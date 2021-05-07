@@ -15,6 +15,12 @@ namespace MyCookingRecipes
         public Form1()
         {
             InitializeComponent();
+
+            
+        }
+        private void Nothing()
+        {
+
         }
     }
 }
