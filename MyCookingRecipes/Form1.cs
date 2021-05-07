@@ -18,9 +18,5 @@ namespace MyCookingRecipes
 
             
         }
-        private void Nothing()
-        {
-
-        }
     }
 }
