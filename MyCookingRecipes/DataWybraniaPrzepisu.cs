@@ -8,7 +8,7 @@ namespace MyCookingRecipes
 {
     public class DataWybraniaPrzepisu
     {
-        public int IdDataWybraniaPrzepisu { get; set; }
+        public int DataWybraniaPrzepisuId { get; set; }
         public int IdPrzepisu { get; set; }
         public DateTime DataWybrania { get; set; }
 

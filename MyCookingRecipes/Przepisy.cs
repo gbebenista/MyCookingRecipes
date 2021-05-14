@@ -8,7 +8,7 @@ namespace MyCookingRecipes
 {
     public class Przepisy
     {
-        public int IdPrzepisu { get; set; }
+        public int PrzepisyId { get; set; }
         public string NazwaPotrawy { get; set; }
         public int CzasPrzygotowania { get; set; }
         public int? IloscPorcji { get; set; }

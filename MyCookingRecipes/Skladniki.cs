@@ -8,7 +8,7 @@ namespace MyCookingRecipes
 {
     public class Skladniki
     {
-        public int IdSkladnika { get; set; }
+        public int SkladnikiId { get; set; }
 
         public int IdRodzajuIlosciSkladnika { get; set; }
 
