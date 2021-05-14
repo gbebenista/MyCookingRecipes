@@ -11,6 +11,8 @@ namespace MyCookingRecipes
     {
         public DbSet<Przepisy> Przepisy { get; set; }
         public DbSet<Ulubione> Ulubione { get; set; }
+        public DbSet<DataWybraniaPrzepisu> DataWybraniaPrzepisow { get; set; }
+        public DbSet<KrokiPrzygotowaniaPrzepisu> KrokiPrzygotowaniaPrzepisow { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
