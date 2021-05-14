@@ -8,7 +8,7 @@ namespace MyCookingRecipes
 {
     public class Ulubione
     {
-        public int IdUlubionegoPrzepisu { get; set; }
+        public int UlubioneId { get; set; }
         public int IdPrzepisu { get; set; }
         public bool CzySystemDodal { get; set; }
 

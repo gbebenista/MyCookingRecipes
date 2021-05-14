@@ -162,6 +162,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\20210514104821_InitialMigration.cs" />
+    <Compile Include="Migrations\20210514104821_InitialMigration.designer.cs">
+      <DependentUpon>20210514104821_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\DatabaseContextModelSnapshot.cs" />
     <Compile Include="RodzajIlosciSkladnika.cs" />
     <Compile Include="SkladnikWPrzepisie.cs" />
     <Compile Include="Skladniki.cs" />
