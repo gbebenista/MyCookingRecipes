@@ -14,5 +14,6 @@ namespace MyCookingRecipes
         public int? IloscPorcji { get; set; }
         
         public List<Ulubione> Ulubione { get; set; }
+        public List<SkladnikWPrzepisie> SkladnikiWPrzepisie { get; set; }
     }
 }
