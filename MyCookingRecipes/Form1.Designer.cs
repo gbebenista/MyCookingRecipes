@@ -28,13 +28,120 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.aplikacjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.przepisyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.składnikiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dodajUsuńToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dodajUsuńToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuńToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 65);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(546, 417);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(565, 65);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(373, 278);
+            this.dataGridView2.TabIndex = 1;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aplikacjaToolStripMenuItem,
+            this.przepisyToolStripMenuItem,
+            this.składnikiToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(950, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // aplikacjaToolStripMenuItem
+            // 
+            this.aplikacjaToolStripMenuItem.Name = "aplikacjaToolStripMenuItem";
+            this.aplikacjaToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.aplikacjaToolStripMenuItem.Text = "Aplikacja";
+            // 
+            // przepisyToolStripMenuItem
+            // 
+            this.przepisyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dodajUsuńToolStripMenuItem1,
+            this.usuńToolStripMenuItem});
+            this.przepisyToolStripMenuItem.Name = "przepisyToolStripMenuItem";
+            this.przepisyToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.przepisyToolStripMenuItem.Text = "Przepisy";
+            // 
+            // składnikiToolStripMenuItem
+            // 
+            this.składnikiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dodajUsuńToolStripMenuItem});
+            this.składnikiToolStripMenuItem.Name = "składnikiToolStripMenuItem";
+            this.składnikiToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.składnikiToolStripMenuItem.Text = "Składniki";
+            // 
+            // dodajUsuńToolStripMenuItem
+            // 
+            this.dodajUsuńToolStripMenuItem.Name = "dodajUsuńToolStripMenuItem";
+            this.dodajUsuńToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dodajUsuńToolStripMenuItem.Text = "Przegaladaj..";
+            // 
+            // dodajUsuńToolStripMenuItem1
+            // 
+            this.dodajUsuńToolStripMenuItem1.Name = "dodajUsuńToolStripMenuItem1";
+            this.dodajUsuńToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.dodajUsuńToolStripMenuItem1.Text = "Dodaj..";
+            // 
+            // usuńToolStripMenuItem
+            // 
+            this.usuńToolStripMenuItem.Name = "usuńToolStripMenuItem";
+            this.usuńToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuńToolStripMenuItem.Text = "Usuń..";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(950, 494);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem aplikacjaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem przepisyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dodajUsuńToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem usuńToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem składnikiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dodajUsuńToolStripMenuItem;
     }
 }
 
