@@ -167,7 +167,19 @@
       <DependentUpon>20210514104821_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DatabaseContextModelSnapshot.cs" />
+    <Compile Include="PrzepisyOkno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrzepisyOkno.Designer.cs">
+      <DependentUpon>PrzepisyOkno.cs</DependentUpon>
+    </Compile>
     <Compile Include="RodzajIlosciSkladnika.cs" />
+    <Compile Include="SkladnikiOkno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SkladnikiOkno.Designer.cs">
+      <DependentUpon>SkladnikiOkno.cs</DependentUpon>
+    </Compile>
     <Compile Include="SkladnikWPrzepisie.cs" />
     <Compile Include="Skladniki.cs" />
     <Compile Include="DatabaseContext.cs" />

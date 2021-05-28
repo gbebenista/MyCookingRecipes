@@ -20,5 +20,14 @@ namespace MyCookingRecipes
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=RecipesDB;Trusted_Connection=True");
+
+        public List<Przepisy> PobierzPrzepisy()
+        {
+            using(DatabaseContext db = new DatabaseContext())
+            {
+                return Przepisy.ToList();
+            }
+        }
+
     }
 }
