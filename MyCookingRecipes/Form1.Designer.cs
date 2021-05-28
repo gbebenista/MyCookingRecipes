@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewPrzepisy = new System.Windows.Forms.DataGridView();
+            this.dataGridViewListaPrzepisow = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aplikacjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.przepisyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,13 +50,27 @@
             this.groupBoxSzczegolyPrzepisu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridViewPrzepisy
+            // dataGridViewListaPrzepisow
             // 
-            this.dataGridViewPrzepisy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPrzepisy.Location = new System.Drawing.Point(12, 65);
-            this.dataGridViewPrzepisy.Name = "dataGridViewPrzepisy";
-            this.dataGridViewPrzepisy.Size = new System.Drawing.Size(546, 417);
-            this.dataGridViewPrzepisy.TabIndex = 0;
+            this.dataGridViewListaPrzepisow.AllowUserToAddRows = false;
+            this.dataGridViewListaPrzepisow.AllowUserToDeleteRows = false;
+            this.dataGridViewListaPrzepisow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListaPrzepisow.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
+            this.dataGridViewListaPrzepisow.Location = new System.Drawing.Point(12, 65);
+            this.dataGridViewListaPrzepisow.MultiSelect = false;
+            this.dataGridViewListaPrzepisow.Name = "dataGridViewListaPrzepisow";
+            this.dataGridViewListaPrzepisow.ReadOnly = true;
+            this.dataGridViewListaPrzepisow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewListaPrzepisow.Size = new System.Drawing.Size(546, 417);
+            this.dataGridViewListaPrzepisow.TabIndex = 0;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(564, 65);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(373, 278);
+            this.dataGridView2.TabIndex = 1;
             // 
             // menuStrip1
             // 
@@ -198,6 +213,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 494);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridViewListaPrzepisow);
             this.Controls.Add(this.groupBoxSzczegolyPrzepisu);
             this.Controls.Add(this.dataGridViewPrzepisy);
             this.Controls.Add(this.menuStrip1);
@@ -205,7 +222,8 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrzepisy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaPrzepisow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBoxSzczegolyPrzepisu.ResumeLayout(false);
@@ -217,7 +235,8 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridViewPrzepisy;
+        private System.Windows.Forms.DataGridView dataGridViewListaPrzepisow;
+        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem aplikacjaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem przepisyToolStripMenuItem;
