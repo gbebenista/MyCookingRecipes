@@ -20,5 +20,6 @@ namespace MyCookingRecipes
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=RecipesDB;Trusted_Connection=True");
+   
     }
 }

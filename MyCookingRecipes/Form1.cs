@@ -18,5 +18,13 @@ namespace MyCookingRecipes
 
             
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            using (DatabaseContext context = new DatabaseContext())
+            {
+                dataGridViewListaPrzepisow.DataSource = context.Przepisy.ToList();
+            }
+        }
     }
 }
