@@ -48,7 +48,9 @@ namespace MyCookingRecipes
             {
                 using (DatabaseContext db = new DatabaseContext())
                 {
-                    Skladniki skladnik = new Skladniki(textBoxNazwaSkladnika.Text,comboBoxRodzajeIlosciSkladnika.SelectedIndex+1);
+                    Skladniki skladnik = new Skladniki();
+                    skladnik.NazwaSkladnika = textBoxNazwaSkladnika.Text;
+                    skladnik.RodzajIlosciSkladnika.RodzajIlosciSkladnikaId = (int)comboBoxRodzajeIlosciSkladnika.SelectedIndex + 1;
                     db.Add(skladnik);
                     db.SaveChanges();
                 }
@@ -95,11 +97,12 @@ namespace MyCookingRecipes
                         List<string> nazwyusunietychskladnikow = new List<string>();
                         foreach (DataGridViewRow row in dataGridViewListaSkladnikow.SelectedRows)
                         {
-                            var skladnikwprzepisie = db.SkladnikiWPrzepisach.Where(swp => swp.Skladnik.SkladnikiId == (int)row.Cells[0].Value).First();
-                            if (skladnikwprzepisie == null)
+                            var skladnikwprzepisie = db.SkladnikiWPrzepisach.Where(swp => swp.Skladnik.SkladnikiId == (int)row.Cells[0].Value).Any();
+                            // sprawdzić czy nie pusta baza
+                            if (skladnikwprzepisie == false)
                             {
                                 nazwyusunietychskladnikow.Add(row.Cells[1].Value.ToString());
-                                db.Remove(skladnikwprzepisie);
+                                db.Remove(db.Skladniki.Where(s => s.SkladnikiId == (int)row.Cells[0].Value).First());
                             }
                             
                         }
@@ -120,6 +123,11 @@ namespace MyCookingRecipes
         }
 
         private void SkladnikiOkno_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void comboBoxRodzajeIlosciSkladnika_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
