@@ -19,7 +19,8 @@ namespace MyCookingRecipes
         public Skladniki(string nazwaSkladnika, int idRodzajuIlosciSkladnika)
         {
             NazwaSkladnika = nazwaSkladnika;
-            IdRodzajuIlosciSkladnika = idRodzajuIlosciSkladnika;
+            RodzajIlosciSkladnika.RodzajIlosciSkladnikaId = idRodzajuIlosciSkladnika;
+            // do sprawdzenia
         }
 
     }

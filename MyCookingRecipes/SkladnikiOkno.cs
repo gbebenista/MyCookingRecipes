@@ -26,7 +26,7 @@ namespace MyCookingRecipes
                     comboBoxRodzajeIlosciSkladnika.DataSource = db.PobierzRodzajeIlosciSkladnika();
                     dataGridViewListaSkladnikow.DataSource =  db.Skladniki.Join(
                     db.RodzajIlosciSkladnikow,
-                    skladnik => skladnik.IdRodzajuIlosciSkladnika,
+                    skladnik => skladnik.RodzajIlosciSkladnika.RodzajIlosciSkladnikaId,
                     rodzajskladnika => rodzajskladnika.RodzajIlosciSkladnikaId,
                     (skladnik, rodzajskladnika) => new {
                         skladnik.SkladnikiId,
@@ -67,7 +67,7 @@ namespace MyCookingRecipes
                 {
                     dataGridViewListaSkladnikow.DataSource = db.Skladniki.Join(
                     db.RodzajIlosciSkladnikow,
-                    skladnik => skladnik.IdRodzajuIlosciSkladnika,
+                    skladnik => skladnik.RodzajIlosciSkladnika.RodzajIlosciSkladnikaId,
                     rodzajskladnika => rodzajskladnika.RodzajIlosciSkladnikaId,
                     (skladnik, rodzajskladnika) => new {
                         skladnik.SkladnikiId,
@@ -95,7 +95,7 @@ namespace MyCookingRecipes
                         List<string> nazwyusunietychskladnikow = new List<string>();
                         foreach (DataGridViewRow row in dataGridViewListaSkladnikow.SelectedRows)
                         {
-                            var skladnikwprzepisie = db.SkladnikiWPrzepisach.Where(swp => swp.IdSkladnika == (int)row.Cells[0].Value).First();
+                            var skladnikwprzepisie = db.SkladnikiWPrzepisach.Where(swp => swp.Skladnik.SkladnikiId == (int)row.Cells[0].Value).First();
                             if (skladnikwprzepisie == null)
                             {
                                 nazwyusunietychskladnikow.Add(row.Cells[1].Value.ToString());
