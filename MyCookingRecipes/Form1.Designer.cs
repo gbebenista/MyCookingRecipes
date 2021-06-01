@@ -62,8 +62,6 @@
             this.dataGridViewListaPrzepisow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewListaPrzepisow.Size = new System.Drawing.Size(546, 417);
             this.dataGridViewListaPrzepisow.TabIndex = 0;
-            this.dataGridViewListaPrzepisow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaPrzepisow_CellClick);
-            this.dataGridViewListaPrzepisow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaPrzepisow_CellContentClick);
             // 
             // menuStrip1
             // 
@@ -129,7 +127,6 @@
             this.groupBoxSzczegolyPrzepisu.TabIndex = 3;
             this.groupBoxSzczegolyPrzepisu.TabStop = false;
             this.groupBoxSzczegolyPrzepisu.Text = "Szczegóły Przepisu";
-            this.groupBoxSzczegolyPrzepisu.Enter += new System.EventHandler(this.groupBoxSzczegolyPrzepisu_Enter);
             // 
             // labelListBoxTytul
             // 
@@ -147,7 +144,6 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(357, 225);
             this.listBox1.TabIndex = 6;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // labelIloscPorcji
             // 
@@ -208,8 +204,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 494);
-            this.Controls.Add(this.groupBoxSzczegolyPrzepisu);
             this.Controls.Add(this.dataGridViewListaPrzepisow);
+            this.Controls.Add(this.groupBoxSzczegolyPrzepisu);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";

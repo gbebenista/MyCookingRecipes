@@ -15,5 +15,12 @@ namespace MyCookingRecipes
         public RodzajIlosciSkladnika RodzajIlosciSkladnika { get; set; }
 
         public List<SkladnikWPrzepisie> SkladnikiWPrzepisie { get; set; }
+
+        public Skladniki(string nazwaSkladnika, int idRodzajuIlosciSkladnika)
+        {
+            NazwaSkladnika = nazwaSkladnika;
+            IdRodzajuIlosciSkladnika = idRodzajuIlosciSkladnika;
+        }
+
     }
 }
