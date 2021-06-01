@@ -23,7 +23,7 @@ namespace MyCookingRecipes
         {
             using (DatabaseContext db = new DatabaseContext())
             {
-                dataGridViewPrzepisy.DataSource = db.PobierzPrzepisy();
+                dataGridViewListaPrzepisow.DataSource = db.PobierzPrzepisy();
             }
         }
 
@@ -34,6 +34,51 @@ namespace MyCookingRecipes
         }
 
         private void dodajUsuńToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewListaPrzepisow_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                Przepisy selected = db.PobierzPrzepis((int)dataGridViewListaPrzepisow.CurrentRow.Cells[0].Value);
+                labelNazwaPrzepisu.Text = selected.NazwaPotrawy;
+                labelCzasPrzygotowania.Text = selected.CzasPrzygotowania.ToString();
+                labelIloscPorcji.Text = selected.IloscPorcji.ToString();
+                listBox1.DataSource = db.SkladnikiWPrzepisach.Join(
+                                db.Skladniki,
+                                skladnikiwprzepisie => skladnikiwprzepisie.Skladnik.SkladnikiId,
+                                skladniki => skladniki.SkladnikiId,
+                                (skladnikiwprzepisie, skladniki) => new
+                                {
+                                    skladniki.NazwaSkladnika,
+                                    skladnikiwprzepisie.Ilosc
+
+                                }
+                                ).ToList();
+
+
+            }
+           
+        }
+
+        private void groupBoxSzczegolyPrzepisu_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewListaPrzepisow_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

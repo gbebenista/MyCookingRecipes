@@ -28,6 +28,29 @@ namespace MyCookingRecipes
                 return Przepisy.ToList();
             }
         }
+        public Przepisy PobierzPrzepis(int id)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                return db.Przepisy.Find(id);
+            }
+        }
+        public void PobierzSkladnikiwPrzepisie(int id )
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                db.SkladnikiWPrzepisach.Join(
+                                db.Skladniki,
+                                skladnikiwprzepisie => skladnikiwprzepisie.Skladnik.SkladnikiId,
+                                skladniki => skladniki.SkladnikiId,
+                                (skladnikiwprzepisie, skladniki) => new
+                                {
+                                    Nazwa = skladniki.NazwaSkladnika,
+
+                                }
+                                ).ToList();
+            }
+        }
 
     }
 }

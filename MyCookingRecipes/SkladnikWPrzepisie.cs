@@ -9,9 +9,6 @@ namespace MyCookingRecipes
     public class SkladnikWPrzepisie
     {
         public int SkladnikWPrzepisieId { get; set; }
-        public int IdPrzepisu { get; set; }
-        public int IdSkladnika { get; set; }
-
         public decimal Ilosc { get; set; }
 
         public Przepisy Przepis { get; set; }

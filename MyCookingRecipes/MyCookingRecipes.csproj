@@ -166,6 +166,10 @@
     <Compile Include="Migrations\20210514104821_InitialMigration.designer.cs">
       <DependentUpon>20210514104821_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20210601213839_Secon.cs" />
+    <Compile Include="Migrations\20210601213839_Secon.designer.cs">
+      <DependentUpon>20210601213839_Secon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\DatabaseContextModelSnapshot.cs" />
     <Compile Include="PrzepisyOkno.cs">
       <SubType>Form</SubType>
