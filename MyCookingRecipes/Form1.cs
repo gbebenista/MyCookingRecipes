@@ -21,9 +21,9 @@ namespace MyCookingRecipes
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            using (DatabaseContext db = new DatabaseContext())
+            using (DatabaseContext context = new DatabaseContext())
             {
-                dataGridViewPrzepisy.DataSource = db.PobierzPrzepisy();
+                dataGridViewListaPrzepisow.DataSource = context.Przepisy.ToList();
             }
         }
 
@@ -35,7 +35,8 @@ namespace MyCookingRecipes
 
         private void dodajUsuńToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            SkladnikiOkno skladnikiOkno = new SkladnikiOkno();
+            skladnikiOkno.Show();
         }
     }
 }

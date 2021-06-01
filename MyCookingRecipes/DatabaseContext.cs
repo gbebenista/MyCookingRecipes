@@ -13,7 +13,7 @@ namespace MyCookingRecipes
         public DbSet<Ulubione> Ulubione { get; set; }
         public DbSet<DataWybraniaPrzepisu> DataWybraniaPrzepisow { get; set; }
         public DbSet<KrokiPrzygotowaniaPrzepisu> KrokiPrzygotowaniaPrzepisow { get; set; }
-        
+
         public DbSet<Skladniki> Skladniki { get; set; }
         public DbSet<RodzajIlosciSkladnika> RodzajIlosciSkladnikow { get; set; }
         public DbSet<SkladnikWPrzepisie> SkladnikiWPrzepisach { get; set; }
@@ -23,11 +23,38 @@ namespace MyCookingRecipes
 
         public List<Przepisy> PobierzPrzepisy()
         {
-            using(DatabaseContext db = new DatabaseContext())
+            using (DatabaseContext db = new DatabaseContext())
             {
                 return Przepisy.ToList();
             }
         }
+
+        public List<RodzajIlosciSkladnika> PobierzRodzajeIlosciSkladnika()
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                return RodzajIlosciSkladnikow.ToList();
+            }
+        }
+
+        //public IEnumerable<Skladniki> PobierzListeSkladnikow()
+        //{
+        //    using (DatabaseContext db = new DatabaseContext())
+        //    {
+        //        var query = Skladniki.Join(
+        //            db.RodzajIlosciSkladnikow,
+        //            skladnik => skladnik.IdRodzajuIlosciSkladnika,
+        //            rodzajskladnika => rodzajskladnika.RodzajIlosciSkladnikaId,
+        //            (skladnik, rodzajskladnika) => new 
+        //            {
+        //                skladnik.SkladnikiId,
+        //                skladnik.NazwaSkladnika,
+        //                rodzajskladnika.Liczebność
+        //            }
+        //            ).ToList();
+        //        return query;
+        //    }
+        //}
 
     }
 }

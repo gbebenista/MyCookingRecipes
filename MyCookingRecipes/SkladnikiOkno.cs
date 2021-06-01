@@ -16,5 +16,112 @@ namespace MyCookingRecipes
         {
             InitializeComponent();
         }
+
+        private void SkladnikiOkno_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                using(DatabaseContext db = new DatabaseContext())
+                {
+                    comboBoxRodzajeIlosciSkladnika.DataSource = db.PobierzRodzajeIlosciSkladnika();
+                    dataGridViewListaSkladnikow.DataSource =  db.Skladniki.Join(
+                    db.RodzajIlosciSkladnikow,
+                    skladnik => skladnik.IdRodzajuIlosciSkladnika,
+                    rodzajskladnika => rodzajskladnika.RodzajIlosciSkladnikaId,
+                    (skladnik, rodzajskladnika) => new {
+                        skladnik.SkladnikiId,
+                        skladnik.NazwaSkladnika,
+                        rodzajskladnika.Liczebność
+                    }
+                    ).ToList();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Wystąpił problem z załadowaniem danych składników. Proszę spróbować ponownie", ex.Message);
+            }
+        }
+
+        private void buttonDodajSkladnik_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (DatabaseContext db = new DatabaseContext())
+                {
+                    Skladniki skladnik = new Skladniki(textBoxNazwaSkladnika.Text,comboBoxRodzajeIlosciSkladnika.SelectedIndex+1);
+                    db.Add(skladnik);
+                    db.SaveChanges();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Wystąpił problem z dodaniem składnika. Proszę spróbować ponownie", ex.Message);
+            }
+        }
+
+        private void buttonWyszukajSkladnik_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (DatabaseContext db = new DatabaseContext())
+                {
+                    dataGridViewListaSkladnikow.DataSource = db.Skladniki.Join(
+                    db.RodzajIlosciSkladnikow,
+                    skladnik => skladnik.IdRodzajuIlosciSkladnika,
+                    rodzajskladnika => rodzajskladnika.RodzajIlosciSkladnikaId,
+                    (skladnik, rodzajskladnika) => new {
+                        skladnik.SkladnikiId,
+                        skladnik.NazwaSkladnika,
+                        rodzajskladnika.Liczebność
+                    }
+                    ).Where(skladnik => skladnik.NazwaSkladnika == textBoxNazwaSkladnika.Text).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Wystąpił problem z załadowaniem danych składników. Proszę spróbować ponownie", ex.Message);
+            }
+        }
+
+        private void buttonUsunSkladniki_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (DatabaseContext db = new DatabaseContext())
+                {
+                    DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć zaznaczone przepisy?", "Usuwanie przepisów", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        List<string> nazwyusunietychskladnikow = new List<string>();
+                        foreach (DataGridViewRow row in dataGridViewListaSkladnikow.SelectedRows)
+                        {
+                            var skladnikwprzepisie = db.SkladnikiWPrzepisach.Where(swp => swp.IdSkladnika == (int)row.Cells[0].Value).First();
+                            if (skladnikwprzepisie == null)
+                            {
+                                nazwyusunietychskladnikow.Add(row.Cells[1].Value.ToString());
+                                db.Remove(skladnikwprzepisie);
+                            }
+                            
+                        }
+                        db.SaveChanges();
+                        MessageBox.Show(String.Format("Usunięto następujące składniki:{0} \n Pozostałe składniki znajdują się w przepisach. W celu usunięcia składników należy usunąć najpierw powiązane z nimi przepisy.", String.Join(",", nazwyusunietychskladnikow)));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Wystąpił problem z załadowaniem danych składników. Proszę spróbować ponownie", ex.Message);
+            }
+        }
+
+        private void buttonZamknijOkno_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void SkladnikiOkno_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
     }
 }
