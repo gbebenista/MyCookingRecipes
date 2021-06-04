@@ -168,6 +168,12 @@
     <Compile Include="DodajModyfikujPrzepisOkno.Designer.cs">
       <DependentUpon>DodajModyfikujPrzepisOkno.cs</DependentUpon>
     </Compile>
+    <Compile Include="KrokiPrzepisuOkno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KrokiPrzepisuOkno.Designer.cs">
+      <DependentUpon>KrokiPrzepisuOkno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\20210514104821_InitialMigration.cs" />
     <Compile Include="Migrations\20210514104821_InitialMigration.designer.cs">
       <DependentUpon>20210514104821_InitialMigration.cs</DependentUpon>
@@ -196,6 +202,12 @@
     <Compile Include="SkladnikiOkno.Designer.cs">
       <DependentUpon>SkladnikiOkno.cs</DependentUpon>
     </Compile>
+    <Compile Include="SkladnikiWPrzepisieOkno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SkladnikiWPrzepisieOkno.Designer.cs">
+      <DependentUpon>SkladnikiWPrzepisieOkno.cs</DependentUpon>
+    </Compile>
     <Compile Include="SkladnikWPrzepisie.cs" />
     <Compile Include="Skladniki.cs" />
     <Compile Include="DatabaseContext.cs" />
@@ -223,6 +235,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KrokiPrzepisuOkno.resx">
+      <DependentUpon>KrokiPrzepisuOkno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -237,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SkladnikiOkno.resx">
       <DependentUpon>SkladnikiOkno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SkladnikiWPrzepisieOkno.resx">
+      <DependentUpon>SkladnikiWPrzepisieOkno.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

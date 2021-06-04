@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace MyCookingRecipes
 {
-    public partial class DodajModyfikujPrzepisOkno : Form
+    public partial class SkladnikiWPrzepisieOkno : Form
     {
-        public DodajModyfikujPrzepisOkno()
+        public SkladnikiWPrzepisieOkno()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

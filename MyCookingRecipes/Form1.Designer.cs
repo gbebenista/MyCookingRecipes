@@ -35,6 +35,8 @@
             this.przepisyZarzadzajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.składnikiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.skladnikiZarzadzajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ulubioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zarzadzajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxSzczegolyPrzepisu = new System.Windows.Forms.GroupBox();
             this.labelListBoxTytul = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -44,8 +46,9 @@
             this.labelCzasPrzygotowaniaTytul = new System.Windows.Forms.Label();
             this.labelNazwaPrzepisu = new System.Windows.Forms.Label();
             this.labelNazwaPrzepisuTytul = new System.Windows.Forms.Label();
-            this.ulubioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zarzadzajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.wyjdźToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaPrzepisow)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBoxSzczegolyPrzepisu.SuspendLayout();
@@ -80,6 +83,8 @@
             // 
             // aplikacjaToolStripMenuItem
             // 
+            this.aplikacjaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.wyjdźToolStripMenuItem});
             this.aplikacjaToolStripMenuItem.Name = "aplikacjaToolStripMenuItem";
             this.aplikacjaToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.aplikacjaToolStripMenuItem.Text = "Aplikacja";
@@ -110,9 +115,23 @@
             // skladnikiZarzadzajToolStripMenuItem
             // 
             this.skladnikiZarzadzajToolStripMenuItem.Name = "skladnikiZarzadzajToolStripMenuItem";
-            this.skladnikiZarzadzajToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.skladnikiZarzadzajToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.skladnikiZarzadzajToolStripMenuItem.Text = "Zarządzaj..";
             this.skladnikiZarzadzajToolStripMenuItem.Click += new System.EventHandler(this.dodajUsuńToolStripMenuItem_Click);
+            // 
+            // ulubioneToolStripMenuItem
+            // 
+            this.ulubioneToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.zarzadzajToolStripMenuItem});
+            this.ulubioneToolStripMenuItem.Name = "ulubioneToolStripMenuItem";
+            this.ulubioneToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.ulubioneToolStripMenuItem.Text = "Ulubione";
+            // 
+            // zarzadzajToolStripMenuItem
+            // 
+            this.zarzadzajToolStripMenuItem.Name = "zarzadzajToolStripMenuItem";
+            this.zarzadzajToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zarzadzajToolStripMenuItem.Text = "Zarzadzaj..";
             // 
             // groupBoxSzczegolyPrzepisu
             // 
@@ -202,25 +221,37 @@
             this.labelNazwaPrzepisuTytul.TabIndex = 0;
             this.labelNazwaPrzepisuTytul.Text = "Nazwa Przepisu";
             // 
-            // ulubioneToolStripMenuItem
+            // button1
             // 
-            this.ulubioneToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.zarzadzajToolStripMenuItem});
-            this.ulubioneToolStripMenuItem.Name = "ulubioneToolStripMenuItem";
-            this.ulubioneToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.ulubioneToolStripMenuItem.Text = "Ulubione";
+            this.button1.Location = new System.Drawing.Point(565, 394);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(373, 45);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Wybierz ten przepis";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // zarzadzajToolStripMenuItem
+            // wyjdźToolStripMenuItem
             // 
-            this.zarzadzajToolStripMenuItem.Name = "zarzadzajToolStripMenuItem";
-            this.zarzadzajToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.zarzadzajToolStripMenuItem.Text = "Zarzadzaj..";
+            this.wyjdźToolStripMenuItem.Name = "wyjdźToolStripMenuItem";
+            this.wyjdźToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.wyjdźToolStripMenuItem.Text = "Wyjdź";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(565, 445);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(373, 37);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Przygotuj listę składników na potrawy";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 494);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridViewListaPrzepisow);
             this.Controls.Add(this.groupBoxSzczegolyPrzepisu);
             this.Controls.Add(this.menuStrip1);
@@ -258,6 +289,9 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ToolStripMenuItem ulubioneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zarzadzajToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem wyjdźToolStripMenuItem;
+        private System.Windows.Forms.Button button2;
     }
 }
 

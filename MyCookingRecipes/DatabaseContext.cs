@@ -35,6 +35,14 @@ namespace MyCookingRecipes
                 return db.Przepisy.Find(id);
             }
         }
+
+        public List<Przepisy> WyszukajPrzepisy(string name)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                return db.Przepisy.Where(p => p.NazwaPotrawy.Contains(name)).ToList();
+            }
+        }
         public void PobierzSkladnikiwPrzepisie(int id )
         {
             using (DatabaseContext db = new DatabaseContext())

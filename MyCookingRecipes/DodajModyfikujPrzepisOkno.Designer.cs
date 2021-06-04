@@ -29,43 +29,43 @@
         private void InitializeComponent()
         {
             this.groupBoxDodajPrzepis = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBoxKrokiPrzygotowania = new System.Windows.Forms.GroupBox();
+            this.buttonDodajKrok = new System.Windows.Forms.Button();
+            this.buttonUsunKrok = new System.Windows.Forms.Button();
+            this.dataGridViewKrokiPrzygotowania = new System.Windows.Forms.DataGridView();
+            this.groupBoxSkladniki = new System.Windows.Forms.GroupBox();
+            this.dataGridViewSkladniki = new System.Windows.Forms.DataGridView();
+            this.buttonDodajSkladnik = new System.Windows.Forms.Button();
+            this.buttonUsunSkladnik = new System.Windows.Forms.Button();
+            this.buttonDodajPrzepis = new System.Windows.Forms.Button();
+            this.labelIloscPorcji = new System.Windows.Forms.Label();
+            this.labelCzasPrzygotowania = new System.Windows.Forms.Label();
+            this.labelNazwaPrzepisu = new System.Windows.Forms.Label();
+            this.numericUpDownIloscPorcji = new System.Windows.Forms.NumericUpDown();
+            this.checkBoxDodajDoUlubionych = new System.Windows.Forms.CheckBox();
+            this.numericUpDownCzasPrzygotowania = new System.Windows.Forms.NumericUpDown();
+            this.textBoxNazwaPrzepisu = new System.Windows.Forms.TextBox();
             this.groupBoxDodajPrzepis.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBoxKrokiPrzygotowania.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKrokiPrzygotowania)).BeginInit();
+            this.groupBoxSkladniki.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSkladniki)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIloscPorcji)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCzasPrzygotowania)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxDodajPrzepis
             // 
-            this.groupBoxDodajPrzepis.Controls.Add(this.groupBox2);
-            this.groupBoxDodajPrzepis.Controls.Add(this.groupBox1);
-            this.groupBoxDodajPrzepis.Controls.Add(this.button3);
-            this.groupBoxDodajPrzepis.Controls.Add(this.label3);
-            this.groupBoxDodajPrzepis.Controls.Add(this.label2);
-            this.groupBoxDodajPrzepis.Controls.Add(this.label1);
-            this.groupBoxDodajPrzepis.Controls.Add(this.numericUpDown2);
-            this.groupBoxDodajPrzepis.Controls.Add(this.checkBox1);
-            this.groupBoxDodajPrzepis.Controls.Add(this.numericUpDown1);
-            this.groupBoxDodajPrzepis.Controls.Add(this.textBox1);
+            this.groupBoxDodajPrzepis.Controls.Add(this.groupBoxKrokiPrzygotowania);
+            this.groupBoxDodajPrzepis.Controls.Add(this.groupBoxSkladniki);
+            this.groupBoxDodajPrzepis.Controls.Add(this.buttonDodajPrzepis);
+            this.groupBoxDodajPrzepis.Controls.Add(this.labelIloscPorcji);
+            this.groupBoxDodajPrzepis.Controls.Add(this.labelCzasPrzygotowania);
+            this.groupBoxDodajPrzepis.Controls.Add(this.labelNazwaPrzepisu);
+            this.groupBoxDodajPrzepis.Controls.Add(this.numericUpDownIloscPorcji);
+            this.groupBoxDodajPrzepis.Controls.Add(this.checkBoxDodajDoUlubionych);
+            this.groupBoxDodajPrzepis.Controls.Add(this.numericUpDownCzasPrzygotowania);
+            this.groupBoxDodajPrzepis.Controls.Add(this.textBoxNazwaPrzepisu);
             this.groupBoxDodajPrzepis.Location = new System.Drawing.Point(12, 12);
             this.groupBoxDodajPrzepis.Name = "groupBoxDodajPrzepis";
             this.groupBoxDodajPrzepis.Size = new System.Drawing.Size(415, 579);
@@ -73,154 +73,155 @@
             this.groupBoxDodajPrzepis.TabStop = false;
             this.groupBoxDodajPrzepis.Text = "Dodaj przepis";
             // 
-            // button3
+            // groupBoxKrokiPrzygotowania
             // 
-            this.button3.Location = new System.Drawing.Point(7, 540);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(402, 33);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Dodaj przepis";
-            this.button3.UseVisualStyleBackColor = true;
+            this.groupBoxKrokiPrzygotowania.Controls.Add(this.buttonDodajKrok);
+            this.groupBoxKrokiPrzygotowania.Controls.Add(this.buttonUsunKrok);
+            this.groupBoxKrokiPrzygotowania.Controls.Add(this.dataGridViewKrokiPrzygotowania);
+            this.groupBoxKrokiPrzygotowania.Location = new System.Drawing.Point(6, 325);
+            this.groupBoxKrokiPrzygotowania.Name = "groupBoxKrokiPrzygotowania";
+            this.groupBoxKrokiPrzygotowania.Size = new System.Drawing.Size(403, 209);
+            this.groupBoxKrokiPrzygotowania.TabIndex = 13;
+            this.groupBoxKrokiPrzygotowania.TabStop = false;
+            this.groupBoxKrokiPrzygotowania.Text = "Kroki przygotowania";
             // 
-            // button2
+            // buttonDodajKrok
             // 
-            this.button2.Location = new System.Drawing.Point(6, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(196, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Dodaj krok przygotowania...";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonDodajKrok.Location = new System.Drawing.Point(6, 19);
+            this.buttonDodajKrok.Name = "buttonDodajKrok";
+            this.buttonDodajKrok.Size = new System.Drawing.Size(196, 23);
+            this.buttonDodajKrok.TabIndex = 10;
+            this.buttonDodajKrok.Text = "Dodaj krok przygotowania...";
+            this.buttonDodajKrok.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // buttonUsunKrok
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 48);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(391, 155);
-            this.dataGridView2.TabIndex = 9;
+            this.buttonUsunKrok.Location = new System.Drawing.Point(208, 19);
+            this.buttonUsunKrok.Name = "buttonUsunKrok";
+            this.buttonUsunKrok.Size = new System.Drawing.Size(189, 23);
+            this.buttonUsunKrok.TabIndex = 12;
+            this.buttonUsunKrok.Text = "Usuń krok przygotowania..";
+            this.buttonUsunKrok.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // dataGridViewKrokiPrzygotowania
             // 
-            this.button1.Location = new System.Drawing.Point(6, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(196, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Dodaj składnik..";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dataGridViewKrokiPrzygotowania.AllowUserToAddRows = false;
+            this.dataGridViewKrokiPrzygotowania.AllowUserToDeleteRows = false;
+            this.dataGridViewKrokiPrzygotowania.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewKrokiPrzygotowania.Location = new System.Drawing.Point(6, 48);
+            this.dataGridViewKrokiPrzygotowania.Name = "dataGridViewKrokiPrzygotowania";
+            this.dataGridViewKrokiPrzygotowania.ReadOnly = true;
+            this.dataGridViewKrokiPrzygotowania.Size = new System.Drawing.Size(391, 155);
+            this.dataGridViewKrokiPrzygotowania.TabIndex = 9;
             // 
-            // dataGridView1
+            // groupBoxSkladniki
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 48);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(391, 138);
-            this.dataGridView1.TabIndex = 7;
+            this.groupBoxSkladniki.Controls.Add(this.dataGridViewSkladniki);
+            this.groupBoxSkladniki.Controls.Add(this.buttonDodajSkladnik);
+            this.groupBoxSkladniki.Controls.Add(this.buttonUsunSkladnik);
+            this.groupBoxSkladniki.Location = new System.Drawing.Point(6, 118);
+            this.groupBoxSkladniki.Name = "groupBoxSkladniki";
+            this.groupBoxSkladniki.Size = new System.Drawing.Size(403, 201);
+            this.groupBoxSkladniki.TabIndex = 13;
+            this.groupBoxSkladniki.TabStop = false;
+            this.groupBoxSkladniki.Text = "Składniki";
             // 
-            // label3
+            // dataGridViewSkladniki
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(151, 76);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Ilość porcji";
+            this.dataGridViewSkladniki.AllowUserToAddRows = false;
+            this.dataGridViewSkladniki.AllowUserToDeleteRows = false;
+            this.dataGridViewSkladniki.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSkladniki.Location = new System.Drawing.Point(6, 48);
+            this.dataGridViewSkladniki.Name = "dataGridViewSkladniki";
+            this.dataGridViewSkladniki.ReadOnly = true;
+            this.dataGridViewSkladniki.Size = new System.Drawing.Size(391, 138);
+            this.dataGridViewSkladniki.TabIndex = 7;
             // 
-            // label2
+            // buttonDodajSkladnik
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Czas przygotowania [min]";
+            this.buttonDodajSkladnik.Location = new System.Drawing.Point(6, 19);
+            this.buttonDodajSkladnik.Name = "buttonDodajSkladnik";
+            this.buttonDodajSkladnik.Size = new System.Drawing.Size(196, 23);
+            this.buttonDodajSkladnik.TabIndex = 8;
+            this.buttonDodajSkladnik.Text = "Dodaj składnik..";
+            this.buttonDodajSkladnik.UseVisualStyleBackColor = true;
+            this.buttonDodajSkladnik.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
+            // buttonUsunSkladnik
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Nazwa przepisu";
+            this.buttonUsunSkladnik.Location = new System.Drawing.Point(208, 19);
+            this.buttonUsunSkladnik.Name = "buttonUsunSkladnik";
+            this.buttonUsunSkladnik.Size = new System.Drawing.Size(189, 23);
+            this.buttonUsunSkladnik.TabIndex = 12;
+            this.buttonUsunSkladnik.Text = "Usuń składnik..";
+            this.buttonUsunSkladnik.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown2
+            // buttonDodajPrzepis
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(151, 92);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown2.TabIndex = 3;
+            this.buttonDodajPrzepis.Location = new System.Drawing.Point(7, 540);
+            this.buttonDodajPrzepis.Name = "buttonDodajPrzepis";
+            this.buttonDodajPrzepis.Size = new System.Drawing.Size(402, 33);
+            this.buttonDodajPrzepis.TabIndex = 11;
+            this.buttonDodajPrzepis.Text = "Dodaj przepis";
+            this.buttonDodajPrzepis.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // labelIloscPorcji
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(286, 93);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(123, 17);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "Dodaj do ulubionych";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.labelIloscPorcji.AutoSize = true;
+            this.labelIloscPorcji.Location = new System.Drawing.Point(151, 76);
+            this.labelIloscPorcji.Name = "labelIloscPorcji";
+            this.labelIloscPorcji.Size = new System.Drawing.Size(57, 13);
+            this.labelIloscPorcji.TabIndex = 6;
+            this.labelIloscPorcji.Text = "Ilość porcji";
             // 
-            // numericUpDown1
+            // labelCzasPrzygotowania
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(6, 92);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(126, 20);
-            this.numericUpDown1.TabIndex = 1;
+            this.labelCzasPrzygotowania.AutoSize = true;
+            this.labelCzasPrzygotowania.Location = new System.Drawing.Point(6, 76);
+            this.labelCzasPrzygotowania.Name = "labelCzasPrzygotowania";
+            this.labelCzasPrzygotowania.Size = new System.Drawing.Size(126, 13);
+            this.labelCzasPrzygotowania.TabIndex = 5;
+            this.labelCzasPrzygotowania.Text = "Czas przygotowania [min]";
             // 
-            // textBox1
+            // labelNazwaPrzepisu
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(403, 20);
-            this.textBox1.TabIndex = 0;
+            this.labelNazwaPrzepisu.AutoSize = true;
+            this.labelNazwaPrzepisu.Location = new System.Drawing.Point(6, 25);
+            this.labelNazwaPrzepisu.Name = "labelNazwaPrzepisu";
+            this.labelNazwaPrzepisu.Size = new System.Drawing.Size(82, 13);
+            this.labelNazwaPrzepisu.TabIndex = 4;
+            this.labelNazwaPrzepisu.Text = "Nazwa przepisu";
             // 
-            // button4
+            // numericUpDownIloscPorcji
             // 
-            this.button4.Location = new System.Drawing.Point(208, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(189, 23);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Usuń składnik..";
-            this.button4.UseVisualStyleBackColor = true;
+            this.numericUpDownIloscPorcji.Location = new System.Drawing.Point(151, 92);
+            this.numericUpDownIloscPorcji.Name = "numericUpDownIloscPorcji";
+            this.numericUpDownIloscPorcji.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownIloscPorcji.TabIndex = 3;
             // 
-            // button5
+            // checkBoxDodajDoUlubionych
             // 
-            this.button5.Location = new System.Drawing.Point(208, 19);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(189, 23);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "Usuń krok przygotowania..";
-            this.button5.UseVisualStyleBackColor = true;
+            this.checkBoxDodajDoUlubionych.AutoSize = true;
+            this.checkBoxDodajDoUlubionych.Location = new System.Drawing.Point(286, 93);
+            this.checkBoxDodajDoUlubionych.Name = "checkBoxDodajDoUlubionych";
+            this.checkBoxDodajDoUlubionych.Size = new System.Drawing.Size(123, 17);
+            this.checkBoxDodajDoUlubionych.TabIndex = 2;
+            this.checkBoxDodajDoUlubionych.Text = "Dodaj do ulubionych";
+            this.checkBoxDodajDoUlubionych.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // numericUpDownCzasPrzygotowania
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Location = new System.Drawing.Point(6, 118);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(403, 201);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Składniki";
+            this.numericUpDownCzasPrzygotowania.Location = new System.Drawing.Point(6, 92);
+            this.numericUpDownCzasPrzygotowania.Name = "numericUpDownCzasPrzygotowania";
+            this.numericUpDownCzasPrzygotowania.Size = new System.Drawing.Size(126, 20);
+            this.numericUpDownCzasPrzygotowania.TabIndex = 1;
             // 
-            // groupBox2
+            // textBoxNazwaPrzepisu
             // 
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.dataGridView2);
-            this.groupBox2.Location = new System.Drawing.Point(6, 325);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(403, 209);
-            this.groupBox2.TabIndex = 13;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Kroki przygotowania";
+            this.textBoxNazwaPrzepisu.Location = new System.Drawing.Point(6, 41);
+            this.textBoxNazwaPrzepisu.Name = "textBoxNazwaPrzepisu";
+            this.textBoxNazwaPrzepisu.Size = new System.Drawing.Size(403, 20);
+            this.textBoxNazwaPrzepisu.TabIndex = 0;
             // 
             // DodajModyfikujPrzepisOkno
             // 
@@ -232,12 +233,12 @@
             this.Text = "DodajModyfikujPrzepisOkno";
             this.groupBoxDodajPrzepis.ResumeLayout(false);
             this.groupBoxDodajPrzepis.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
+            this.groupBoxKrokiPrzygotowania.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKrokiPrzygotowania)).EndInit();
+            this.groupBoxSkladniki.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSkladniki)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIloscPorcji)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCzasPrzygotowania)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -245,21 +246,21 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBoxDodajPrzepis;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button buttonDodajPrzepis;
+        private System.Windows.Forms.Button buttonDodajKrok;
+        private System.Windows.Forms.DataGridView dataGridViewKrokiPrzygotowania;
+        private System.Windows.Forms.Button buttonDodajSkladnik;
+        private System.Windows.Forms.DataGridView dataGridViewSkladniki;
+        private System.Windows.Forms.Label labelIloscPorcji;
+        private System.Windows.Forms.Label labelCzasPrzygotowania;
+        private System.Windows.Forms.Label labelNazwaPrzepisu;
+        private System.Windows.Forms.NumericUpDown numericUpDownIloscPorcji;
+        private System.Windows.Forms.CheckBox checkBoxDodajDoUlubionych;
+        private System.Windows.Forms.NumericUpDown numericUpDownCzasPrzygotowania;
+        private System.Windows.Forms.TextBox textBoxNazwaPrzepisu;
+        private System.Windows.Forms.GroupBox groupBoxSkladniki;
+        private System.Windows.Forms.Button buttonUsunSkladnik;
+        private System.Windows.Forms.Button buttonUsunKrok;
+        private System.Windows.Forms.GroupBox groupBoxKrokiPrzygotowania;
     }
 }
