@@ -162,6 +162,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DodajModyfikujPrzepisOkno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajModyfikujPrzepisOkno.Designer.cs">
+      <DependentUpon>DodajModyfikujPrzepisOkno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\20210514104821_InitialMigration.cs" />
     <Compile Include="Migrations\20210514104821_InitialMigration.designer.cs">
       <DependentUpon>20210514104821_InitialMigration.cs</DependentUpon>
@@ -171,6 +177,12 @@
       <DependentUpon>20210601213839_Secon.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DatabaseContextModelSnapshot.cs" />
+    <Compile Include="PrzepisSzczegolyOkno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrzepisSzczegolyOkno.Designer.cs">
+      <DependentUpon>PrzepisSzczegolyOkno.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrzepisyOkno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +211,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Przepisy.cs" />
     <Compile Include="Ulubione.cs" />
+    <Compile Include="UlubioneOkno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UlubioneOkno.Designer.cs">
+      <DependentUpon>UlubioneOkno.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DodajModyfikujPrzepisOkno.resx">
+      <DependentUpon>DodajModyfikujPrzepisOkno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +232,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PrzepisyOkno.resx">
+      <DependentUpon>PrzepisyOkno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SkladnikiOkno.resx">
       <DependentUpon>SkladnikiOkno.cs</DependentUpon>
     </EmbeddedResource>

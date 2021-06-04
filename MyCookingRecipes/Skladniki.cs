@@ -16,12 +16,5 @@ namespace MyCookingRecipes
 
         public List<SkladnikWPrzepisie> SkladnikiWPrzepisie { get; set; }
 
-        public Skladniki(string nazwaSkladnika, int idRodzajuIlosciSkladnika)
-        {
-            NazwaSkladnika = nazwaSkladnika;
-            RodzajIlosciSkladnika.RodzajIlosciSkladnikaId = idRodzajuIlosciSkladnika;
-            // do sprawdzenia
-        }
-
     }
 }

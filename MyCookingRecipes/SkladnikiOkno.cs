@@ -21,10 +21,27 @@ namespace MyCookingRecipes
         {
             try
             {
-                using(DatabaseContext db = new DatabaseContext())
+                using (DatabaseContext db = new DatabaseContext())
                 {
                     comboBoxRodzajeIlosciSkladnika.DataSource = db.PobierzRodzajeIlosciSkladnika();
-                    dataGridViewListaSkladnikow.DataSource =  db.Skladniki.Join(
+                    comboBoxRodzajeIlosciSkladnika.DisplayMember = "Liczebność";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Wystąpił problem z załadowaniem danych składników. Proszę spróbować ponownie", ex.Message);
+            }
+            LoadDefaultDataGridView();
+        }
+
+        public void LoadDefaultDataGridView()
+        {
+            try
+            {
+                using (DatabaseContext db = new DatabaseContext())
+                {
+                    
+                    dataGridViewListaSkladnikow.DataSource = db.Skladniki.Join(
                     db.RodzajIlosciSkladnikow,
                     skladnik => skladnik.RodzajIlosciSkladnika.RodzajIlosciSkladnikaId,
                     rodzajskladnika => rodzajskladnika.RodzajIlosciSkladnikaId,
@@ -36,7 +53,7 @@ namespace MyCookingRecipes
                     ).ToList();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Wystąpił problem z załadowaniem danych składników. Proszę spróbować ponownie", ex.Message);
             }
@@ -48,14 +65,20 @@ namespace MyCookingRecipes
             {
                 using (DatabaseContext db = new DatabaseContext())
                 {
-                    Skladniki skladnik = new Skladniki(textBoxNazwaSkladnika.Text,comboBoxRodzajeIlosciSkladnika.SelectedIndex+1);
+                    //do poprawy
+                    Skladniki skladnik = new Skladniki
+                    {
+                        NazwaSkladnika = textBoxNazwaSkladnika.Text,
+                        RodzajIlosciSkladnika = (RodzajIlosciSkladnika)comboBoxRodzajeIlosciSkladnika.SelectedItem
+                    };
                     db.Add(skladnik);
                     db.SaveChanges();
+                    LoadDefaultDataGridView();
                 }
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Wystąpił problem z dodaniem składnika. Proszę spróbować ponownie", ex.Message);
+                MessageBox.Show("Wystąpił problem z dodaniem składnika. Proszę spróbować ponownie"+ex.InnerException.ToString());
             }
         }
 
@@ -74,7 +97,8 @@ namespace MyCookingRecipes
                         skladnik.NazwaSkladnika,
                         rodzajskladnika.Liczebność
                     }
-                    ).Where(skladnik => skladnik.NazwaSkladnika == textBoxNazwaSkladnika.Text).ToList();
+                    ).Where(skladnik => skladnik.NazwaSkladnika.Contains(textBoxWyszukajSkladnik.Text)).ToList();
+                    
                 }
             }
             catch (Exception ex)
@@ -89,22 +113,32 @@ namespace MyCookingRecipes
             {
                 using (DatabaseContext db = new DatabaseContext())
                 {
-                    DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć zaznaczone przepisy?", "Usuwanie przepisów", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dialogResult == DialogResult.Yes)
+                    if (dataGridViewListaSkladnikow.SelectedRows.Count == 0) return;
+                    else
                     {
-                        List<string> nazwyusunietychskladnikow = new List<string>();
-                        foreach (DataGridViewRow row in dataGridViewListaSkladnikow.SelectedRows)
+                        DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć zaznaczone przepisy?", "Usuwanie przepisów", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (dialogResult == DialogResult.Yes)
                         {
-                            var skladnikwprzepisie = db.SkladnikiWPrzepisach.Where(swp => swp.Skladnik.SkladnikiId == (int)row.Cells[0].Value).First();
-                            if (skladnikwprzepisie == null)
+
+
+                            List<string> nazwyusunietychskladnikow = new List<string>();
+
+                            foreach (DataGridViewRow row in dataGridViewListaSkladnikow.SelectedRows)
                             {
-                                nazwyusunietychskladnikow.Add(row.Cells[1].Value.ToString());
-                                db.Remove(skladnikwprzepisie);
+                                var skladnikwprzepisie = db.SkladnikiWPrzepisach.Where(swp => swp.Skladnik.SkladnikiId == (int)row.Cells[0].Value).Any();
+                                if (skladnikwprzepisie == false)
+                                {
+                                    nazwyusunietychskladnikow.Add(row.Cells[1].Value.ToString());
+                                    db.Remove(db.Skladniki.Where(s => s.SkladnikiId == (int)row.Cells[0].Value).First());
+                                }
+
                             }
-                            
+                            db.SaveChanges();
+                            LoadDefaultDataGridView();
+                            MessageBox.Show(String.Format("Usunięto następujące składniki:\n {0}", String.Join(",", nazwyusunietychskladnikow)));
+
+
                         }
-                        db.SaveChanges();
-                        MessageBox.Show(String.Format("Usunięto następujące składniki:{0} \n Pozostałe składniki znajdują się w przepisach. W celu usunięcia składników należy usunąć najpierw powiązane z nimi przepisy.", String.Join(",", nazwyusunietychskladnikow)));
                     }
                 }
             }
@@ -116,7 +150,7 @@ namespace MyCookingRecipes
 
         private void buttonZamknijOkno_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
         }
 
         private void SkladnikiOkno_FormClosing(object sender, FormClosingEventArgs e)

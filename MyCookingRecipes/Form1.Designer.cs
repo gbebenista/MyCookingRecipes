@@ -44,6 +44,8 @@
             this.labelCzasPrzygotowaniaTytul = new System.Windows.Forms.Label();
             this.labelNazwaPrzepisu = new System.Windows.Forms.Label();
             this.labelNazwaPrzepisuTytul = new System.Windows.Forms.Label();
+            this.ulubioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zarzadzajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaPrzepisow)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBoxSzczegolyPrzepisu.SuspendLayout();
@@ -68,7 +70,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aplikacjaToolStripMenuItem,
             this.przepisyToolStripMenuItem,
-            this.składnikiToolStripMenuItem});
+            this.składnikiToolStripMenuItem,
+            this.ulubioneToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(950, 24);
@@ -92,7 +95,7 @@
             // przepisyZarzadzajToolStripMenuItem
             // 
             this.przepisyZarzadzajToolStripMenuItem.Name = "przepisyZarzadzajToolStripMenuItem";
-            this.przepisyZarzadzajToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.przepisyZarzadzajToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.przepisyZarzadzajToolStripMenuItem.Text = "Zarządzaj..";
             this.przepisyZarzadzajToolStripMenuItem.Click += new System.EventHandler(this.dodajUsuńToolStripMenuItem1_Click);
             // 
@@ -107,7 +110,7 @@
             // skladnikiZarzadzajToolStripMenuItem
             // 
             this.skladnikiZarzadzajToolStripMenuItem.Name = "skladnikiZarzadzajToolStripMenuItem";
-            this.skladnikiZarzadzajToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.skladnikiZarzadzajToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.skladnikiZarzadzajToolStripMenuItem.Text = "Zarządzaj..";
             this.skladnikiZarzadzajToolStripMenuItem.Click += new System.EventHandler(this.dodajUsuńToolStripMenuItem_Click);
             // 
@@ -199,6 +202,20 @@
             this.labelNazwaPrzepisuTytul.TabIndex = 0;
             this.labelNazwaPrzepisuTytul.Text = "Nazwa Przepisu";
             // 
+            // ulubioneToolStripMenuItem
+            // 
+            this.ulubioneToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.zarzadzajToolStripMenuItem});
+            this.ulubioneToolStripMenuItem.Name = "ulubioneToolStripMenuItem";
+            this.ulubioneToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.ulubioneToolStripMenuItem.Text = "Ulubione";
+            // 
+            // zarzadzajToolStripMenuItem
+            // 
+            this.zarzadzajToolStripMenuItem.Name = "zarzadzajToolStripMenuItem";
+            this.zarzadzajToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zarzadzajToolStripMenuItem.Text = "Zarzadzaj..";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,6 +256,8 @@
         private System.Windows.Forms.Label labelCzasPrzygotowania;
         private System.Windows.Forms.Label labelListBoxTytul;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ToolStripMenuItem ulubioneToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zarzadzajToolStripMenuItem;
     }
 }
 

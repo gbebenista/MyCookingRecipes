@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace MyCookingRecipes
 {
-    public partial class PrzepisyOkno : Form
+    public partial class PrzepisSzczegolyOkno : Form
     {
-        public PrzepisyOkno()
+        public PrzepisSzczegolyOkno()
         {
             InitializeComponent();
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
