@@ -32,7 +32,7 @@ namespace MyCookingRecipes
         {
             using (DatabaseContext db = new DatabaseContext())
             {
-                return db.Przepisy.Find(id);
+                return db.Przepisy.Include(p => p.SkladnikiWPrzepisie).ThenInclude(p => p.Skladnik).ThenInclude(p => p.RodzajIlosciSkladnika).Where(p => p.PrzepisyId == id).First();
             }
         }
 

@@ -50,22 +50,13 @@ namespace MyCookingRecipes
                     labelNazwaPrzepisu.Text = selected.NazwaPotrawy;
                     labelCzasPrzygotowania.Text = selected.CzasPrzygotowania.ToString();
                     labelIloscPorcji.Text = selected.IloscPorcji.ToString();
-                    listBoxSkladnikiWPrzepisie.DataSource = db.SkladnikiWPrzepisach.Join(
-                                    db.Skladniki,
-                                    skladnikiwprzepisie => skladnikiwprzepisie.Skladnik.SkladnikiId,
-                                    skladniki => skladniki.SkladnikiId,
-                                    (skladnikiwprzepisie, skladniki) => new
-                                    {
-                                        skladniki.NazwaSkladnika,
-                                        skladnikiwprzepisie.Ilosc
-
-                                    }
-                                    ).ToList();
                     labelNazwaPrzepisu.Text = selected.NazwaPotrawy;
                     labelCzasPrzygotowania.Text = selected.CzasPrzygotowania.ToString();
                     labelIloscPorcji.Text = selected.IloscPorcji.ToString();
-                    //wywala nullpointerexception, nie wiem czy go łapać czy co
-                    //listBoxSkladnikiWPrzepisie.DataSource = selected.SkladnikiWPrzepisie.ToList();
+                    
+                    listBoxSkladnikiWPrzepisie.DataSource = selected.SkladnikiWPrzepisie.Select(x => new { x.Skladnik.NazwaSkladnika }).ToList();
+                    listBoxSkladnikiWPrzepisie.DisplayMember = "NazwaSkladnika";
+
                 }
                 
             }
