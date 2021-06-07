@@ -52,11 +52,11 @@ namespace MyCookingRecipes
             }
         }
 
-        public List<string> PobierzRodzajeIlosciSkladnika()
+        public List<RodzajIlosciSkladnika> PobierzRodzajeIlosciSkladnika()
         {
             using (DatabaseContext db = new DatabaseContext())
             {
-                return RodzajIlosciSkladnikow.Select(ris => ris.Liczebność).ToList();
+                return RodzajIlosciSkladnikow.ToList();
             }
         }
 
