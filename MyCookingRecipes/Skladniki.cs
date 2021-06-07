@@ -10,7 +10,7 @@ namespace MyCookingRecipes
     {
         public int SkladnikiId { get; set; }
 
-        public string NazwaSkladnika { get; set; }
+        public string  NazwaSkladnika { get; set; }
 
         public RodzajIlosciSkladnika RodzajIlosciSkladnika { get; set; }
 

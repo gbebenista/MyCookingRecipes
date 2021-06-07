@@ -69,7 +69,10 @@ namespace MyCookingRecipes
                     Skladniki skladnik = new Skladniki
                     {
                         NazwaSkladnika = textBoxNazwaSkladnika.Text,
-                        RodzajIlosciSkladnika = (RodzajIlosciSkladnika)comboBoxRodzajeIlosciSkladnika.SelectedItem
+                        //RodzajIlosciSkladnika = comboBoxRodzajeIlosciSkladnika.SelectedItem
+                        RodzajIlosciSkladnika = db.RodzajIlosciSkladnikow.Find(((RodzajIlosciSkladnika)comboBoxRodzajeIlosciSkladnika.SelectedItem).RodzajIlosciSkladnikaId)
+
+
                     };
                     db.Add(skladnik);
                     db.SaveChanges();
