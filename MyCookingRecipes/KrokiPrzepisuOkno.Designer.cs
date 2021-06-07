@@ -28,145 +28,152 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.dataGridViewListaKrokowPrzepisu = new System.Windows.Forms.DataGridView();
+            this.groupBoxListaKrokowPrzepisu = new System.Windows.Forms.GroupBox();
+            this.buttonZamknij = new System.Windows.Forms.Button();
+            this.buttonUsunKrokiPrzepisu = new System.Windows.Forms.Button();
+            this.groupBoxDodajKrokPrzepisu = new System.Windows.Forms.GroupBox();
+            this.buttonDodajKrokPrzepisu = new System.Windows.Forms.Button();
+            this.numericUpDownKolejnoscWPrzepisie = new System.Windows.Forms.NumericUpDown();
+            this.labelKolejnoscWPrzepisie = new System.Windows.Forms.Label();
+            this.labelOpisKrokuPrzepisu = new System.Windows.Forms.Label();
+            this.textBoxOpisKrokuPrzepisu = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaKrokowPrzepisu)).BeginInit();
+            this.groupBoxListaKrokowPrzepisu.SuspendLayout();
+            this.groupBoxDodajKrokPrzepisu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKolejnoscWPrzepisie)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewListaKrokowPrzepisu
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 46);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(683, 234);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewListaKrokowPrzepisu.AllowUserToAddRows = false;
+            this.dataGridViewListaKrokowPrzepisu.AllowUserToDeleteRows = false;
+            this.dataGridViewListaKrokowPrzepisu.AllowUserToResizeColumns = false;
+            this.dataGridViewListaKrokowPrzepisu.AllowUserToResizeRows = false;
+            this.dataGridViewListaKrokowPrzepisu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListaKrokowPrzepisu.Location = new System.Drawing.Point(7, 46);
+            this.dataGridViewListaKrokowPrzepisu.Name = "dataGridViewListaKrokowPrzepisu";
+            this.dataGridViewListaKrokowPrzepisu.ReadOnly = true;
+            this.dataGridViewListaKrokowPrzepisu.RowHeadersVisible = false;
+            this.dataGridViewListaKrokowPrzepisu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewListaKrokowPrzepisu.Size = new System.Drawing.Size(683, 234);
+            this.dataGridViewListaKrokowPrzepisu.TabIndex = 0;
             // 
-            // groupBox1
+            // groupBoxListaKrokowPrzepisu
             // 
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(695, 286);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Lista kroków przepisu";
+            this.groupBoxListaKrokowPrzepisu.Controls.Add(this.buttonZamknij);
+            this.groupBoxListaKrokowPrzepisu.Controls.Add(this.buttonUsunKrokiPrzepisu);
+            this.groupBoxListaKrokowPrzepisu.Controls.Add(this.dataGridViewListaKrokowPrzepisu);
+            this.groupBoxListaKrokowPrzepisu.Location = new System.Drawing.Point(13, 13);
+            this.groupBoxListaKrokowPrzepisu.Name = "groupBoxListaKrokowPrzepisu";
+            this.groupBoxListaKrokowPrzepisu.Size = new System.Drawing.Size(695, 286);
+            this.groupBoxListaKrokowPrzepisu.TabIndex = 1;
+            this.groupBoxListaKrokowPrzepisu.TabStop = false;
+            this.groupBoxListaKrokowPrzepisu.Text = "Lista kroków przepisu";
             // 
-            // groupBox2
+            // buttonZamknij
             // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.numericUpDown1);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Location = new System.Drawing.Point(13, 306);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(695, 132);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Dodaj kolejny krok przepisu";
+            this.buttonZamknij.Location = new System.Drawing.Point(452, 17);
+            this.buttonZamknij.Name = "buttonZamknij";
+            this.buttonZamknij.Size = new System.Drawing.Size(237, 23);
+            this.buttonZamknij.TabIndex = 2;
+            this.buttonZamknij.Text = "Wyjdź";
+            this.buttonZamknij.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // buttonUsunKrokiPrzepisu
             // 
-            this.textBox1.Location = new System.Drawing.Point(7, 39);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(506, 87);
-            this.textBox1.TabIndex = 0;
+            this.buttonUsunKrokiPrzepisu.Location = new System.Drawing.Point(6, 17);
+            this.buttonUsunKrokiPrzepisu.Name = "buttonUsunKrokiPrzepisu";
+            this.buttonUsunKrokiPrzepisu.Size = new System.Drawing.Size(250, 23);
+            this.buttonUsunKrokiPrzepisu.TabIndex = 1;
+            this.buttonUsunKrokiPrzepisu.Text = "Usuń zaznaczone kroki przepisu..";
+            this.buttonUsunKrokiPrzepisu.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // groupBoxDodajKrokPrzepisu
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Opis kroku przepisu";
+            this.groupBoxDodajKrokPrzepisu.Controls.Add(this.buttonDodajKrokPrzepisu);
+            this.groupBoxDodajKrokPrzepisu.Controls.Add(this.numericUpDownKolejnoscWPrzepisie);
+            this.groupBoxDodajKrokPrzepisu.Controls.Add(this.labelKolejnoscWPrzepisie);
+            this.groupBoxDodajKrokPrzepisu.Controls.Add(this.labelOpisKrokuPrzepisu);
+            this.groupBoxDodajKrokPrzepisu.Controls.Add(this.textBoxOpisKrokuPrzepisu);
+            this.groupBoxDodajKrokPrzepisu.Location = new System.Drawing.Point(13, 306);
+            this.groupBoxDodajKrokPrzepisu.Name = "groupBoxDodajKrokPrzepisu";
+            this.groupBoxDodajKrokPrzepisu.Size = new System.Drawing.Size(695, 132);
+            this.groupBoxDodajKrokPrzepisu.TabIndex = 2;
+            this.groupBoxDodajKrokPrzepisu.TabStop = false;
+            this.groupBoxDodajKrokPrzepisu.Text = "Dodaj kolejny krok przepisu";
             // 
-            // label2
+            // buttonDodajKrokPrzepisu
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(516, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Kolejność w przepisie";
+            this.buttonDodajKrokPrzepisu.Location = new System.Drawing.Point(519, 65);
+            this.buttonDodajKrokPrzepisu.Name = "buttonDodajKrokPrzepisu";
+            this.buttonDodajKrokPrzepisu.Size = new System.Drawing.Size(170, 61);
+            this.buttonDodajKrokPrzepisu.TabIndex = 4;
+            this.buttonDodajKrokPrzepisu.Text = "Dodaj krok przepisu";
+            this.buttonDodajKrokPrzepisu.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // numericUpDownKolejnoscWPrzepisie
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(519, 39);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(170, 20);
-            this.numericUpDown1.TabIndex = 3;
+            this.numericUpDownKolejnoscWPrzepisie.Location = new System.Drawing.Point(519, 39);
+            this.numericUpDownKolejnoscWPrzepisie.Name = "numericUpDownKolejnoscWPrzepisie";
+            this.numericUpDownKolejnoscWPrzepisie.Size = new System.Drawing.Size(170, 20);
+            this.numericUpDownKolejnoscWPrzepisie.TabIndex = 3;
             // 
-            // button1
+            // labelKolejnoscWPrzepisie
             // 
-            this.button1.Location = new System.Drawing.Point(519, 65);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(170, 61);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Dodaj krok przepisu";
-            this.button1.UseVisualStyleBackColor = true;
+            this.labelKolejnoscWPrzepisie.AutoSize = true;
+            this.labelKolejnoscWPrzepisie.Location = new System.Drawing.Point(516, 23);
+            this.labelKolejnoscWPrzepisie.Name = "labelKolejnoscWPrzepisie";
+            this.labelKolejnoscWPrzepisie.Size = new System.Drawing.Size(108, 13);
+            this.labelKolejnoscWPrzepisie.TabIndex = 2;
+            this.labelKolejnoscWPrzepisie.Text = "Kolejność w przepisie";
             // 
-            // button2
+            // labelOpisKrokuPrzepisu
             // 
-            this.button2.Location = new System.Drawing.Point(6, 17);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(250, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Usuń zaznaczone kroki przepisu..";
-            this.button2.UseVisualStyleBackColor = true;
+            this.labelOpisKrokuPrzepisu.AutoSize = true;
+            this.labelOpisKrokuPrzepisu.Location = new System.Drawing.Point(6, 23);
+            this.labelOpisKrokuPrzepisu.Name = "labelOpisKrokuPrzepisu";
+            this.labelOpisKrokuPrzepisu.Size = new System.Drawing.Size(100, 13);
+            this.labelOpisKrokuPrzepisu.TabIndex = 1;
+            this.labelOpisKrokuPrzepisu.Text = "Opis kroku przepisu";
             // 
-            // button3
+            // textBoxOpisKrokuPrzepisu
             // 
-            this.button3.Location = new System.Drawing.Point(452, 17);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(237, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Wyjdź";
-            this.button3.UseVisualStyleBackColor = true;
+            this.textBoxOpisKrokuPrzepisu.Location = new System.Drawing.Point(7, 39);
+            this.textBoxOpisKrokuPrzepisu.Multiline = true;
+            this.textBoxOpisKrokuPrzepisu.Name = "textBoxOpisKrokuPrzepisu";
+            this.textBoxOpisKrokuPrzepisu.Size = new System.Drawing.Size(506, 87);
+            this.textBoxOpisKrokuPrzepisu.TabIndex = 0;
             // 
             // KrokiPrzepisuOkno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(720, 450);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxDodajKrokPrzepisu);
+            this.Controls.Add(this.groupBoxListaKrokowPrzepisu);
             this.Name = "KrokiPrzepisuOkno";
             this.Text = "KrokiPrzepisuOkno";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaKrokowPrzepisu)).EndInit();
+            this.groupBoxListaKrokowPrzepisu.ResumeLayout(false);
+            this.groupBoxDodajKrokPrzepisu.ResumeLayout(false);
+            this.groupBoxDodajKrokPrzepisu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKolejnoscWPrzepisie)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridView dataGridViewListaKrokowPrzepisu;
+        private System.Windows.Forms.GroupBox groupBoxListaKrokowPrzepisu;
+        private System.Windows.Forms.GroupBox groupBoxDodajKrokPrzepisu;
+        private System.Windows.Forms.TextBox textBoxOpisKrokuPrzepisu;
+        private System.Windows.Forms.Button buttonUsunKrokiPrzepisu;
+        private System.Windows.Forms.Button buttonDodajKrokPrzepisu;
+        private System.Windows.Forms.NumericUpDown numericUpDownKolejnoscWPrzepisie;
+        private System.Windows.Forms.Label labelKolejnoscWPrzepisie;
+        private System.Windows.Forms.Label labelOpisKrokuPrzepisu;
+        private System.Windows.Forms.Button buttonZamknij;
     }
 }

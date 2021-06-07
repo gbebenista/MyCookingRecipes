@@ -93,6 +93,7 @@
             this.buttonDodajKrok.TabIndex = 10;
             this.buttonDodajKrok.Text = "Dodaj krok przygotowania...";
             this.buttonDodajKrok.UseVisualStyleBackColor = true;
+            this.buttonDodajKrok.Click += new System.EventHandler(this.buttonDodajKrok_Click);
             // 
             // buttonUsunKrok
             // 
@@ -107,10 +108,15 @@
             // 
             this.dataGridViewKrokiPrzygotowania.AllowUserToAddRows = false;
             this.dataGridViewKrokiPrzygotowania.AllowUserToDeleteRows = false;
+            this.dataGridViewKrokiPrzygotowania.AllowUserToResizeColumns = false;
+            this.dataGridViewKrokiPrzygotowania.AllowUserToResizeRows = false;
+            this.dataGridViewKrokiPrzygotowania.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewKrokiPrzygotowania.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewKrokiPrzygotowania.Location = new System.Drawing.Point(6, 48);
             this.dataGridViewKrokiPrzygotowania.Name = "dataGridViewKrokiPrzygotowania";
             this.dataGridViewKrokiPrzygotowania.ReadOnly = true;
+            this.dataGridViewKrokiPrzygotowania.RowHeadersVisible = false;
+            this.dataGridViewKrokiPrzygotowania.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewKrokiPrzygotowania.Size = new System.Drawing.Size(391, 155);
             this.dataGridViewKrokiPrzygotowania.TabIndex = 9;
             // 
@@ -130,10 +136,15 @@
             // 
             this.dataGridViewSkladniki.AllowUserToAddRows = false;
             this.dataGridViewSkladniki.AllowUserToDeleteRows = false;
+            this.dataGridViewSkladniki.AllowUserToResizeColumns = false;
+            this.dataGridViewSkladniki.AllowUserToResizeRows = false;
+            this.dataGridViewSkladniki.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewSkladniki.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSkladniki.Location = new System.Drawing.Point(6, 48);
             this.dataGridViewSkladniki.Name = "dataGridViewSkladniki";
             this.dataGridViewSkladniki.ReadOnly = true;
+            this.dataGridViewSkladniki.RowHeadersVisible = false;
+            this.dataGridViewSkladniki.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSkladniki.Size = new System.Drawing.Size(391, 138);
             this.dataGridViewSkladniki.TabIndex = 7;
             // 
@@ -145,7 +156,7 @@
             this.buttonDodajSkladnik.TabIndex = 8;
             this.buttonDodajSkladnik.Text = "Dodaj składnik..";
             this.buttonDodajSkladnik.UseVisualStyleBackColor = true;
-            this.buttonDodajSkladnik.Click += new System.EventHandler(this.button1_Click);
+            this.buttonDodajSkladnik.Click += new System.EventHandler(this.buttonDodajSkladnik_Click);
             // 
             // buttonUsunSkladnik
             // 
@@ -164,6 +175,7 @@
             this.buttonDodajPrzepis.TabIndex = 11;
             this.buttonDodajPrzepis.Text = "Dodaj przepis";
             this.buttonDodajPrzepis.UseVisualStyleBackColor = true;
+            this.buttonDodajPrzepis.Click += new System.EventHandler(this.buttonDodajPrzepis_Click);
             // 
             // labelIloscPorcji
             // 
@@ -195,9 +207,19 @@
             // numericUpDownIloscPorcji
             // 
             this.numericUpDownIloscPorcji.Location = new System.Drawing.Point(151, 92);
+            this.numericUpDownIloscPorcji.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDownIloscPorcji.Name = "numericUpDownIloscPorcji";
             this.numericUpDownIloscPorcji.Size = new System.Drawing.Size(120, 20);
             this.numericUpDownIloscPorcji.TabIndex = 3;
+            this.numericUpDownIloscPorcji.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // checkBoxDodajDoUlubionych
             // 
@@ -212,9 +234,19 @@
             // numericUpDownCzasPrzygotowania
             // 
             this.numericUpDownCzasPrzygotowania.Location = new System.Drawing.Point(6, 92);
+            this.numericUpDownCzasPrzygotowania.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDownCzasPrzygotowania.Name = "numericUpDownCzasPrzygotowania";
             this.numericUpDownCzasPrzygotowania.Size = new System.Drawing.Size(126, 20);
             this.numericUpDownCzasPrzygotowania.TabIndex = 1;
+            this.numericUpDownCzasPrzygotowania.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // textBoxNazwaPrzepisu
             // 

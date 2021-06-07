@@ -28,196 +28,196 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.dataGridViewSkladnikiWPrzepisie = new System.Windows.Forms.DataGridView();
+            this.groupBoxListaSkladnikow = new System.Windows.Forms.GroupBox();
+            this.buttonSzukajSkladniki = new System.Windows.Forms.Button();
+            this.textBoxSzukajSkladniki = new System.Windows.Forms.TextBox();
+            this.groupBoxDodajSkladnikWPrzepisie = new System.Windows.Forms.GroupBox();
+            this.labelRodzajIlosciNazwa = new System.Windows.Forms.Label();
+            this.labelRodzajIlosci = new System.Windows.Forms.Label();
+            this.buttonDodajDoPrzepisu = new System.Windows.Forms.Button();
+            this.numericUpDownIlosc = new System.Windows.Forms.NumericUpDown();
+            this.labelIlosc = new System.Windows.Forms.Label();
+            this.labelWybranySkladnikNazwa = new System.Windows.Forms.Label();
+            this.labelWybranySkladnik = new System.Windows.Forms.Label();
+            this.buttonSkladnikiOkno = new System.Windows.Forms.Button();
+            this.buttonWyjdz = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSkladnikiWPrzepisie)).BeginInit();
+            this.groupBoxListaSkladnikow.SuspendLayout();
+            this.groupBoxDodajSkladnikWPrzepisie.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIlosc)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewSkladnikiWPrzepisie
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 46);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(398, 261);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewSkladnikiWPrzepisie.AllowUserToAddRows = false;
+            this.dataGridViewSkladnikiWPrzepisie.AllowUserToDeleteRows = false;
+            this.dataGridViewSkladnikiWPrzepisie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSkladnikiWPrzepisie.Location = new System.Drawing.Point(6, 46);
+            this.dataGridViewSkladnikiWPrzepisie.Name = "dataGridViewSkladnikiWPrzepisie";
+            this.dataGridViewSkladnikiWPrzepisie.ReadOnly = true;
+            this.dataGridViewSkladnikiWPrzepisie.Size = new System.Drawing.Size(398, 261);
+            this.dataGridViewSkladnikiWPrzepisie.TabIndex = 0;
             // 
-            // groupBox1
+            // groupBoxListaSkladnikow
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(410, 318);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Lista składników";
+            this.groupBoxListaSkladnikow.Controls.Add(this.buttonSzukajSkladniki);
+            this.groupBoxListaSkladnikow.Controls.Add(this.textBoxSzukajSkladniki);
+            this.groupBoxListaSkladnikow.Controls.Add(this.dataGridViewSkladnikiWPrzepisie);
+            this.groupBoxListaSkladnikow.Location = new System.Drawing.Point(13, 13);
+            this.groupBoxListaSkladnikow.Name = "groupBoxListaSkladnikow";
+            this.groupBoxListaSkladnikow.Size = new System.Drawing.Size(410, 318);
+            this.groupBoxListaSkladnikow.TabIndex = 1;
+            this.groupBoxListaSkladnikow.TabStop = false;
+            this.groupBoxListaSkladnikow.Text = "Lista składników";
             // 
-            // textBox1
+            // buttonSzukajSkladniki
             // 
-            this.textBox1.Location = new System.Drawing.Point(7, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(281, 20);
-            this.textBox1.TabIndex = 1;
+            this.buttonSzukajSkladniki.Location = new System.Drawing.Point(295, 20);
+            this.buttonSzukajSkladniki.Name = "buttonSzukajSkladniki";
+            this.buttonSzukajSkladniki.Size = new System.Drawing.Size(109, 20);
+            this.buttonSzukajSkladniki.TabIndex = 2;
+            this.buttonSzukajSkladniki.Text = "Szukaj";
+            this.buttonSzukajSkladniki.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // textBoxSzukajSkladniki
             // 
-            this.button1.Location = new System.Drawing.Point(295, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 20);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.textBoxSzukajSkladniki.Location = new System.Drawing.Point(7, 20);
+            this.textBoxSzukajSkladniki.Name = "textBoxSzukajSkladniki";
+            this.textBoxSzukajSkladniki.Size = new System.Drawing.Size(281, 20);
+            this.textBoxSzukajSkladniki.TabIndex = 1;
             // 
-            // groupBox2
+            // groupBoxDodajSkladnikWPrzepisie
             // 
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.numericUpDown1);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(430, 13);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(244, 235);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Dodawanie składnika do przepisu";
+            this.groupBoxDodajSkladnikWPrzepisie.Controls.Add(this.labelRodzajIlosciNazwa);
+            this.groupBoxDodajSkladnikWPrzepisie.Controls.Add(this.labelRodzajIlosci);
+            this.groupBoxDodajSkladnikWPrzepisie.Controls.Add(this.buttonDodajDoPrzepisu);
+            this.groupBoxDodajSkladnikWPrzepisie.Controls.Add(this.numericUpDownIlosc);
+            this.groupBoxDodajSkladnikWPrzepisie.Controls.Add(this.labelIlosc);
+            this.groupBoxDodajSkladnikWPrzepisie.Controls.Add(this.labelWybranySkladnikNazwa);
+            this.groupBoxDodajSkladnikWPrzepisie.Controls.Add(this.labelWybranySkladnik);
+            this.groupBoxDodajSkladnikWPrzepisie.Location = new System.Drawing.Point(430, 13);
+            this.groupBoxDodajSkladnikWPrzepisie.Name = "groupBoxDodajSkladnikWPrzepisie";
+            this.groupBoxDodajSkladnikWPrzepisie.Size = new System.Drawing.Size(244, 235);
+            this.groupBoxDodajSkladnikWPrzepisie.TabIndex = 2;
+            this.groupBoxDodajSkladnikWPrzepisie.TabStop = false;
+            this.groupBoxDodajSkladnikWPrzepisie.Text = "Dodawanie składnika do przepisu";
             // 
-            // label1
+            // labelRodzajIlosciNazwa
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Wybrany składnik";
+            this.labelRodzajIlosciNazwa.AutoSize = true;
+            this.labelRodzajIlosciNazwa.Location = new System.Drawing.Point(13, 88);
+            this.labelRodzajIlosciNazwa.Name = "labelRodzajIlosciNazwa";
+            this.labelRodzajIlosciNazwa.Size = new System.Drawing.Size(35, 13);
+            this.labelRodzajIlosciNazwa.TabIndex = 6;
+            this.labelRodzajIlosciNazwa.Text = "label5";
             // 
-            // label2
+            // labelRodzajIlosci
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.labelRodzajIlosci.AutoSize = true;
+            this.labelRodzajIlosci.Location = new System.Drawing.Point(13, 75);
+            this.labelRodzajIlosci.Name = "labelRodzajIlosci";
+            this.labelRodzajIlosci.Size = new System.Drawing.Size(116, 13);
+            this.labelRodzajIlosci.TabIndex = 5;
+            this.labelRodzajIlosci.Text = "Rodzaj ilości składnika";
             // 
-            // label3
+            // buttonDodajDoPrzepisu
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 133);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(165, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Ilość [wg rodzaju ilości składnika]";
+            this.buttonDodajDoPrzepisu.Location = new System.Drawing.Point(6, 188);
+            this.buttonDodajDoPrzepisu.Name = "buttonDodajDoPrzepisu";
+            this.buttonDodajDoPrzepisu.Size = new System.Drawing.Size(232, 41);
+            this.buttonDodajDoPrzepisu.TabIndex = 4;
+            this.buttonDodajDoPrzepisu.Text = "Dodaj do przepisu";
+            this.buttonDodajDoPrzepisu.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // numericUpDownIlosc
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(13, 149);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(165, 20);
-            this.numericUpDown1.TabIndex = 3;
+            this.numericUpDownIlosc.Location = new System.Drawing.Point(13, 149);
+            this.numericUpDownIlosc.Name = "numericUpDownIlosc";
+            this.numericUpDownIlosc.Size = new System.Drawing.Size(165, 20);
+            this.numericUpDownIlosc.TabIndex = 3;
             // 
-            // button2
+            // labelIlosc
             // 
-            this.button2.Location = new System.Drawing.Point(6, 188);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(232, 41);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Dodaj do przepisu";
-            this.button2.UseVisualStyleBackColor = true;
+            this.labelIlosc.AutoSize = true;
+            this.labelIlosc.Location = new System.Drawing.Point(13, 133);
+            this.labelIlosc.Name = "labelIlosc";
+            this.labelIlosc.Size = new System.Drawing.Size(165, 13);
+            this.labelIlosc.TabIndex = 2;
+            this.labelIlosc.Text = "Ilość [wg rodzaju ilości składnika]";
             // 
-            // button3
+            // labelWybranySkladnikNazwa
             // 
-            this.button3.Location = new System.Drawing.Point(430, 254);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(244, 35);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Zarządzaj składnikami";
-            this.button3.UseVisualStyleBackColor = true;
+            this.labelWybranySkladnikNazwa.AutoSize = true;
+            this.labelWybranySkladnikNazwa.Location = new System.Drawing.Point(13, 40);
+            this.labelWybranySkladnikNazwa.Name = "labelWybranySkladnikNazwa";
+            this.labelWybranySkladnikNazwa.Size = new System.Drawing.Size(35, 13);
+            this.labelWybranySkladnikNazwa.TabIndex = 1;
+            this.labelWybranySkladnikNazwa.Text = "label2";
             // 
-            // button4
+            // labelWybranySkladnik
             // 
-            this.button4.Location = new System.Drawing.Point(430, 295);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(244, 36);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Wyjdź";
-            this.button4.UseVisualStyleBackColor = true;
+            this.labelWybranySkladnik.AutoSize = true;
+            this.labelWybranySkladnik.Location = new System.Drawing.Point(13, 27);
+            this.labelWybranySkladnik.Name = "labelWybranySkladnik";
+            this.labelWybranySkladnik.Size = new System.Drawing.Size(93, 13);
+            this.labelWybranySkladnik.TabIndex = 0;
+            this.labelWybranySkladnik.Text = "Wybrany składnik";
             // 
-            // label4
+            // buttonSkladnikiOkno
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 75);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Rodzaj ilości składnika";
+            this.buttonSkladnikiOkno.Location = new System.Drawing.Point(430, 254);
+            this.buttonSkladnikiOkno.Name = "buttonSkladnikiOkno";
+            this.buttonSkladnikiOkno.Size = new System.Drawing.Size(244, 35);
+            this.buttonSkladnikiOkno.TabIndex = 3;
+            this.buttonSkladnikiOkno.Text = "Zarządzaj składnikami";
+            this.buttonSkladnikiOkno.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // buttonWyjdz
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 88);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "label5";
+            this.buttonWyjdz.Location = new System.Drawing.Point(430, 295);
+            this.buttonWyjdz.Name = "buttonWyjdz";
+            this.buttonWyjdz.Size = new System.Drawing.Size(244, 36);
+            this.buttonWyjdz.TabIndex = 4;
+            this.buttonWyjdz.Text = "Wyjdź";
+            this.buttonWyjdz.UseVisualStyleBackColor = true;
             // 
             // SkladnikiWPrzepisieOkno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 345);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.buttonWyjdz);
+            this.Controls.Add(this.buttonSkladnikiOkno);
+            this.Controls.Add(this.groupBoxDodajSkladnikWPrzepisie);
+            this.Controls.Add(this.groupBoxListaSkladnikow);
             this.Name = "SkladnikiWPrzepisieOkno";
             this.Text = "SkladnikiWPrzepisieOkno";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSkladnikiWPrzepisie)).EndInit();
+            this.groupBoxListaSkladnikow.ResumeLayout(false);
+            this.groupBoxListaSkladnikow.PerformLayout();
+            this.groupBoxDodajSkladnikWPrzepisie.ResumeLayout(false);
+            this.groupBoxDodajSkladnikWPrzepisie.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIlosc)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView dataGridViewSkladnikiWPrzepisie;
+        private System.Windows.Forms.GroupBox groupBoxListaSkladnikow;
+        private System.Windows.Forms.Button buttonSzukajSkladniki;
+        private System.Windows.Forms.TextBox textBoxSzukajSkladniki;
+        private System.Windows.Forms.GroupBox groupBoxDodajSkladnikWPrzepisie;
+        private System.Windows.Forms.Label labelRodzajIlosciNazwa;
+        private System.Windows.Forms.Label labelRodzajIlosci;
+        private System.Windows.Forms.Button buttonDodajDoPrzepisu;
+        private System.Windows.Forms.NumericUpDown numericUpDownIlosc;
+        private System.Windows.Forms.Label labelIlosc;
+        private System.Windows.Forms.Label labelWybranySkladnikNazwa;
+        private System.Windows.Forms.Label labelWybranySkladnik;
+        private System.Windows.Forms.Button buttonSkladnikiOkno;
+        private System.Windows.Forms.Button buttonWyjdz;
     }
 }

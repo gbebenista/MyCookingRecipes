@@ -16,7 +16,7 @@ namespace MyCookingRecipes
         {
             InitializeComponent();
 
-            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -39,34 +39,41 @@ namespace MyCookingRecipes
             skladnikiOkno.Show();
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void dataGridViewListaPrzepisow_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            using (DatabaseContext db = new DatabaseContext())
+            try
             {
-                Przepisy selected = db.PobierzPrzepis((int)dataGridViewListaPrzepisow.CurrentRow.Cells[0].Value);
-                labelNazwaPrzepisu.Text = selected.NazwaPotrawy;
-                labelCzasPrzygotowania.Text = selected.CzasPrzygotowania.ToString();
-                labelIloscPorcji.Text = selected.IloscPorcji.ToString();
-                listBox1.DataSource = db.SkladnikiWPrzepisach.Join(
-                                db.Skladniki,
-                                skladnikiwprzepisie => skladnikiwprzepisie.Skladnik.SkladnikiId,
-                                skladniki => skladniki.SkladnikiId,
-                                (skladnikiwprzepisie, skladniki) => new
-                                {
-                                    skladniki.NazwaSkladnika,
-                                    skladnikiwprzepisie.Ilosc
+                using (DatabaseContext db = new DatabaseContext())
+                {
+                    Przepisy selected = db.PobierzPrzepis((int)dataGridViewListaPrzepisow.CurrentRow.Cells[0].Value);
+                    labelNazwaPrzepisu.Text = selected.NazwaPotrawy;
+                    labelCzasPrzygotowania.Text = selected.CzasPrzygotowania.ToString();
+                    labelIloscPorcji.Text = selected.IloscPorcji.ToString();
+                    listBoxSkladnikiWPrzepisie.DataSource = db.SkladnikiWPrzepisach.Join(
+                                    db.Skladniki,
+                                    skladnikiwprzepisie => skladnikiwprzepisie.Skladnik.SkladnikiId,
+                                    skladniki => skladniki.SkladnikiId,
+                                    (skladnikiwprzepisie, skladniki) => new
+                                    {
+                                        skladniki.NazwaSkladnika,
+                                        skladnikiwprzepisie.Ilosc
 
-                                }
-                                ).ToList();
-
-
+                                    }
+                                    ).ToList();
+                    labelNazwaPrzepisu.Text = selected.NazwaPotrawy;
+                    labelCzasPrzygotowania.Text = selected.CzasPrzygotowania.ToString();
+                    labelIloscPorcji.Text = selected.IloscPorcji.ToString();
+                    //wywala nullpointerexception, nie wiem czy go łapać czy co
+                    //listBoxSkladnikiWPrzepisie.DataSource = selected.SkladnikiWPrzepisie.ToList();
+                }
+                
             }
-           
+            catch (Exception)
+            {
+                MessageBox.Show("Wystąpił błąd podczas ładowania pojedynczego przepisu.");
+            }
+
         }
 
         private void groupBoxSzczegolyPrzepisu_Enter(object sender, EventArgs e)
@@ -82,6 +89,17 @@ namespace MyCookingRecipes
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void zarzadzajToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewListaPrzepisow_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            PrzepisSzczegolyOkno przepisSzczegolyOkno = new PrzepisSzczegolyOkno();
+            przepisSzczegolyOkno.Show();
         }
     }
 }

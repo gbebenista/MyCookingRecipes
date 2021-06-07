@@ -17,7 +17,19 @@ namespace MyCookingRecipes
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonDodajSkladnik_Click(object sender, EventArgs e)
+        {
+            SkladnikiWPrzepisieOkno skladnikiWPrzepisieOkno = new SkladnikiWPrzepisieOkno();
+            skladnikiWPrzepisieOkno.Show();
+        }
+
+        private void buttonDodajKrok_Click(object sender, EventArgs e)
+        {
+            KrokiPrzepisuOkno krokiPrzepisuOkno = new KrokiPrzepisuOkno();
+            krokiPrzepisuOkno.Show();
+        }
+
+        private void buttonDodajPrzepis_Click(object sender, EventArgs e)
         {
 
         }
