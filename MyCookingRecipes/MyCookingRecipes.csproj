@@ -247,6 +247,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PrzepisSzczegolyOkno.resx">
+      <DependentUpon>PrzepisSzczegolyOkno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrzepisyOkno.resx">
       <DependentUpon>PrzepisyOkno.cs</DependentUpon>
     </EmbeddedResource>
