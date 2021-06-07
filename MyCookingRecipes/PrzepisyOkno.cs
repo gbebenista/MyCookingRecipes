@@ -36,23 +36,13 @@ namespace MyCookingRecipes
         private void PrzepisyOkno_Load(object sender, EventArgs e)
         {
             LadujPrzepisy();
-
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+
+        private void buttonDodajPrzepis_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            DodajModyfikujPrzepisOkno dodajModyfikujPrzepisOkno = new DodajModyfikujPrzepisOkno();
-            dodajModyfikujPrzepisOkno.Show();
+            DodajModyfikujPrzepisOkno dodajModyfikujPrzepisOkno = new DodajModyfikujPrzepisOkno(null);
+            dodajModyfikujPrzepisOkno.ShowDialog();
         }
 
         private void buttonSzukajPrzepis_Click(object sender, EventArgs e)
@@ -72,8 +62,8 @@ namespace MyCookingRecipes
 
         private void buttonModyfikujPrzepis_Click(object sender, EventArgs e)
         {
-            DodajModyfikujPrzepisOkno dodajModyfikujPrzepisOkno = new DodajModyfikujPrzepisOkno();
-            dodajModyfikujPrzepisOkno.Show();
+            DodajModyfikujPrzepisOkno dodajModyfikujPrzepisOkno = new DodajModyfikujPrzepisOkno((int?)dataGridViewPrzepisyOknoLista.CurrentRow.Cells[0].Value);
+            dodajModyfikujPrzepisOkno.ShowDialog();
         }
 
         private void buttonUsunPrzepis_Click(object sender, EventArgs e)

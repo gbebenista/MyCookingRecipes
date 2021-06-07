@@ -30,13 +30,13 @@ namespace MyCookingRecipes
         private void dodajUsuńToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             PrzepisyOkno przepisyOkno = new PrzepisyOkno();
-            przepisyOkno.Show();
+            przepisyOkno.ShowDialog();
         }
 
         private void dodajUsuńToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SkladnikiOkno skladnikiOkno = new SkladnikiOkno();
-            skladnikiOkno.Show();
+            skladnikiOkno.ShowDialog();
         }
 
 
@@ -47,13 +47,10 @@ namespace MyCookingRecipes
                 using (DatabaseContext db = new DatabaseContext())
                 {
                     Przepisy selected = db.PobierzPrzepis((int)dataGridViewListaPrzepisow.CurrentRow.Cells[0].Value);
+
                     labelNazwaPrzepisu.Text = selected.NazwaPotrawy;
                     labelCzasPrzygotowania.Text = selected.CzasPrzygotowania.ToString();
                     labelIloscPorcji.Text = selected.IloscPorcji.ToString();
-                    labelNazwaPrzepisu.Text = selected.NazwaPotrawy;
-                    labelCzasPrzygotowania.Text = selected.CzasPrzygotowania.ToString();
-                    labelIloscPorcji.Text = selected.IloscPorcji.ToString();
-                    
                     listBoxSkladnikiWPrzepisie.DataSource = selected.SkladnikiWPrzepisie.Select(x => new { x.Skladnik.NazwaSkladnika }).ToList();
                     listBoxSkladnikiWPrzepisie.DisplayMember = "NazwaSkladnika";
 
@@ -84,13 +81,20 @@ namespace MyCookingRecipes
 
         private void zarzadzajToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            UlubioneOkno ulubioneOkno = new UlubioneOkno();
+            ulubioneOkno.ShowDialog();
         }
 
         private void dataGridViewListaPrzepisow_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            PrzepisSzczegolyOkno przepisSzczegolyOkno = new PrzepisSzczegolyOkno();
-            przepisSzczegolyOkno.Show();
+            PrzepisSzczegolyOkno przepisSzczegolyOkno = new PrzepisSzczegolyOkno((int)dataGridViewListaPrzepisow.CurrentRow.Cells[0].Value);
+            przepisSzczegolyOkno.ShowDialog();
+        }
+
+        private void buttonListaSkladnikow_Click(object sender, EventArgs e)
+        {
+            SkladnikiNaPotrawyOkno skladnikiNaPotrawyOkno = new SkladnikiNaPotrawyOkno();
+            skladnikiNaPotrawyOkno.ShowDialog();
         }
     }
 }

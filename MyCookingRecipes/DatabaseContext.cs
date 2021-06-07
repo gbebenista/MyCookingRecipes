@@ -36,6 +36,14 @@ namespace MyCookingRecipes
             }
         }
 
+        public Przepisy PobierzPrzepisZKrokami(int id)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                return db.Przepisy.Include(p => p.SkladnikiWPrzepisie).ThenInclude(p => p.Skladnik).ThenInclude(p => p.RodzajIlosciSkladnika).Include(p => p.KrokiPrzygotowaniaPrzepisow).Where(p => p.PrzepisyId == id).First();
+            }
+        }
+
         public List<Przepisy> WyszukajPrzepisy(string name)
         {
             using (DatabaseContext db = new DatabaseContext())

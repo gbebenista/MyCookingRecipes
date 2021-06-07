@@ -12,21 +12,24 @@ namespace MyCookingRecipes
 {
     public partial class DodajModyfikujPrzepisOkno : Form
     {
-        public DodajModyfikujPrzepisOkno()
+        int? PrzepisId { get; set; }
+
+        public DodajModyfikujPrzepisOkno(int? id)
         {
             InitializeComponent();
+            this.PrzepisId = id;
         }
 
         private void buttonDodajSkladnik_Click(object sender, EventArgs e)
         {
             SkladnikiWPrzepisieOkno skladnikiWPrzepisieOkno = new SkladnikiWPrzepisieOkno();
-            skladnikiWPrzepisieOkno.Show();
+            skladnikiWPrzepisieOkno.ShowDialog();
         }
 
         private void buttonDodajKrok_Click(object sender, EventArgs e)
         {
             KrokiPrzepisuOkno krokiPrzepisuOkno = new KrokiPrzepisuOkno();
-            krokiPrzepisuOkno.Show();
+            krokiPrzepisuOkno.ShowDialog();
         }
 
         private void buttonDodajPrzepis_Click(object sender, EventArgs e)

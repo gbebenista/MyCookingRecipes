@@ -36,19 +36,25 @@
             this.labelIloscPorcji = new System.Windows.Forms.Label();
             this.labelUlubioneTytul = new System.Windows.Forms.Label();
             this.labelCzyUlubione = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listBoxListaSkladnikow = new System.Windows.Forms.ListBox();
+            this.groupBoxListaSkladnikow = new System.Windows.Forms.GroupBox();
+            this.groupBoxKrokiPrzepisu = new System.Windows.Forms.GroupBox();
+            this.listBoxKrokiPrzepisu = new System.Windows.Forms.ListBox();
+            this.buttonModyfikujPrzepis = new System.Windows.Forms.Button();
+            this.buttonUsunPrzepis = new System.Windows.Forms.Button();
+            this.buttonZamknijOkno = new System.Windows.Forms.Button();
             this.groupBoxSzegolyPrzepisu.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBoxListaSkladnikow.SuspendLayout();
+            this.groupBoxKrokiPrzepisu.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxSzegolyPrzepisu
             // 
-            this.groupBoxSzegolyPrzepisu.Controls.Add(this.groupBox2);
-            this.groupBoxSzegolyPrzepisu.Controls.Add(this.groupBox1);
+            this.groupBoxSzegolyPrzepisu.Controls.Add(this.buttonZamknijOkno);
+            this.groupBoxSzegolyPrzepisu.Controls.Add(this.buttonUsunPrzepis);
+            this.groupBoxSzegolyPrzepisu.Controls.Add(this.buttonModyfikujPrzepis);
+            this.groupBoxSzegolyPrzepisu.Controls.Add(this.groupBoxKrokiPrzepisu);
+            this.groupBoxSzegolyPrzepisu.Controls.Add(this.groupBoxListaSkladnikow);
             this.groupBoxSzegolyPrzepisu.Controls.Add(this.labelUlubioneTytul);
             this.groupBoxSzegolyPrzepisu.Controls.Add(this.labelIloscPorcjiTytul);
             this.groupBoxSzegolyPrzepisu.Controls.Add(this.labelCzyUlubione);
@@ -61,7 +67,7 @@
             this.groupBoxSzegolyPrzepisu.Size = new System.Drawing.Size(550, 576);
             this.groupBoxSzegolyPrzepisu.TabIndex = 1;
             this.groupBoxSzegolyPrzepisu.TabStop = false;
-            this.groupBoxSzegolyPrzepisu.Text = "groupBox1";
+            this.groupBoxSzegolyPrzepisu.Text = "Szczegóły przepisu";
             // 
             // labelNazwaPrzepisu
             // 
@@ -78,18 +84,18 @@
             this.labelCzasPrzygotowaniaTytul.AutoSize = true;
             this.labelCzasPrzygotowaniaTytul.Location = new System.Drawing.Point(16, 62);
             this.labelCzasPrzygotowaniaTytul.Name = "labelCzasPrzygotowaniaTytul";
-            this.labelCzasPrzygotowaniaTytul.Size = new System.Drawing.Size(101, 13);
+            this.labelCzasPrzygotowaniaTytul.Size = new System.Drawing.Size(126, 13);
             this.labelCzasPrzygotowaniaTytul.TabIndex = 2;
-            this.labelCzasPrzygotowaniaTytul.Text = "Czas przygotowania";
+            this.labelCzasPrzygotowaniaTytul.Text = "Czas przygotowania [min]";
             // 
             // labelIloscPorcjiTytul
             // 
             this.labelIloscPorcjiTytul.AutoSize = true;
             this.labelIloscPorcjiTytul.Location = new System.Drawing.Point(140, 62);
             this.labelIloscPorcjiTytul.Name = "labelIloscPorcjiTytul";
-            this.labelIloscPorcjiTytul.Size = new System.Drawing.Size(57, 13);
+            this.labelIloscPorcjiTytul.Size = new System.Drawing.Size(79, 13);
             this.labelIloscPorcjiTytul.TabIndex = 2;
-            this.labelIloscPorcjiTytul.Text = "Ilość porcji";
+            this.labelIloscPorcjiTytul.Text = "Ilość porcji [szt]";
             // 
             // labelCzasPrzygotowania
             // 
@@ -127,41 +133,70 @@
             this.labelCzyUlubione.TabIndex = 1;
             this.labelCzyUlubione.Text = "label1";
             // 
-            // listBox1
+            // listBoxListaSkladnikow
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 19);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(526, 173);
-            this.listBox1.TabIndex = 3;
+            this.listBoxListaSkladnikow.FormattingEnabled = true;
+            this.listBoxListaSkladnikow.Location = new System.Drawing.Point(6, 19);
+            this.listBoxListaSkladnikow.Name = "listBoxListaSkladnikow";
+            this.listBoxListaSkladnikow.Size = new System.Drawing.Size(526, 173);
+            this.listBoxListaSkladnikow.TabIndex = 3;
             // 
-            // groupBox1
+            // groupBoxListaSkladnikow
             // 
-            this.groupBox1.Controls.Add(this.listBox1);
-            this.groupBox1.Location = new System.Drawing.Point(6, 135);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(538, 202);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBoxListaSkladnikow.Controls.Add(this.listBoxListaSkladnikow);
+            this.groupBoxListaSkladnikow.Location = new System.Drawing.Point(6, 135);
+            this.groupBoxListaSkladnikow.Name = "groupBoxListaSkladnikow";
+            this.groupBoxListaSkladnikow.Size = new System.Drawing.Size(538, 202);
+            this.groupBoxListaSkladnikow.TabIndex = 4;
+            this.groupBoxListaSkladnikow.TabStop = false;
+            this.groupBoxListaSkladnikow.Text = "Lista składników";
             // 
-            // groupBox2
+            // groupBoxKrokiPrzepisu
             // 
-            this.groupBox2.Controls.Add(this.listBox2);
-            this.groupBox2.Location = new System.Drawing.Point(6, 343);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(538, 227);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBoxKrokiPrzepisu.Controls.Add(this.listBoxKrokiPrzepisu);
+            this.groupBoxKrokiPrzepisu.Location = new System.Drawing.Point(6, 343);
+            this.groupBoxKrokiPrzepisu.Name = "groupBoxKrokiPrzepisu";
+            this.groupBoxKrokiPrzepisu.Size = new System.Drawing.Size(538, 227);
+            this.groupBoxKrokiPrzepisu.TabIndex = 5;
+            this.groupBoxKrokiPrzepisu.TabStop = false;
+            this.groupBoxKrokiPrzepisu.Text = "Kroki przygotowania przepisu";
             // 
-            // listBox2
+            // listBoxKrokiPrzepisu
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(6, 19);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(526, 199);
-            this.listBox2.TabIndex = 0;
+            this.listBoxKrokiPrzepisu.FormattingEnabled = true;
+            this.listBoxKrokiPrzepisu.Location = new System.Drawing.Point(6, 19);
+            this.listBoxKrokiPrzepisu.Name = "listBoxKrokiPrzepisu";
+            this.listBoxKrokiPrzepisu.Size = new System.Drawing.Size(526, 199);
+            this.listBoxKrokiPrzepisu.TabIndex = 0;
+            // 
+            // buttonModyfikujPrzepis
+            // 
+            this.buttonModyfikujPrzepis.Location = new System.Drawing.Point(337, 19);
+            this.buttonModyfikujPrzepis.Name = "buttonModyfikujPrzepis";
+            this.buttonModyfikujPrzepis.Size = new System.Drawing.Size(201, 23);
+            this.buttonModyfikujPrzepis.TabIndex = 6;
+            this.buttonModyfikujPrzepis.Text = "Modyfikuj przepis";
+            this.buttonModyfikujPrzepis.UseVisualStyleBackColor = true;
+            this.buttonModyfikujPrzepis.Click += new System.EventHandler(this.buttonModyfikujPrzepis_Click);
+            // 
+            // buttonUsunPrzepis
+            // 
+            this.buttonUsunPrzepis.Location = new System.Drawing.Point(337, 48);
+            this.buttonUsunPrzepis.Name = "buttonUsunPrzepis";
+            this.buttonUsunPrzepis.Size = new System.Drawing.Size(201, 23);
+            this.buttonUsunPrzepis.TabIndex = 6;
+            this.buttonUsunPrzepis.Text = "Usuń przepis";
+            this.buttonUsunPrzepis.UseVisualStyleBackColor = true;
+            // 
+            // buttonZamknijOkno
+            // 
+            this.buttonZamknijOkno.Location = new System.Drawing.Point(337, 77);
+            this.buttonZamknijOkno.Name = "buttonZamknijOkno";
+            this.buttonZamknijOkno.Size = new System.Drawing.Size(201, 23);
+            this.buttonZamknijOkno.TabIndex = 6;
+            this.buttonZamknijOkno.Text = "Wyjdź";
+            this.buttonZamknijOkno.UseVisualStyleBackColor = true;
+            this.buttonZamknijOkno.Click += new System.EventHandler(this.buttonZamknijOkno_Click);
             // 
             // PrzepisSzczegolyOkno
             // 
@@ -171,10 +206,11 @@
             this.Controls.Add(this.groupBoxSzegolyPrzepisu);
             this.Name = "PrzepisSzczegolyOkno";
             this.Text = "PrzepisSzczegolyOkno";
+            this.Load += new System.EventHandler(this.PrzepisSzczegolyOkno_Load);
             this.groupBoxSzegolyPrzepisu.ResumeLayout(false);
             this.groupBoxSzegolyPrzepisu.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
+            this.groupBoxListaSkladnikow.ResumeLayout(false);
+            this.groupBoxKrokiPrzepisu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -188,9 +224,12 @@
         private System.Windows.Forms.Label labelCzasPrzygotowania;
         private System.Windows.Forms.Label labelUlubioneTytul;
         private System.Windows.Forms.Label labelCzyUlubione;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.GroupBox groupBoxKrokiPrzepisu;
+        private System.Windows.Forms.ListBox listBoxKrokiPrzepisu;
+        private System.Windows.Forms.GroupBox groupBoxListaSkladnikow;
+        private System.Windows.Forms.ListBox listBoxListaSkladnikow;
+        private System.Windows.Forms.Button buttonZamknijOkno;
+        private System.Windows.Forms.Button buttonUsunPrzepis;
+        private System.Windows.Forms.Button buttonModyfikujPrzepis;
     }
 }

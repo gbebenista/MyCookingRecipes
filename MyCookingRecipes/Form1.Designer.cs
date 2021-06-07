@@ -47,7 +47,6 @@
             this.labelCzasPrzygotowaniaTytul = new System.Windows.Forms.Label();
             this.labelNazwaPrzepisu = new System.Windows.Forms.Label();
             this.labelNazwaPrzepisuTytul = new System.Windows.Forms.Label();
-            this.buttonWybierzPrzepis = new System.Windows.Forms.Button();
             this.buttonListaSkladnikow = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaPrzepisow)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -158,7 +157,7 @@
             this.groupBoxSzczegolyPrzepisu.Controls.Add(this.labelNazwaPrzepisuTytul);
             this.groupBoxSzczegolyPrzepisu.Location = new System.Drawing.Point(565, 65);
             this.groupBoxSzczegolyPrzepisu.Name = "groupBoxSzczegolyPrzepisu";
-            this.groupBoxSzczegolyPrzepisu.Size = new System.Drawing.Size(373, 323);
+            this.groupBoxSzczegolyPrzepisu.Size = new System.Drawing.Size(373, 347);
             this.groupBoxSzczegolyPrzepisu.TabIndex = 3;
             this.groupBoxSzczegolyPrzepisu.TabStop = false;
             this.groupBoxSzczegolyPrzepisu.Text = "Szczegóły przepisu";
@@ -177,7 +176,7 @@
             this.listBoxSkladnikiWPrzepisie.FormattingEnabled = true;
             this.listBoxSkladnikiWPrzepisie.Location = new System.Drawing.Point(10, 88);
             this.listBoxSkladnikiWPrzepisie.Name = "listBoxSkladnikiWPrzepisie";
-            this.listBoxSkladnikiWPrzepisie.Size = new System.Drawing.Size(357, 225);
+            this.listBoxSkladnikiWPrzepisie.Size = new System.Drawing.Size(357, 251);
             this.listBoxSkladnikiWPrzepisie.TabIndex = 6;
             // 
             // labelIloscPorcji
@@ -234,23 +233,15 @@
             this.labelNazwaPrzepisuTytul.TabIndex = 0;
             this.labelNazwaPrzepisuTytul.Text = "Nazwa Przepisu";
             // 
-            // buttonWybierzPrzepis
-            // 
-            this.buttonWybierzPrzepis.Location = new System.Drawing.Point(565, 394);
-            this.buttonWybierzPrzepis.Name = "buttonWybierzPrzepis";
-            this.buttonWybierzPrzepis.Size = new System.Drawing.Size(373, 45);
-            this.buttonWybierzPrzepis.TabIndex = 4;
-            this.buttonWybierzPrzepis.Text = "Wybierz ten przepis";
-            this.buttonWybierzPrzepis.UseVisualStyleBackColor = true;
-            // 
             // buttonListaSkladnikow
             // 
-            this.buttonListaSkladnikow.Location = new System.Drawing.Point(565, 445);
+            this.buttonListaSkladnikow.Location = new System.Drawing.Point(565, 418);
             this.buttonListaSkladnikow.Name = "buttonListaSkladnikow";
-            this.buttonListaSkladnikow.Size = new System.Drawing.Size(373, 37);
+            this.buttonListaSkladnikow.Size = new System.Drawing.Size(373, 64);
             this.buttonListaSkladnikow.TabIndex = 5;
             this.buttonListaSkladnikow.Text = "Przygotuj listę składników na potrawy";
             this.buttonListaSkladnikow.UseVisualStyleBackColor = true;
+            this.buttonListaSkladnikow.Click += new System.EventHandler(this.buttonListaSkladnikow_Click);
             // 
             // Form1
             // 
@@ -258,7 +249,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 494);
             this.Controls.Add(this.buttonListaSkladnikow);
-            this.Controls.Add(this.buttonWybierzPrzepis);
             this.Controls.Add(this.dataGridViewListaPrzepisow);
             this.Controls.Add(this.groupBoxSzczegolyPrzepisu);
             this.Controls.Add(this.menuStrip1);
@@ -296,7 +286,6 @@
         private System.Windows.Forms.ListBox listBoxSkladnikiWPrzepisie;
         private System.Windows.Forms.ToolStripMenuItem ulubioneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zarzadzajToolStripMenuItem;
-        private System.Windows.Forms.Button buttonWybierzPrzepis;
         private System.Windows.Forms.ToolStripMenuItem wyjdźToolStripMenuItem;
         private System.Windows.Forms.Button buttonListaSkladnikow;
     }

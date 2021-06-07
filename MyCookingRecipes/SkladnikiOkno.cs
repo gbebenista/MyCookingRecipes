@@ -65,14 +65,10 @@ namespace MyCookingRecipes
             {
                 using (DatabaseContext db = new DatabaseContext())
                 {
-                    //do poprawy
                     Skladniki skladnik = new Skladniki
                     {
                         NazwaSkladnika = textBoxNazwaSkladnika.Text,
-                        //RodzajIlosciSkladnika = comboBoxRodzajeIlosciSkladnika.SelectedItem
                         RodzajIlosciSkladnika = db.RodzajIlosciSkladnikow.Find(((RodzajIlosciSkladnika)comboBoxRodzajeIlosciSkladnika.SelectedItem).RodzajIlosciSkladnikaId)
-
-
                     };
                     db.Add(skladnik);
                     db.SaveChanges();

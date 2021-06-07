@@ -91,7 +91,7 @@
             this.buttonDodajNowyPrzepis.TabIndex = 1;
             this.buttonDodajNowyPrzepis.Text = "Dodaj nowy przepis";
             this.buttonDodajNowyPrzepis.UseVisualStyleBackColor = true;
-            this.buttonDodajNowyPrzepis.Click += new System.EventHandler(this.button2_Click);
+            this.buttonDodajNowyPrzepis.Click += new System.EventHandler(this.buttonDodajPrzepis_Click);
             // 
             // buttonModyfikujPrzepis
             // 

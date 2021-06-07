@@ -222,6 +222,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Przepisy.cs" />
+    <Compile Include="SkladnikiNaPotrawyOkno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SkladnikiNaPotrawyOkno.Designer.cs">
+      <DependentUpon>SkladnikiNaPotrawyOkno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ulubione.cs" />
     <Compile Include="UlubioneOkno.cs">
       <SubType>Form</SubType>
