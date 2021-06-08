@@ -17,7 +17,7 @@ namespace MyCookingRecipes
         public DodajModyfikujPrzepisOkno(int? id)
         {
             InitializeComponent();
-            this.PrzepisId = id;
+            PrzepisId = id;
         }
 
         private void buttonDodajSkladnik_Click(object sender, EventArgs e)

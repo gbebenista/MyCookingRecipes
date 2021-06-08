@@ -168,6 +168,12 @@
     <Compile Include="DodajModyfikujPrzepisOkno.Designer.cs">
       <DependentUpon>DodajModyfikujPrzepisOkno.cs</DependentUpon>
     </Compile>
+    <Compile Include="DodajUlubioneOkno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajUlubioneOkno.Designer.cs">
+      <DependentUpon>DodajUlubioneOkno.cs</DependentUpon>
+    </Compile>
     <Compile Include="KrokiPrzepisuOkno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +244,9 @@
     <EmbeddedResource Include="DodajModyfikujPrzepisOkno.resx">
       <DependentUpon>DodajModyfikujPrzepisOkno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DodajUlubioneOkno.resx">
+      <DependentUpon>DodajUlubioneOkno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SkladnikiWPrzepisieOkno.resx">
       <DependentUpon>SkladnikiWPrzepisieOkno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UlubioneOkno.resx">
+      <DependentUpon>UlubioneOkno.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

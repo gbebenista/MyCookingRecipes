@@ -95,5 +95,13 @@ namespace MyCookingRecipes
         //    }
         //}
 
+        //public List<Ulubione> ListaUlubionych()
+        //{
+        //    using (DatabaseContext db = new DatabaseContext())
+        //    {
+        //        return db.Ulubione.Include(p => p.Przepis).Select(p => new { p.Przepis.NazwaPotrawy }).ToList();
+        //    }
+        //}
+
     }
 }
