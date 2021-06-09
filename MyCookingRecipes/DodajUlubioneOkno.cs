@@ -91,5 +91,10 @@ namespace MyCookingRecipes
                 MessageBox.Show("Wystąpił problem z dodaniem przepisu do ulubionych. Proszę spróbować ponownie");
             }
         }
+
+        private void dataGridViewListaPrzepisow_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+        }
     }
 }

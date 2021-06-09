@@ -78,12 +78,6 @@ namespace MyCookingRecipes
             this.dataGridViewListaPrzepisow.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaPrzepisow_CellDoubleClick);
             this.dataGridViewListaPrzepisow.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewListaPrzepisow_CellMouseUp);
             this.dataGridViewListaPrzepisow.RowContextMenuStripNeeded += new System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventHandler(this.dataGridViewListaPrzepisow_RowContextMenuStripNeeded);
-            //
-            //ToolStripMenuItems for DataGridView
-            //
-            this.modyfikujPrzepis.Click += new System.EventHandler(this.modyfikujPrzepis_Click);
-            this.usunPrzepis.Click += new System.EventHandler(this.usunPrzepis_Click);
-            this.dodajUsunUlubione.Click += new System.EventHandler(this.dodajUsunUlubione_Click);
             // 
             // menuStrip1
             // 

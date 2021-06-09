@@ -119,6 +119,7 @@
             this.dataGridViewKrokiPrzygotowania.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewKrokiPrzygotowania.Size = new System.Drawing.Size(391, 155);
             this.dataGridViewKrokiPrzygotowania.TabIndex = 9;
+            this.dataGridViewKrokiPrzygotowania.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKrokiPrzygotowania_CellContentClick);
             // 
             // groupBoxSkladniki
             // 
@@ -147,6 +148,7 @@
             this.dataGridViewSkladniki.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSkladniki.Size = new System.Drawing.Size(391, 138);
             this.dataGridViewSkladniki.TabIndex = 7;
+            this.dataGridViewSkladniki.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSkladniki_CellContentClick);
             // 
             // buttonDodajSkladnik
             // 

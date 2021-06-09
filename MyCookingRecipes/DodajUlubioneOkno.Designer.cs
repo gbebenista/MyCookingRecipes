@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBoxDodajUlubione = new System.Windows.Forms.GroupBox();
-            this.groupBoxListaPrzepisow = new System.Windows.Forms.GroupBox();
-            this.dataGridViewListaPrzepisow = new System.Windows.Forms.DataGridView();
-            this.textBoxSzukaj = new System.Windows.Forms.TextBox();
-            this.buttonSzukaj = new System.Windows.Forms.Button();
-            this.buttonDodaj = new System.Windows.Forms.Button();
-            this.buttonPrzepisy = new System.Windows.Forms.Button();
             this.buttonZamknij = new System.Windows.Forms.Button();
+            this.buttonPrzepisy = new System.Windows.Forms.Button();
+            this.buttonDodaj = new System.Windows.Forms.Button();
+            this.groupBoxListaPrzepisow = new System.Windows.Forms.GroupBox();
+            this.buttonSzukaj = new System.Windows.Forms.Button();
+            this.textBoxSzukaj = new System.Windows.Forms.TextBox();
+            this.dataGridViewListaPrzepisow = new System.Windows.Forms.DataGridView();
             this.groupBoxDodajUlubione.SuspendLayout();
             this.groupBoxListaPrzepisow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaPrzepisow)).BeginInit();
@@ -54,6 +54,36 @@
             this.groupBoxDodajUlubione.TabStop = false;
             this.groupBoxDodajUlubione.Text = "Dodaj do ulubionych";
             // 
+            // buttonZamknij
+            // 
+            this.buttonZamknij.Location = new System.Drawing.Point(378, 19);
+            this.buttonZamknij.Name = "buttonZamknij";
+            this.buttonZamknij.Size = new System.Drawing.Size(159, 38);
+            this.buttonZamknij.TabIndex = 3;
+            this.buttonZamknij.Text = "Wyjdź";
+            this.buttonZamknij.UseVisualStyleBackColor = true;
+            this.buttonZamknij.Click += new System.EventHandler(this.buttonZamknij_Click);
+            // 
+            // buttonPrzepisy
+            // 
+            this.buttonPrzepisy.Location = new System.Drawing.Point(200, 19);
+            this.buttonPrzepisy.Name = "buttonPrzepisy";
+            this.buttonPrzepisy.Size = new System.Drawing.Size(172, 38);
+            this.buttonPrzepisy.TabIndex = 2;
+            this.buttonPrzepisy.Text = "Przejdź do przepisów";
+            this.buttonPrzepisy.UseVisualStyleBackColor = true;
+            this.buttonPrzepisy.Click += new System.EventHandler(this.buttonPrzepisy_Click);
+            // 
+            // buttonDodaj
+            // 
+            this.buttonDodaj.Location = new System.Drawing.Point(6, 19);
+            this.buttonDodaj.Name = "buttonDodaj";
+            this.buttonDodaj.Size = new System.Drawing.Size(187, 38);
+            this.buttonDodaj.TabIndex = 1;
+            this.buttonDodaj.Text = "Dodaj przepis do ulubionych";
+            this.buttonDodaj.UseVisualStyleBackColor = true;
+            this.buttonDodaj.Click += new System.EventHandler(this.buttonDodaj_Click);
+            // 
             // groupBoxListaPrzepisow
             // 
             this.groupBoxListaPrzepisow.Controls.Add(this.buttonSzukaj);
@@ -65,6 +95,23 @@
             this.groupBoxListaPrzepisow.TabIndex = 0;
             this.groupBoxListaPrzepisow.TabStop = false;
             this.groupBoxListaPrzepisow.Text = "Lista przepisów";
+            // 
+            // buttonSzukaj
+            // 
+            this.buttonSzukaj.Location = new System.Drawing.Point(383, 28);
+            this.buttonSzukaj.Name = "buttonSzukaj";
+            this.buttonSzukaj.Size = new System.Drawing.Size(141, 20);
+            this.buttonSzukaj.TabIndex = 2;
+            this.buttonSzukaj.Text = "Szukaj";
+            this.buttonSzukaj.UseVisualStyleBackColor = true;
+            this.buttonSzukaj.Click += new System.EventHandler(this.buttonSzukaj_Click);
+            // 
+            // textBoxSzukaj
+            // 
+            this.textBoxSzukaj.Location = new System.Drawing.Point(7, 28);
+            this.textBoxSzukaj.Name = "textBoxSzukaj";
+            this.textBoxSzukaj.Size = new System.Drawing.Size(370, 20);
+            this.textBoxSzukaj.TabIndex = 1;
             // 
             // dataGridViewListaPrzepisow
             // 
@@ -82,53 +129,7 @@
             this.dataGridViewListaPrzepisow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewListaPrzepisow.Size = new System.Drawing.Size(517, 351);
             this.dataGridViewListaPrzepisow.TabIndex = 0;
-            // 
-            // textBoxSzukaj
-            // 
-            this.textBoxSzukaj.Location = new System.Drawing.Point(7, 28);
-            this.textBoxSzukaj.Name = "textBoxSzukaj";
-            this.textBoxSzukaj.Size = new System.Drawing.Size(370, 20);
-            this.textBoxSzukaj.TabIndex = 1;
-            // 
-            // buttonSzukaj
-            // 
-            this.buttonSzukaj.Location = new System.Drawing.Point(383, 28);
-            this.buttonSzukaj.Name = "buttonSzukaj";
-            this.buttonSzukaj.Size = new System.Drawing.Size(141, 20);
-            this.buttonSzukaj.TabIndex = 2;
-            this.buttonSzukaj.Text = "Szukaj";
-            this.buttonSzukaj.UseVisualStyleBackColor = true;
-            this.buttonSzukaj.Click += new System.EventHandler(this.buttonSzukaj_Click);
-            // 
-            // buttonDodaj
-            // 
-            this.buttonDodaj.Location = new System.Drawing.Point(6, 19);
-            this.buttonDodaj.Name = "buttonDodaj";
-            this.buttonDodaj.Size = new System.Drawing.Size(187, 38);
-            this.buttonDodaj.TabIndex = 1;
-            this.buttonDodaj.Text = "Dodaj przepis do ulubionych";
-            this.buttonDodaj.UseVisualStyleBackColor = true;
-            this.buttonDodaj.Click += new System.EventHandler(this.buttonDodaj_Click);
-            // 
-            // buttonPrzepisy
-            // 
-            this.buttonPrzepisy.Location = new System.Drawing.Point(200, 19);
-            this.buttonPrzepisy.Name = "buttonPrzepisy";
-            this.buttonPrzepisy.Size = new System.Drawing.Size(172, 38);
-            this.buttonPrzepisy.TabIndex = 2;
-            this.buttonPrzepisy.Text = "Przejdź do przepisów";
-            this.buttonPrzepisy.UseVisualStyleBackColor = true;
-            this.buttonPrzepisy.Click += new System.EventHandler(this.buttonPrzepisy_Click);
-            // 
-            // buttonZamknij
-            // 
-            this.buttonZamknij.Location = new System.Drawing.Point(378, 19);
-            this.buttonZamknij.Name = "buttonZamknij";
-            this.buttonZamknij.Size = new System.Drawing.Size(159, 38);
-            this.buttonZamknij.TabIndex = 3;
-            this.buttonZamknij.Text = "Wyjdź";
-            this.buttonZamknij.UseVisualStyleBackColor = true;
-            this.buttonZamknij.Click += new System.EventHandler(this.buttonZamknij_Click);
+            this.dataGridViewListaPrzepisow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaPrzepisow_CellContentClick);
             // 
             // DodajUlubioneOkno
             // 

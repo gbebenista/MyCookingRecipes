@@ -36,5 +36,15 @@ namespace MyCookingRecipes
         {
 
         }
+
+        private void dataGridViewSkladniki_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+        }
+
+        private void dataGridViewKrokiPrzygotowania_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+        }
     }
 }

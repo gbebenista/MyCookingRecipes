@@ -24,13 +24,24 @@ namespace MyCookingRecipes
 
 
         }
+        public void LoadDefaultDataGridView()
+        {
+            try
+            {
+                using (DatabaseContext context = new DatabaseContext())
+                {
+                    dataGridViewListaPrzepisow.DataSource = context.Przepisy.ToList();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Wystąpił błąd podczas ładowania przepisów do tabeli");
+            }
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            using (DatabaseContext context = new DatabaseContext())
-            {
-                dataGridViewListaPrzepisow.DataSource = context.Przepisy.ToList();
-            }
+            LoadDefaultDataGridView();
         }
 
         private void dodajUsuńToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -50,6 +61,7 @@ namespace MyCookingRecipes
         {
             try
             {
+                if (e.RowIndex == -1) return;
                 using (DatabaseContext db = new DatabaseContext())
                 {
                     Przepisy selected = db.PobierzPrzepis((int)dataGridViewListaPrzepisow.CurrentRow.Cells[0].Value);
@@ -93,6 +105,7 @@ namespace MyCookingRecipes
 
         private void dataGridViewListaPrzepisow_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1) return;
             PrzepisSzczegolyOkno przepisSzczegolyOkno = new PrzepisSzczegolyOkno((int)dataGridViewListaPrzepisow.CurrentRow.Cells[0].Value);
             przepisSzczegolyOkno.ShowDialog();
         }
@@ -245,5 +258,6 @@ namespace MyCookingRecipes
                 dataGridViewListaPrzepisow.CurrentCell = dataGridViewListaPrzepisow[e.ColumnIndex, e.RowIndex];
             }
         }
+
     }
 }

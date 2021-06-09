@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.groupBoxSzegolyPrzepisu = new System.Windows.Forms.GroupBox();
-            this.labelNazwaPrzepisu = new System.Windows.Forms.Label();
-            this.labelCzasPrzygotowaniaTytul = new System.Windows.Forms.Label();
-            this.labelIloscPorcjiTytul = new System.Windows.Forms.Label();
-            this.labelCzasPrzygotowania = new System.Windows.Forms.Label();
-            this.labelIloscPorcji = new System.Windows.Forms.Label();
-            this.labelUlubioneTytul = new System.Windows.Forms.Label();
-            this.labelCzyUlubione = new System.Windows.Forms.Label();
-            this.listBoxListaSkladnikow = new System.Windows.Forms.ListBox();
-            this.groupBoxListaSkladnikow = new System.Windows.Forms.GroupBox();
+            this.buttonZamknijOkno = new System.Windows.Forms.Button();
+            this.buttonUsunPrzepis = new System.Windows.Forms.Button();
+            this.buttonModyfikujPrzepis = new System.Windows.Forms.Button();
             this.groupBoxKrokiPrzepisu = new System.Windows.Forms.GroupBox();
             this.listBoxKrokiPrzepisu = new System.Windows.Forms.ListBox();
-            this.buttonModyfikujPrzepis = new System.Windows.Forms.Button();
-            this.buttonUsunPrzepis = new System.Windows.Forms.Button();
-            this.buttonZamknijOkno = new System.Windows.Forms.Button();
+            this.groupBoxListaSkladnikow = new System.Windows.Forms.GroupBox();
+            this.listBoxListaSkladnikow = new System.Windows.Forms.ListBox();
+            this.labelUlubioneTytul = new System.Windows.Forms.Label();
+            this.labelIloscPorcjiTytul = new System.Windows.Forms.Label();
+            this.labelCzyUlubione = new System.Windows.Forms.Label();
+            this.labelCzasPrzygotowaniaTytul = new System.Windows.Forms.Label();
+            this.labelIloscPorcji = new System.Windows.Forms.Label();
+            this.labelCzasPrzygotowania = new System.Windows.Forms.Label();
+            this.labelNazwaPrzepisu = new System.Windows.Forms.Label();
             this.groupBoxSzegolyPrzepisu.SuspendLayout();
-            this.groupBoxListaSkladnikow.SuspendLayout();
             this.groupBoxKrokiPrzepisu.SuspendLayout();
+            this.groupBoxListaSkladnikow.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxSzegolyPrzepisu
@@ -69,87 +69,35 @@
             this.groupBoxSzegolyPrzepisu.TabStop = false;
             this.groupBoxSzegolyPrzepisu.Text = "Szczegóły przepisu";
             // 
-            // labelNazwaPrzepisu
+            // buttonZamknijOkno
             // 
-            this.labelNazwaPrzepisu.AutoSize = true;
-            this.labelNazwaPrzepisu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelNazwaPrzepisu.Location = new System.Drawing.Point(14, 27);
-            this.labelNazwaPrzepisu.Name = "labelNazwaPrzepisu";
-            this.labelNazwaPrzepisu.Size = new System.Drawing.Size(70, 25);
-            this.labelNazwaPrzepisu.TabIndex = 1;
-            this.labelNazwaPrzepisu.Text = "label1";
+            this.buttonZamknijOkno.Location = new System.Drawing.Point(337, 77);
+            this.buttonZamknijOkno.Name = "buttonZamknijOkno";
+            this.buttonZamknijOkno.Size = new System.Drawing.Size(201, 23);
+            this.buttonZamknijOkno.TabIndex = 6;
+            this.buttonZamknijOkno.Text = "Wyjdź";
+            this.buttonZamknijOkno.UseVisualStyleBackColor = true;
+            this.buttonZamknijOkno.Click += new System.EventHandler(this.buttonZamknijOkno_Click);
             // 
-            // labelCzasPrzygotowaniaTytul
+            // buttonUsunPrzepis
             // 
-            this.labelCzasPrzygotowaniaTytul.AutoSize = true;
-            this.labelCzasPrzygotowaniaTytul.Location = new System.Drawing.Point(16, 62);
-            this.labelCzasPrzygotowaniaTytul.Name = "labelCzasPrzygotowaniaTytul";
-            this.labelCzasPrzygotowaniaTytul.Size = new System.Drawing.Size(126, 13);
-            this.labelCzasPrzygotowaniaTytul.TabIndex = 2;
-            this.labelCzasPrzygotowaniaTytul.Text = "Czas przygotowania [min]";
+            this.buttonUsunPrzepis.Location = new System.Drawing.Point(337, 48);
+            this.buttonUsunPrzepis.Name = "buttonUsunPrzepis";
+            this.buttonUsunPrzepis.Size = new System.Drawing.Size(201, 23);
+            this.buttonUsunPrzepis.TabIndex = 6;
+            this.buttonUsunPrzepis.Text = "Usuń przepis";
+            this.buttonUsunPrzepis.UseVisualStyleBackColor = true;
+            this.buttonUsunPrzepis.Click += new System.EventHandler(this.buttonUsunPrzepis_Click);
             // 
-            // labelIloscPorcjiTytul
+            // buttonModyfikujPrzepis
             // 
-            this.labelIloscPorcjiTytul.AutoSize = true;
-            this.labelIloscPorcjiTytul.Location = new System.Drawing.Point(140, 62);
-            this.labelIloscPorcjiTytul.Name = "labelIloscPorcjiTytul";
-            this.labelIloscPorcjiTytul.Size = new System.Drawing.Size(79, 13);
-            this.labelIloscPorcjiTytul.TabIndex = 2;
-            this.labelIloscPorcjiTytul.Text = "Ilość porcji [szt]";
-            // 
-            // labelCzasPrzygotowania
-            // 
-            this.labelCzasPrzygotowania.AutoSize = true;
-            this.labelCzasPrzygotowania.Location = new System.Drawing.Point(16, 84);
-            this.labelCzasPrzygotowania.Name = "labelCzasPrzygotowania";
-            this.labelCzasPrzygotowania.Size = new System.Drawing.Size(35, 13);
-            this.labelCzasPrzygotowania.TabIndex = 1;
-            this.labelCzasPrzygotowania.Text = "label1";
-            // 
-            // labelIloscPorcji
-            // 
-            this.labelIloscPorcji.AutoSize = true;
-            this.labelIloscPorcji.Location = new System.Drawing.Point(140, 84);
-            this.labelIloscPorcji.Name = "labelIloscPorcji";
-            this.labelIloscPorcji.Size = new System.Drawing.Size(35, 13);
-            this.labelIloscPorcji.TabIndex = 1;
-            this.labelIloscPorcji.Text = "label1";
-            // 
-            // labelUlubioneTytul
-            // 
-            this.labelUlubioneTytul.AutoSize = true;
-            this.labelUlubioneTytul.Location = new System.Drawing.Point(220, 62);
-            this.labelUlubioneTytul.Name = "labelUlubioneTytul";
-            this.labelUlubioneTytul.Size = new System.Drawing.Size(49, 13);
-            this.labelUlubioneTytul.TabIndex = 2;
-            this.labelUlubioneTytul.Text = "Ulubione";
-            // 
-            // labelCzyUlubione
-            // 
-            this.labelCzyUlubione.AutoSize = true;
-            this.labelCzyUlubione.Location = new System.Drawing.Point(220, 84);
-            this.labelCzyUlubione.Name = "labelCzyUlubione";
-            this.labelCzyUlubione.Size = new System.Drawing.Size(35, 13);
-            this.labelCzyUlubione.TabIndex = 1;
-            this.labelCzyUlubione.Text = "label1";
-            // 
-            // listBoxListaSkladnikow
-            // 
-            this.listBoxListaSkladnikow.FormattingEnabled = true;
-            this.listBoxListaSkladnikow.Location = new System.Drawing.Point(6, 19);
-            this.listBoxListaSkladnikow.Name = "listBoxListaSkladnikow";
-            this.listBoxListaSkladnikow.Size = new System.Drawing.Size(526, 173);
-            this.listBoxListaSkladnikow.TabIndex = 3;
-            // 
-            // groupBoxListaSkladnikow
-            // 
-            this.groupBoxListaSkladnikow.Controls.Add(this.listBoxListaSkladnikow);
-            this.groupBoxListaSkladnikow.Location = new System.Drawing.Point(6, 135);
-            this.groupBoxListaSkladnikow.Name = "groupBoxListaSkladnikow";
-            this.groupBoxListaSkladnikow.Size = new System.Drawing.Size(538, 202);
-            this.groupBoxListaSkladnikow.TabIndex = 4;
-            this.groupBoxListaSkladnikow.TabStop = false;
-            this.groupBoxListaSkladnikow.Text = "Lista składników";
+            this.buttonModyfikujPrzepis.Location = new System.Drawing.Point(337, 19);
+            this.buttonModyfikujPrzepis.Name = "buttonModyfikujPrzepis";
+            this.buttonModyfikujPrzepis.Size = new System.Drawing.Size(201, 23);
+            this.buttonModyfikujPrzepis.TabIndex = 6;
+            this.buttonModyfikujPrzepis.Text = "Modyfikuj przepis";
+            this.buttonModyfikujPrzepis.UseVisualStyleBackColor = true;
+            this.buttonModyfikujPrzepis.Click += new System.EventHandler(this.buttonModyfikujPrzepis_Click);
             // 
             // groupBoxKrokiPrzepisu
             // 
@@ -169,34 +117,87 @@
             this.listBoxKrokiPrzepisu.Size = new System.Drawing.Size(526, 199);
             this.listBoxKrokiPrzepisu.TabIndex = 0;
             // 
-            // buttonModyfikujPrzepis
+            // groupBoxListaSkladnikow
             // 
-            this.buttonModyfikujPrzepis.Location = new System.Drawing.Point(337, 19);
-            this.buttonModyfikujPrzepis.Name = "buttonModyfikujPrzepis";
-            this.buttonModyfikujPrzepis.Size = new System.Drawing.Size(201, 23);
-            this.buttonModyfikujPrzepis.TabIndex = 6;
-            this.buttonModyfikujPrzepis.Text = "Modyfikuj przepis";
-            this.buttonModyfikujPrzepis.UseVisualStyleBackColor = true;
-            this.buttonModyfikujPrzepis.Click += new System.EventHandler(this.buttonModyfikujPrzepis_Click);
+            this.groupBoxListaSkladnikow.Controls.Add(this.listBoxListaSkladnikow);
+            this.groupBoxListaSkladnikow.Location = new System.Drawing.Point(6, 135);
+            this.groupBoxListaSkladnikow.Name = "groupBoxListaSkladnikow";
+            this.groupBoxListaSkladnikow.Size = new System.Drawing.Size(538, 202);
+            this.groupBoxListaSkladnikow.TabIndex = 4;
+            this.groupBoxListaSkladnikow.TabStop = false;
+            this.groupBoxListaSkladnikow.Text = "Lista składników";
             // 
-            // buttonUsunPrzepis
+            // listBoxListaSkladnikow
             // 
-            this.buttonUsunPrzepis.Location = new System.Drawing.Point(337, 48);
-            this.buttonUsunPrzepis.Name = "buttonUsunPrzepis";
-            this.buttonUsunPrzepis.Size = new System.Drawing.Size(201, 23);
-            this.buttonUsunPrzepis.TabIndex = 6;
-            this.buttonUsunPrzepis.Text = "Usuń przepis";
-            this.buttonUsunPrzepis.UseVisualStyleBackColor = true;
+            this.listBoxListaSkladnikow.FormattingEnabled = true;
+            this.listBoxListaSkladnikow.Location = new System.Drawing.Point(6, 19);
+            this.listBoxListaSkladnikow.Name = "listBoxListaSkladnikow";
+            this.listBoxListaSkladnikow.Size = new System.Drawing.Size(526, 173);
+            this.listBoxListaSkladnikow.TabIndex = 3;
             // 
-            // buttonZamknijOkno
+            // labelUlubioneTytul
             // 
-            this.buttonZamknijOkno.Location = new System.Drawing.Point(337, 77);
-            this.buttonZamknijOkno.Name = "buttonZamknijOkno";
-            this.buttonZamknijOkno.Size = new System.Drawing.Size(201, 23);
-            this.buttonZamknijOkno.TabIndex = 6;
-            this.buttonZamknijOkno.Text = "Wyjdź";
-            this.buttonZamknijOkno.UseVisualStyleBackColor = true;
-            this.buttonZamknijOkno.Click += new System.EventHandler(this.buttonZamknijOkno_Click);
+            this.labelUlubioneTytul.AutoSize = true;
+            this.labelUlubioneTytul.Location = new System.Drawing.Point(220, 62);
+            this.labelUlubioneTytul.Name = "labelUlubioneTytul";
+            this.labelUlubioneTytul.Size = new System.Drawing.Size(49, 13);
+            this.labelUlubioneTytul.TabIndex = 2;
+            this.labelUlubioneTytul.Text = "Ulubione";
+            // 
+            // labelIloscPorcjiTytul
+            // 
+            this.labelIloscPorcjiTytul.AutoSize = true;
+            this.labelIloscPorcjiTytul.Location = new System.Drawing.Point(140, 62);
+            this.labelIloscPorcjiTytul.Name = "labelIloscPorcjiTytul";
+            this.labelIloscPorcjiTytul.Size = new System.Drawing.Size(79, 13);
+            this.labelIloscPorcjiTytul.TabIndex = 2;
+            this.labelIloscPorcjiTytul.Text = "Ilość porcji [szt]";
+            // 
+            // labelCzyUlubione
+            // 
+            this.labelCzyUlubione.AutoSize = true;
+            this.labelCzyUlubione.Location = new System.Drawing.Point(220, 84);
+            this.labelCzyUlubione.Name = "labelCzyUlubione";
+            this.labelCzyUlubione.Size = new System.Drawing.Size(35, 13);
+            this.labelCzyUlubione.TabIndex = 1;
+            this.labelCzyUlubione.Text = "label1";
+            // 
+            // labelCzasPrzygotowaniaTytul
+            // 
+            this.labelCzasPrzygotowaniaTytul.AutoSize = true;
+            this.labelCzasPrzygotowaniaTytul.Location = new System.Drawing.Point(16, 62);
+            this.labelCzasPrzygotowaniaTytul.Name = "labelCzasPrzygotowaniaTytul";
+            this.labelCzasPrzygotowaniaTytul.Size = new System.Drawing.Size(126, 13);
+            this.labelCzasPrzygotowaniaTytul.TabIndex = 2;
+            this.labelCzasPrzygotowaniaTytul.Text = "Czas przygotowania [min]";
+            // 
+            // labelIloscPorcji
+            // 
+            this.labelIloscPorcji.AutoSize = true;
+            this.labelIloscPorcji.Location = new System.Drawing.Point(140, 84);
+            this.labelIloscPorcji.Name = "labelIloscPorcji";
+            this.labelIloscPorcji.Size = new System.Drawing.Size(35, 13);
+            this.labelIloscPorcji.TabIndex = 1;
+            this.labelIloscPorcji.Text = "label1";
+            // 
+            // labelCzasPrzygotowania
+            // 
+            this.labelCzasPrzygotowania.AutoSize = true;
+            this.labelCzasPrzygotowania.Location = new System.Drawing.Point(16, 84);
+            this.labelCzasPrzygotowania.Name = "labelCzasPrzygotowania";
+            this.labelCzasPrzygotowania.Size = new System.Drawing.Size(35, 13);
+            this.labelCzasPrzygotowania.TabIndex = 1;
+            this.labelCzasPrzygotowania.Text = "label1";
+            // 
+            // labelNazwaPrzepisu
+            // 
+            this.labelNazwaPrzepisu.AutoSize = true;
+            this.labelNazwaPrzepisu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelNazwaPrzepisu.Location = new System.Drawing.Point(14, 27);
+            this.labelNazwaPrzepisu.Name = "labelNazwaPrzepisu";
+            this.labelNazwaPrzepisu.Size = new System.Drawing.Size(70, 25);
+            this.labelNazwaPrzepisu.TabIndex = 1;
+            this.labelNazwaPrzepisu.Text = "label1";
             // 
             // PrzepisSzczegolyOkno
             // 
@@ -209,8 +210,8 @@
             this.Load += new System.EventHandler(this.PrzepisSzczegolyOkno_Load);
             this.groupBoxSzegolyPrzepisu.ResumeLayout(false);
             this.groupBoxSzegolyPrzepisu.PerformLayout();
-            this.groupBoxListaSkladnikow.ResumeLayout(false);
             this.groupBoxKrokiPrzepisu.ResumeLayout(false);
+            this.groupBoxListaSkladnikow.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

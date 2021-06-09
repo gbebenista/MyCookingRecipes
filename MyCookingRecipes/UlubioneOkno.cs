@@ -99,5 +99,10 @@ namespace MyCookingRecipes
             DodajUlubioneOkno dodajUlubioneOkno = new DodajUlubioneOkno();
             dodajUlubioneOkno.ShowDialog();
         }
+
+        private void dataGridViewListaUlubione_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+        }
     }
 }

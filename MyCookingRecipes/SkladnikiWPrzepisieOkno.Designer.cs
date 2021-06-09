@@ -58,6 +58,7 @@
             this.dataGridViewSkladnikiWPrzepisie.ReadOnly = true;
             this.dataGridViewSkladnikiWPrzepisie.Size = new System.Drawing.Size(398, 261);
             this.dataGridViewSkladnikiWPrzepisie.TabIndex = 0;
+            this.dataGridViewSkladnikiWPrzepisie.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSkladnikiWPrzepisie_CellContentClick);
             // 
             // groupBoxListaSkladnikow
             // 

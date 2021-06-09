@@ -83,6 +83,7 @@
             this.dataGridViewPrzepisyOknoLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewPrzepisyOknoLista.Size = new System.Drawing.Size(573, 337);
             this.dataGridViewPrzepisyOknoLista.TabIndex = 0;
+            this.dataGridViewPrzepisyOknoLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPrzepisyOknoLista_CellContentClick);
             // 
             // buttonDodajNowyPrzepis
             // 

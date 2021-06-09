@@ -156,5 +156,10 @@ namespace MyCookingRecipes
         {
 
         }
+
+        private void dataGridViewListaSkladnikow_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+        }
     }
 }

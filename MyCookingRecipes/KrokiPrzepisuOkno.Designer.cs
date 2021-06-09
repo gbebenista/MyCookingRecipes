@@ -58,6 +58,7 @@
             this.dataGridViewListaKrokowPrzepisu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewListaKrokowPrzepisu.Size = new System.Drawing.Size(683, 234);
             this.dataGridViewListaKrokowPrzepisu.TabIndex = 0;
+            this.dataGridViewListaKrokowPrzepisu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaKrokowPrzepisu_CellContentClick);
             // 
             // groupBoxListaKrokowPrzepisu
             // 

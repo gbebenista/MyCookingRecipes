@@ -16,5 +16,10 @@ namespace MyCookingRecipes
         {
             InitializeComponent();
         }
+
+        private void dataGridViewListaKrokowPrzepisu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+        }
     }
 }

@@ -82,6 +82,7 @@
             this.dataGridViewListaSkladnikow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewListaSkladnikow.Size = new System.Drawing.Size(478, 306);
             this.dataGridViewListaSkladnikow.TabIndex = 1;
+            this.dataGridViewListaSkladnikow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaSkladnikow_CellContentClick);
             // 
             // textBoxWyszukajSkladnik
             // 
