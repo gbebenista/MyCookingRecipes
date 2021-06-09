@@ -134,7 +134,7 @@ namespace MyCookingRecipes
                             }
                             db.SaveChanges();
                             LoadDefaultDataGridView();
-                            MessageBox.Show(String.Format("Usunięto następujące składniki:\n {0}", String.Join(",", nazwyusunietychskladnikow)));
+                            MessageBox.Show(String.Format("Usunięto następujące składniki:\n {0}", String.Join("\n", nazwyusunietychskladnikow)));
 
 
                         }

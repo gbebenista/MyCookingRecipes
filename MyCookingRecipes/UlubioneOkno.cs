@@ -67,7 +67,7 @@ namespace MyCookingRecipes
                     if (dataGridViewListaUlubione.SelectedRows.Count == 0) return;
                     else
                     {
-                        DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć zaznaczone przepisy?", "Usuwanie przepisów", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć zaznaczone przepisy z ulubionych?", "Usuwanie przepisów z ulubionych", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (dialogResult == DialogResult.Yes)
                         {
 
@@ -81,7 +81,7 @@ namespace MyCookingRecipes
                             }
                             db.SaveChanges();
                             LoadDefaultDataGridView();
-                            MessageBox.Show(String.Format("Usunięto następujące składniki:\n {0}", String.Join(",", nazwyusunietychulubionych)));
+                            MessageBox.Show(String.Format("Usunięto następujące przepisy:\n {0}", String.Join("\n", nazwyusunietychulubionych)));
 
 
                         }

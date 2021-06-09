@@ -1,4 +1,6 @@
-﻿namespace MyCookingRecipes
+﻿using System;
+
+namespace MyCookingRecipes
 {
     partial class Form1
     {
@@ -48,6 +50,8 @@
             this.labelNazwaPrzepisu = new System.Windows.Forms.Label();
             this.labelNazwaPrzepisuTytul = new System.Windows.Forms.Label();
             this.buttonListaSkladnikow = new System.Windows.Forms.Button();
+            this.textBoxSzukaj = new System.Windows.Forms.TextBox();
+            this.checkBoxUlubione = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaPrzepisow)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBoxSzczegolyPrzepisu.SuspendLayout();
@@ -62,16 +66,24 @@
             this.dataGridViewListaPrzepisow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewListaPrzepisow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewListaPrzepisow.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
-            this.dataGridViewListaPrzepisow.Location = new System.Drawing.Point(12, 65);
+            this.dataGridViewListaPrzepisow.Location = new System.Drawing.Point(12, 60);
             this.dataGridViewListaPrzepisow.MultiSelect = false;
             this.dataGridViewListaPrzepisow.Name = "dataGridViewListaPrzepisow";
             this.dataGridViewListaPrzepisow.ReadOnly = true;
             this.dataGridViewListaPrzepisow.RowHeadersVisible = false;
             this.dataGridViewListaPrzepisow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewListaPrzepisow.Size = new System.Drawing.Size(546, 417);
+            this.dataGridViewListaPrzepisow.Size = new System.Drawing.Size(546, 384);
             this.dataGridViewListaPrzepisow.TabIndex = 0;
             this.dataGridViewListaPrzepisow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaPrzepisow_CellClick);
             this.dataGridViewListaPrzepisow.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaPrzepisow_CellDoubleClick);
+            this.dataGridViewListaPrzepisow.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewListaPrzepisow_CellMouseUp);
+            this.dataGridViewListaPrzepisow.RowContextMenuStripNeeded += new System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventHandler(this.dataGridViewListaPrzepisow_RowContextMenuStripNeeded);
+            //
+            //ToolStripMenuItems for DataGridView
+            //
+            this.modyfikujPrzepis.Click += new System.EventHandler(this.modyfikujPrzepis_Click);
+            this.usunPrzepis.Click += new System.EventHandler(this.usunPrzepis_Click);
+            this.dodajUsunUlubione.Click += new System.EventHandler(this.dodajUsunUlubione_Click);
             // 
             // menuStrip1
             // 
@@ -155,7 +167,7 @@
             this.groupBoxSzczegolyPrzepisu.Controls.Add(this.labelCzasPrzygotowaniaTytul);
             this.groupBoxSzczegolyPrzepisu.Controls.Add(this.labelNazwaPrzepisu);
             this.groupBoxSzczegolyPrzepisu.Controls.Add(this.labelNazwaPrzepisuTytul);
-            this.groupBoxSzczegolyPrzepisu.Location = new System.Drawing.Point(565, 65);
+            this.groupBoxSzczegolyPrzepisu.Location = new System.Drawing.Point(565, 27);
             this.groupBoxSzczegolyPrzepisu.Name = "groupBoxSzczegolyPrzepisu";
             this.groupBoxSzczegolyPrzepisu.Size = new System.Drawing.Size(373, 347);
             this.groupBoxSzczegolyPrzepisu.TabIndex = 3;
@@ -235,7 +247,7 @@
             // 
             // buttonListaSkladnikow
             // 
-            this.buttonListaSkladnikow.Location = new System.Drawing.Point(565, 418);
+            this.buttonListaSkladnikow.Location = new System.Drawing.Point(565, 380);
             this.buttonListaSkladnikow.Name = "buttonListaSkladnikow";
             this.buttonListaSkladnikow.Size = new System.Drawing.Size(373, 64);
             this.buttonListaSkladnikow.TabIndex = 5;
@@ -243,11 +255,32 @@
             this.buttonListaSkladnikow.UseVisualStyleBackColor = true;
             this.buttonListaSkladnikow.Click += new System.EventHandler(this.buttonListaSkladnikow_Click);
             // 
+            // textBoxSzukaj
+            // 
+            this.textBoxSzukaj.Location = new System.Drawing.Point(13, 34);
+            this.textBoxSzukaj.Name = "textBoxSzukaj";
+            this.textBoxSzukaj.Size = new System.Drawing.Size(471, 20);
+            this.textBoxSzukaj.TabIndex = 6;
+            this.textBoxSzukaj.TextChanged += new System.EventHandler(this.textBoxSzukaj_TextChanged);
+            // 
+            // checkBoxUlubione
+            // 
+            this.checkBoxUlubione.AutoSize = true;
+            this.checkBoxUlubione.Location = new System.Drawing.Point(490, 36);
+            this.checkBoxUlubione.Name = "checkBoxUlubione";
+            this.checkBoxUlubione.Size = new System.Drawing.Size(68, 17);
+            this.checkBoxUlubione.TabIndex = 8;
+            this.checkBoxUlubione.Text = "Ulubione";
+            this.checkBoxUlubione.UseVisualStyleBackColor = true;
+            this.checkBoxUlubione.CheckedChanged += new System.EventHandler(this.checkBoxUlubione_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 494);
+            this.ClientSize = new System.Drawing.Size(950, 456);
+            this.Controls.Add(this.checkBoxUlubione);
+            this.Controls.Add(this.textBoxSzukaj);
             this.Controls.Add(this.buttonListaSkladnikow);
             this.Controls.Add(this.dataGridViewListaPrzepisow);
             this.Controls.Add(this.groupBoxSzczegolyPrzepisu);
@@ -264,6 +297,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void DodajUsunUlubione_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -288,6 +326,8 @@
         private System.Windows.Forms.ToolStripMenuItem zarzadzajToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wyjdźToolStripMenuItem;
         private System.Windows.Forms.Button buttonListaSkladnikow;
+        private System.Windows.Forms.TextBox textBoxSzukaj;
+        private System.Windows.Forms.CheckBox checkBoxUlubione;
     }
 }
 
