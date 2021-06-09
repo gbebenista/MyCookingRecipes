@@ -35,6 +35,7 @@
             this.buttonDodajNowyPrzepis = new System.Windows.Forms.Button();
             this.buttonModyfikujPrzepis = new System.Windows.Forms.Button();
             this.buttonUsunPrzepis = new System.Windows.Forms.Button();
+            this.buttonZamknij = new System.Windows.Forms.Button();
             this.groupBoxListaPrzepisow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrzepisyOknoLista)).BeginInit();
             this.SuspendLayout();
@@ -87,7 +88,7 @@
             // 
             this.buttonDodajNowyPrzepis.Location = new System.Drawing.Point(8, 9);
             this.buttonDodajNowyPrzepis.Name = "buttonDodajNowyPrzepis";
-            this.buttonDodajNowyPrzepis.Size = new System.Drawing.Size(197, 23);
+            this.buttonDodajNowyPrzepis.Size = new System.Drawing.Size(140, 23);
             this.buttonDodajNowyPrzepis.TabIndex = 1;
             this.buttonDodajNowyPrzepis.Text = "Dodaj nowy przepis";
             this.buttonDodajNowyPrzepis.UseVisualStyleBackColor = true;
@@ -95,9 +96,9 @@
             // 
             // buttonModyfikujPrzepis
             // 
-            this.buttonModyfikujPrzepis.Location = new System.Drawing.Point(211, 9);
+            this.buttonModyfikujPrzepis.Location = new System.Drawing.Point(154, 9);
             this.buttonModyfikujPrzepis.Name = "buttonModyfikujPrzepis";
-            this.buttonModyfikujPrzepis.Size = new System.Drawing.Size(201, 23);
+            this.buttonModyfikujPrzepis.Size = new System.Drawing.Size(171, 23);
             this.buttonModyfikujPrzepis.TabIndex = 2;
             this.buttonModyfikujPrzepis.Text = "Modyfikuj zaznaczony przepis";
             this.buttonModyfikujPrzepis.UseVisualStyleBackColor = true;
@@ -105,19 +106,30 @@
             // 
             // buttonUsunPrzepis
             // 
-            this.buttonUsunPrzepis.Location = new System.Drawing.Point(418, 9);
+            this.buttonUsunPrzepis.Location = new System.Drawing.Point(331, 9);
             this.buttonUsunPrzepis.Name = "buttonUsunPrzepis";
-            this.buttonUsunPrzepis.Size = new System.Drawing.Size(176, 23);
+            this.buttonUsunPrzepis.Size = new System.Drawing.Size(138, 23);
             this.buttonUsunPrzepis.TabIndex = 3;
             this.buttonUsunPrzepis.Text = "Usuń zaznaczony przepis";
             this.buttonUsunPrzepis.UseVisualStyleBackColor = true;
             this.buttonUsunPrzepis.Click += new System.EventHandler(this.buttonUsunPrzepis_Click);
+            // 
+            // buttonZamknij
+            // 
+            this.buttonZamknij.Location = new System.Drawing.Point(475, 9);
+            this.buttonZamknij.Name = "buttonZamknij";
+            this.buttonZamknij.Size = new System.Drawing.Size(113, 23);
+            this.buttonZamknij.TabIndex = 4;
+            this.buttonZamknij.Text = "Wyjdź";
+            this.buttonZamknij.UseVisualStyleBackColor = true;
+            this.buttonZamknij.Click += new System.EventHandler(this.buttonZamknij_Click);
             // 
             // PrzepisyOkno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(606, 445);
+            this.Controls.Add(this.buttonZamknij);
             this.Controls.Add(this.buttonUsunPrzepis);
             this.Controls.Add(this.buttonModyfikujPrzepis);
             this.Controls.Add(this.buttonDodajNowyPrzepis);
@@ -141,5 +153,6 @@
         private System.Windows.Forms.Button buttonDodajNowyPrzepis;
         private System.Windows.Forms.Button buttonModyfikujPrzepis;
         private System.Windows.Forms.Button buttonUsunPrzepis;
+        private System.Windows.Forms.Button buttonZamknij;
     }
 }

@@ -80,5 +80,10 @@ namespace MyCookingRecipes
                 MessageBox.Show("Wystąpił błąd podczas usuwania przepisu");
             }
         }
+
+        private void buttonZamknij_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

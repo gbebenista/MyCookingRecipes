@@ -96,7 +96,8 @@ namespace MyCookingRecipes
 
         private void buttonDodajUlubiony_Click(object sender, EventArgs e)
         {
-
+            DodajUlubioneOkno dodajUlubioneOkno = new DodajUlubioneOkno();
+            dodajUlubioneOkno.ShowDialog();
         }
     }
 }
