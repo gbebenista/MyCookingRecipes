@@ -229,8 +229,14 @@ namespace MyCookingRecipes
             {
                 using (DatabaseContext db = new DatabaseContext())
                 {
+                    List<Ulubione> noweUlubione = new List<Ulubione>();
+                    
 
-                    var q = (from dwp in db.DataWybraniaPrzepisow
+                    var ulub = (from ulu in db.Ulubione
+                                where ulu.CzySystemDodal == false
+                                select ulu.Przepis.PrzepisyId
+                                ).ToList();
+                    var kompulu = (from dwp in db.DataWybraniaPrzepisow
                              where dwp.DataWybrania > DateTime.Today.AddDays(-30)
                              group dwp by dwp.Przepisy.PrzepisyId into g
                             
@@ -240,13 +246,29 @@ namespace MyCookingRecipes
                                  Ilosc = g.Count()
                              }
                              ).OrderByDescending(i => i.Ilosc).ThenBy(j => j.Key).Take(5).ToList();
-                   // Console.WriteLine(q);
+
+
+                    var xx = kompulu.Select(e => e.Key).Where(e => !ulub.Contains(e)).ToList();
+
+                    foreach (var i in xx)
+                    {
+                        noweUlubione.Add(new Ulubione
+                        {
+                            Przepis = db.Przepisy.Find(i),
+                            CzySystemDodal = false
+                        });
+                    }
+
+                    db.RemoveRange(db.Ulubione.Where(u => u.CzySystemDodal == true).ToList());
+                    db.AddRange(noweUlubione);
+                    db.SaveChanges();
+                    //Console.WriteLine(xx);
                 }
 
             }
             catch (Exception)
             {
-                MessageBox.Show("Wystąpił problem ze stworzeniem listy składników.");
+                MessageBox.Show("Wystąpił problem podczas dodawania przepisów do ulubionych .");
 
 
             }
