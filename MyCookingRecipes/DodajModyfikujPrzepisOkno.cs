@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -84,9 +85,9 @@ namespace MyCookingRecipes
                             {
                                 SkladnikWPrzepisie skladnikWPrzepisie = new SkladnikWPrzepisie
                                 {
-                                    Ilosc = (int)row.Cells[3].Value,
+                                    Ilosc = (decimal)row.Cells[3].Value,
                                     Przepis = nowyprzepis,
-                                    Skladnik = db.Skladniki.Where(s => s.SkladnikiId == (int)row.Cells[2].Value).First()
+                                    Skladnik = db.Skladniki.Include(s => s.RodzajIlosciSkladnika).Where(s => s.SkladnikiId == (int)row.Cells[1].Value).First()
                                 };
                                 db.Add(skladnikWPrzepisie);
                             }
@@ -109,6 +110,7 @@ namespace MyCookingRecipes
                                 };
                                 db.Add(nowyulubiony);
                             }
+                            
                             db.SaveChanges();
                            
                             break;
@@ -129,9 +131,9 @@ namespace MyCookingRecipes
                     this.Close();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Wystąpił błąd podczas dodawania/edycji przepisu.");
+                MessageBox.Show("Wystąpił błąd podczas dodawania/edycji przepisu.", ex.InnerException.ToString());
             }
         }
 
