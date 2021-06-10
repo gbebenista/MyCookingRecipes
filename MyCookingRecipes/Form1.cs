@@ -13,11 +13,6 @@ namespace MyCookingRecipes
     public partial class Form1 : Form
     {
 
-        //private ContextMenuStrip contextMenuStrip;
-        //private ToolStripMenuItem modyfikujPrzepis = new ToolStripMenuItem();
-        //private ToolStripMenuItem usunPrzepis = new ToolStripMenuItem();
-        //private ToolStripMenuItem dodajUsunUlubione = new ToolStripMenuItem();
-
         public Form1()
         {
             InitializeComponent();
@@ -48,6 +43,7 @@ namespace MyCookingRecipes
         {
             PrzepisyOkno przepisyOkno = new PrzepisyOkno();
             przepisyOkno.ShowDialog();
+            if (przepisyOkno.DialogResult == DialogResult.OK) LoadDefaultDataGridView();
         }
 
         private void dodajUsuńToolStripMenuItem_Click(object sender, EventArgs e)
@@ -186,7 +182,25 @@ namespace MyCookingRecipes
 
         private void usunPrzepisToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            try
+            {
+                using (DatabaseContext db = new DatabaseContext())
+                {
+                    DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć ten przepis?", "Usuwanie przepisu", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        db.UsunPrzepis((int)dataGridViewListaPrzepisow.CurrentRow.Cells[0].Value);
 
+                        MessageBox.Show("Usunięto przepis.");
+
+                        LoadDefaultDataGridView();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Wystąpił problem podczas usuwania przepisu.", ex.InnerException.ToString());
+            }
         }
 
         private void dodajUsunDoUlubionychToolStripMenuItem_Click(object sender, EventArgs e)
@@ -201,7 +215,7 @@ namespace MyCookingRecipes
                     {
                         db.Remove(db.Ulubione.Where(u => u.Przepis.PrzepisyId == (int)dataGridViewListaPrzepisow.CurrentRow.Cells[0].Value).First());
                         db.SaveChanges();
-                        MessageBox.Show(String.Format("Usunięto przepis:{0}", dataGridViewListaPrzepisow.CurrentRow.Cells[1]));
+                        MessageBox.Show(String.Format("Usunięto przepis:{0}", dataGridViewListaPrzepisow.CurrentRow.Cells[1].Value));
                     }
                     else
                     {

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBoxListaPrzepisow = new System.Windows.Forms.GroupBox();
-            this.buttonSzukajPrzepis = new System.Windows.Forms.Button();
             this.textBoxSzukajPrzepis = new System.Windows.Forms.TextBox();
             this.dataGridViewPrzepisyOknoLista = new System.Windows.Forms.DataGridView();
             this.buttonDodajNowyPrzepis = new System.Windows.Forms.Button();
@@ -42,7 +41,6 @@
             // 
             // groupBoxListaPrzepisow
             // 
-            this.groupBoxListaPrzepisow.Controls.Add(this.buttonSzukajPrzepis);
             this.groupBoxListaPrzepisow.Controls.Add(this.textBoxSzukajPrzepis);
             this.groupBoxListaPrzepisow.Controls.Add(this.dataGridViewPrzepisyOknoLista);
             this.groupBoxListaPrzepisow.Location = new System.Drawing.Point(8, 38);
@@ -52,22 +50,13 @@
             this.groupBoxListaPrzepisow.TabStop = false;
             this.groupBoxListaPrzepisow.Text = "Lista przepisów";
             // 
-            // buttonSzukajPrzepis
-            // 
-            this.buttonSzukajPrzepis.Location = new System.Drawing.Point(421, 20);
-            this.buttonSzukajPrzepis.Name = "buttonSzukajPrzepis";
-            this.buttonSzukajPrzepis.Size = new System.Drawing.Size(159, 23);
-            this.buttonSzukajPrzepis.TabIndex = 2;
-            this.buttonSzukajPrzepis.Text = "Szukaj";
-            this.buttonSzukajPrzepis.UseVisualStyleBackColor = true;
-            this.buttonSzukajPrzepis.Click += new System.EventHandler(this.buttonSzukajPrzepis_Click);
-            // 
             // textBoxSzukajPrzepis
             // 
             this.textBoxSzukajPrzepis.Location = new System.Drawing.Point(7, 22);
             this.textBoxSzukajPrzepis.Name = "textBoxSzukajPrzepis";
-            this.textBoxSzukajPrzepis.Size = new System.Drawing.Size(408, 20);
+            this.textBoxSzukajPrzepis.Size = new System.Drawing.Size(573, 20);
             this.textBoxSzukajPrzepis.TabIndex = 1;
+            this.textBoxSzukajPrzepis.TextChanged += new System.EventHandler(this.textBoxSzukajPrzepis_TextChanged);
             // 
             // dataGridViewPrzepisyOknoLista
             // 
@@ -79,11 +68,13 @@
             this.dataGridViewPrzepisyOknoLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPrzepisyOknoLista.Location = new System.Drawing.Point(7, 48);
             this.dataGridViewPrzepisyOknoLista.Name = "dataGridViewPrzepisyOknoLista";
+            this.dataGridViewPrzepisyOknoLista.ReadOnly = true;
             this.dataGridViewPrzepisyOknoLista.RowHeadersVisible = false;
             this.dataGridViewPrzepisyOknoLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewPrzepisyOknoLista.Size = new System.Drawing.Size(573, 337);
             this.dataGridViewPrzepisyOknoLista.TabIndex = 0;
             this.dataGridViewPrzepisyOknoLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPrzepisyOknoLista_CellContentClick);
+            this.dataGridViewPrzepisyOknoLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPrzepisyOknoLista_CellDoubleClick);
             // 
             // buttonDodajNowyPrzepis
             // 
@@ -149,7 +140,6 @@
 
         private System.Windows.Forms.GroupBox groupBoxListaPrzepisow;
         private System.Windows.Forms.DataGridView dataGridViewPrzepisyOknoLista;
-        private System.Windows.Forms.Button buttonSzukajPrzepis;
         private System.Windows.Forms.TextBox textBoxSzukajPrzepis;
         private System.Windows.Forms.Button buttonDodajNowyPrzepis;
         private System.Windows.Forms.Button buttonModyfikujPrzepis;

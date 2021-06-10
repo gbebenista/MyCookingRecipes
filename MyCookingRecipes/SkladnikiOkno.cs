@@ -149,12 +149,13 @@ namespace MyCookingRecipes
 
         private void buttonZamknijOkno_Click(object sender, EventArgs e)
         {
+            buttonZamknijOkno.DialogResult = DialogResult.OK;
             this.Close();
         }
 
         private void SkladnikiOkno_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            buttonZamknijOkno.DialogResult = DialogResult.OK;
         }
 
         private void dataGridViewListaSkladnikow_CellContentClick(object sender, DataGridViewCellEventArgs e)

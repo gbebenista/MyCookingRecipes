@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewSkladnikiWPrzepisie = new System.Windows.Forms.DataGridView();
+            this.dataGridViewSkladniki = new System.Windows.Forms.DataGridView();
             this.groupBoxListaSkladnikow = new System.Windows.Forms.GroupBox();
-            this.buttonSzukajSkladniki = new System.Windows.Forms.Button();
             this.textBoxSzukajSkladniki = new System.Windows.Forms.TextBox();
             this.groupBoxDodajSkladnikWPrzepisie = new System.Windows.Forms.GroupBox();
             this.labelRodzajIlosciNazwa = new System.Windows.Forms.Label();
@@ -42,29 +41,35 @@
             this.labelWybranySkladnik = new System.Windows.Forms.Label();
             this.buttonSkladnikiOkno = new System.Windows.Forms.Button();
             this.buttonWyjdz = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSkladnikiWPrzepisie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSkladniki)).BeginInit();
             this.groupBoxListaSkladnikow.SuspendLayout();
             this.groupBoxDodajSkladnikWPrzepisie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIlosc)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridViewSkladnikiWPrzepisie
+            // dataGridViewSkladniki
             // 
-            this.dataGridViewSkladnikiWPrzepisie.AllowUserToAddRows = false;
-            this.dataGridViewSkladnikiWPrzepisie.AllowUserToDeleteRows = false;
-            this.dataGridViewSkladnikiWPrzepisie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSkladnikiWPrzepisie.Location = new System.Drawing.Point(6, 46);
-            this.dataGridViewSkladnikiWPrzepisie.Name = "dataGridViewSkladnikiWPrzepisie";
-            this.dataGridViewSkladnikiWPrzepisie.ReadOnly = true;
-            this.dataGridViewSkladnikiWPrzepisie.Size = new System.Drawing.Size(398, 261);
-            this.dataGridViewSkladnikiWPrzepisie.TabIndex = 0;
-            this.dataGridViewSkladnikiWPrzepisie.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSkladnikiWPrzepisie_CellContentClick);
+            this.dataGridViewSkladniki.AllowUserToAddRows = false;
+            this.dataGridViewSkladniki.AllowUserToDeleteRows = false;
+            this.dataGridViewSkladniki.AllowUserToResizeColumns = false;
+            this.dataGridViewSkladniki.AllowUserToResizeRows = false;
+            this.dataGridViewSkladniki.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewSkladniki.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSkladniki.Location = new System.Drawing.Point(6, 46);
+            this.dataGridViewSkladniki.MultiSelect = false;
+            this.dataGridViewSkladniki.Name = "dataGridViewSkladniki";
+            this.dataGridViewSkladniki.ReadOnly = true;
+            this.dataGridViewSkladniki.RowHeadersVisible = false;
+            this.dataGridViewSkladniki.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewSkladniki.Size = new System.Drawing.Size(398, 261);
+            this.dataGridViewSkladniki.TabIndex = 0;
+            this.dataGridViewSkladniki.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSkladniki_CellClick);
+            this.dataGridViewSkladniki.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSkladnikiWPrzepisie_CellContentClick);
             // 
             // groupBoxListaSkladnikow
             // 
-            this.groupBoxListaSkladnikow.Controls.Add(this.buttonSzukajSkladniki);
             this.groupBoxListaSkladnikow.Controls.Add(this.textBoxSzukajSkladniki);
-            this.groupBoxListaSkladnikow.Controls.Add(this.dataGridViewSkladnikiWPrzepisie);
+            this.groupBoxListaSkladnikow.Controls.Add(this.dataGridViewSkladniki);
             this.groupBoxListaSkladnikow.Location = new System.Drawing.Point(13, 13);
             this.groupBoxListaSkladnikow.Name = "groupBoxListaSkladnikow";
             this.groupBoxListaSkladnikow.Size = new System.Drawing.Size(410, 318);
@@ -72,21 +77,13 @@
             this.groupBoxListaSkladnikow.TabStop = false;
             this.groupBoxListaSkladnikow.Text = "Lista składników";
             // 
-            // buttonSzukajSkladniki
-            // 
-            this.buttonSzukajSkladniki.Location = new System.Drawing.Point(295, 20);
-            this.buttonSzukajSkladniki.Name = "buttonSzukajSkladniki";
-            this.buttonSzukajSkladniki.Size = new System.Drawing.Size(109, 20);
-            this.buttonSzukajSkladniki.TabIndex = 2;
-            this.buttonSzukajSkladniki.Text = "Szukaj";
-            this.buttonSzukajSkladniki.UseVisualStyleBackColor = true;
-            // 
             // textBoxSzukajSkladniki
             // 
             this.textBoxSzukajSkladniki.Location = new System.Drawing.Point(7, 20);
             this.textBoxSzukajSkladniki.Name = "textBoxSzukajSkladniki";
-            this.textBoxSzukajSkladniki.Size = new System.Drawing.Size(281, 20);
+            this.textBoxSzukajSkladniki.Size = new System.Drawing.Size(397, 20);
             this.textBoxSzukajSkladniki.TabIndex = 1;
+            this.textBoxSzukajSkladniki.TextChanged += new System.EventHandler(this.textBoxSzukajSkladniki_TextChanged);
             // 
             // groupBoxDodajSkladnikWPrzepisie
             // 
@@ -130,6 +127,7 @@
             this.buttonDodajDoPrzepisu.TabIndex = 4;
             this.buttonDodajDoPrzepisu.Text = "Dodaj do przepisu";
             this.buttonDodajDoPrzepisu.UseVisualStyleBackColor = true;
+            this.buttonDodajDoPrzepisu.Click += new System.EventHandler(this.buttonDodajDoPrzepisu_Click);
             // 
             // numericUpDownIlosc
             // 
@@ -173,6 +171,7 @@
             this.buttonSkladnikiOkno.TabIndex = 3;
             this.buttonSkladnikiOkno.Text = "Zarządzaj składnikami";
             this.buttonSkladnikiOkno.UseVisualStyleBackColor = true;
+            this.buttonSkladnikiOkno.Click += new System.EventHandler(this.buttonSkladnikiOkno_Click);
             // 
             // buttonWyjdz
             // 
@@ -182,6 +181,7 @@
             this.buttonWyjdz.TabIndex = 4;
             this.buttonWyjdz.Text = "Wyjdź";
             this.buttonWyjdz.UseVisualStyleBackColor = true;
+            this.buttonWyjdz.Click += new System.EventHandler(this.buttonWyjdz_Click);
             // 
             // SkladnikiWPrzepisieOkno
             // 
@@ -194,7 +194,8 @@
             this.Controls.Add(this.groupBoxListaSkladnikow);
             this.Name = "SkladnikiWPrzepisieOkno";
             this.Text = "SkladnikiWPrzepisieOkno";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSkladnikiWPrzepisie)).EndInit();
+            this.Load += new System.EventHandler(this.SkladnikiWPrzepisieOkno_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSkladniki)).EndInit();
             this.groupBoxListaSkladnikow.ResumeLayout(false);
             this.groupBoxListaSkladnikow.PerformLayout();
             this.groupBoxDodajSkladnikWPrzepisie.ResumeLayout(false);
@@ -206,9 +207,8 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridViewSkladnikiWPrzepisie;
+        private System.Windows.Forms.DataGridView dataGridViewSkladniki;
         private System.Windows.Forms.GroupBox groupBoxListaSkladnikow;
-        private System.Windows.Forms.Button buttonSzukajSkladniki;
         private System.Windows.Forms.TextBox textBoxSzukajSkladniki;
         private System.Windows.Forms.GroupBox groupBoxDodajSkladnikWPrzepisie;
         private System.Windows.Forms.Label labelRodzajIlosciNazwa;

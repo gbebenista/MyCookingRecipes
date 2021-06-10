@@ -45,7 +45,51 @@ namespace MyCookingRecipes
             dodajModyfikujPrzepisOkno.ShowDialog();
         }
 
-        private void buttonSzukajPrzepis_Click(object sender, EventArgs e)
+
+        private void buttonModyfikujPrzepis_Click(object sender, EventArgs e)
+        {
+            DodajModyfikujPrzepisOkno dodajModyfikujPrzepisOkno = new DodajModyfikujPrzepisOkno((int?)dataGridViewPrzepisyOknoLista.CurrentRow.Cells[0].Value);
+            dodajModyfikujPrzepisOkno.ShowDialog();
+        }
+
+        private void buttonUsunPrzepis_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (DatabaseContext db = new DatabaseContext())
+                {
+                    DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć ten przepis?", "Usuwanie przepisu", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+
+                        db.UsunPrzepis((int)dataGridViewPrzepisyOknoLista.CurrentRow.Cells[0].Value);
+
+                        MessageBox.Show("Usunięto przepis. Okno zostanie zamknięte.");
+
+                        Form1 glowneokno = (Form1)Application.OpenForms["Form1"];
+                        glowneokno.LoadDefaultDataGridView();
+                        this.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Wystąpił problem podczas usuwania przepisu.", ex.InnerException.ToString());
+            }
+        }
+
+        private void buttonZamknij_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            buttonZamknij.DialogResult = DialogResult.OK;
+        }
+
+        private void dataGridViewPrzepisyOknoLista_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+        }
+
+        private void textBoxSzukajPrzepis_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -60,35 +104,10 @@ namespace MyCookingRecipes
             }
         }
 
-        private void buttonModyfikujPrzepis_Click(object sender, EventArgs e)
+        private void dataGridViewPrzepisyOknoLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DodajModyfikujPrzepisOkno dodajModyfikujPrzepisOkno = new DodajModyfikujPrzepisOkno((int?)dataGridViewPrzepisyOknoLista.CurrentRow.Cells[0].Value);
             dodajModyfikujPrzepisOkno.ShowDialog();
-        }
-
-        private void buttonUsunPrzepis_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (DatabaseContext db = new DatabaseContext())
-                {
-                    
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Wystąpił błąd podczas usuwania przepisu");
-            }
-        }
-
-        private void buttonZamknij_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void dataGridViewPrzepisyOknoLista_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex == -1) return;
         }
     }
 }

@@ -33,9 +33,7 @@
             this.buttonUsunPrzepis = new System.Windows.Forms.Button();
             this.buttonModyfikujPrzepis = new System.Windows.Forms.Button();
             this.groupBoxKrokiPrzepisu = new System.Windows.Forms.GroupBox();
-            this.listBoxKrokiPrzepisu = new System.Windows.Forms.ListBox();
             this.groupBoxListaSkladnikow = new System.Windows.Forms.GroupBox();
-            this.listBoxListaSkladnikow = new System.Windows.Forms.ListBox();
             this.labelUlubioneTytul = new System.Windows.Forms.Label();
             this.labelIloscPorcjiTytul = new System.Windows.Forms.Label();
             this.labelCzyUlubione = new System.Windows.Forms.Label();
@@ -43,6 +41,8 @@
             this.labelIloscPorcji = new System.Windows.Forms.Label();
             this.labelCzasPrzygotowania = new System.Windows.Forms.Label();
             this.labelNazwaPrzepisu = new System.Windows.Forms.Label();
+            this.listViewListaSkladnikow = new System.Windows.Forms.ListView();
+            this.listViewKrokiPrzepisu = new System.Windows.Forms.ListView();
             this.groupBoxSzegolyPrzepisu.SuspendLayout();
             this.groupBoxKrokiPrzepisu.SuspendLayout();
             this.groupBoxListaSkladnikow.SuspendLayout();
@@ -101,7 +101,7 @@
             // 
             // groupBoxKrokiPrzepisu
             // 
-            this.groupBoxKrokiPrzepisu.Controls.Add(this.listBoxKrokiPrzepisu);
+            this.groupBoxKrokiPrzepisu.Controls.Add(this.listViewKrokiPrzepisu);
             this.groupBoxKrokiPrzepisu.Location = new System.Drawing.Point(6, 343);
             this.groupBoxKrokiPrzepisu.Name = "groupBoxKrokiPrzepisu";
             this.groupBoxKrokiPrzepisu.Size = new System.Drawing.Size(538, 227);
@@ -109,31 +109,15 @@
             this.groupBoxKrokiPrzepisu.TabStop = false;
             this.groupBoxKrokiPrzepisu.Text = "Kroki przygotowania przepisu";
             // 
-            // listBoxKrokiPrzepisu
-            // 
-            this.listBoxKrokiPrzepisu.FormattingEnabled = true;
-            this.listBoxKrokiPrzepisu.Location = new System.Drawing.Point(6, 19);
-            this.listBoxKrokiPrzepisu.Name = "listBoxKrokiPrzepisu";
-            this.listBoxKrokiPrzepisu.Size = new System.Drawing.Size(526, 199);
-            this.listBoxKrokiPrzepisu.TabIndex = 0;
-            // 
             // groupBoxListaSkladnikow
             // 
-            this.groupBoxListaSkladnikow.Controls.Add(this.listBoxListaSkladnikow);
+            this.groupBoxListaSkladnikow.Controls.Add(this.listViewListaSkladnikow);
             this.groupBoxListaSkladnikow.Location = new System.Drawing.Point(6, 135);
             this.groupBoxListaSkladnikow.Name = "groupBoxListaSkladnikow";
             this.groupBoxListaSkladnikow.Size = new System.Drawing.Size(538, 202);
             this.groupBoxListaSkladnikow.TabIndex = 4;
             this.groupBoxListaSkladnikow.TabStop = false;
             this.groupBoxListaSkladnikow.Text = "Lista składników";
-            // 
-            // listBoxListaSkladnikow
-            // 
-            this.listBoxListaSkladnikow.FormattingEnabled = true;
-            this.listBoxListaSkladnikow.Location = new System.Drawing.Point(6, 19);
-            this.listBoxListaSkladnikow.Name = "listBoxListaSkladnikow";
-            this.listBoxListaSkladnikow.Size = new System.Drawing.Size(526, 173);
-            this.listBoxListaSkladnikow.TabIndex = 3;
             // 
             // labelUlubioneTytul
             // 
@@ -199,6 +183,22 @@
             this.labelNazwaPrzepisu.TabIndex = 1;
             this.labelNazwaPrzepisu.Text = "label1";
             // 
+            // listViewListaSkladnikow
+            // 
+            this.listViewListaSkladnikow.Location = new System.Drawing.Point(6, 20);
+            this.listViewListaSkladnikow.Name = "listViewListaSkladnikow";
+            this.listViewListaSkladnikow.Size = new System.Drawing.Size(526, 176);
+            this.listViewListaSkladnikow.TabIndex = 0;
+            this.listViewListaSkladnikow.UseCompatibleStateImageBehavior = false;
+            // 
+            // listViewKrokiPrzepisu
+            // 
+            this.listViewKrokiPrzepisu.Location = new System.Drawing.Point(6, 19);
+            this.listViewKrokiPrzepisu.Name = "listViewKrokiPrzepisu";
+            this.listViewKrokiPrzepisu.Size = new System.Drawing.Size(526, 202);
+            this.listViewKrokiPrzepisu.TabIndex = 0;
+            this.listViewKrokiPrzepisu.UseCompatibleStateImageBehavior = false;
+            // 
             // PrzepisSzczegolyOkno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,11 +226,11 @@
         private System.Windows.Forms.Label labelUlubioneTytul;
         private System.Windows.Forms.Label labelCzyUlubione;
         private System.Windows.Forms.GroupBox groupBoxKrokiPrzepisu;
-        private System.Windows.Forms.ListBox listBoxKrokiPrzepisu;
         private System.Windows.Forms.GroupBox groupBoxListaSkladnikow;
-        private System.Windows.Forms.ListBox listBoxListaSkladnikow;
         private System.Windows.Forms.Button buttonZamknijOkno;
         private System.Windows.Forms.Button buttonUsunPrzepis;
         private System.Windows.Forms.Button buttonModyfikujPrzepis;
+        private System.Windows.Forms.ListView listViewKrokiPrzepisu;
+        private System.Windows.Forms.ListView listViewListaSkladnikow;
     }
 }
