@@ -51,7 +51,7 @@
             this.groupBoxListaPrzepisow.Size = new System.Drawing.Size(433, 425);
             this.groupBoxListaPrzepisow.TabIndex = 0;
             this.groupBoxListaPrzepisow.TabStop = false;
-            this.groupBoxListaPrzepisow.Text = "groupBox1";
+            this.groupBoxListaPrzepisow.Text = "Lista przepisów";
             // 
             // dataGridViewListaPrzepisow
             // 
@@ -86,7 +86,7 @@
             this.groupBoxSkladnikiNaPotrawy.Size = new System.Drawing.Size(395, 386);
             this.groupBoxSkladnikiNaPotrawy.TabIndex = 1;
             this.groupBoxSkladnikiNaPotrawy.TabStop = false;
-            this.groupBoxSkladnikiNaPotrawy.Text = "groupBox2";
+            this.groupBoxSkladnikiNaPotrawy.Text = "Składniki na potrawy";
             // 
             // dataGridViewListaSkladnikow
             // 

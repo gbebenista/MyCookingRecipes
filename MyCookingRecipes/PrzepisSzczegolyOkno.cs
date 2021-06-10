@@ -35,10 +35,8 @@ namespace MyCookingRecipes
                     if (db.Ulubione.Where(u => u.Przepis.PrzepisyId == PrzepisId).Any()) labelCzyUlubione.Text = "Tak";
                     else labelCzyUlubione.Text = "Nie";
 
-                    listBoxListaSkladnikow.DataSource = przepis.SkladnikiWPrzepisie.Select(p => new { p.Skladnik.NazwaSkladnika }).ToList();
-                    listBoxListaSkladnikow.DisplayMember = "NazwaSkladnika";
-                    listBoxKrokiPrzepisu.DataSource = przepis.KrokiPrzygotowaniaPrzepisow.Select(k => new { k.Opis }).ToList();
-                    listBoxKrokiPrzepisu.DisplayMember = "Opis";
+                    //listViewListaSkladnikow.Items.AddRange(przepis.SkladnikiWPrzepisie.Select(p => new { p.Skladnik.NazwaSkladnika }).ToList());
+                    //listViewKrokiPrzepisu.Items.AddRange(przepis.KrokiPrzygotowaniaPrzepisow.Select(k => new { k.Opis }).ToList());
                 }
             }
             catch (Exception)
@@ -67,13 +65,8 @@ namespace MyCookingRecipes
                     DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć ten przepis?", "Usuwanie przepisu", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        //nie działa
-                        db.Ulubione.Remove(db.Ulubione.Where(u => u.Przepis.PrzepisyId == PrzepisId).First());
-                        db.DataWybraniaPrzepisow.RemoveRange(db.DataWybraniaPrzepisow.Where(dwp => dwp.Przepisy.PrzepisyId == PrzepisId));
-                        db.KrokiPrzygotowaniaPrzepisow.RemoveRange(db.KrokiPrzygotowaniaPrzepisow.Where(kpp => kpp.Przepisy.PrzepisyId == PrzepisId));
-                        db.SkladnikiWPrzepisach.RemoveRange(db.SkladnikiWPrzepisach.Where(swp => swp.Przepis.PrzepisyId == PrzepisId));
-                        db.Przepisy.Remove(db.Przepisy.Where(p => p.PrzepisyId == PrzepisId).First());
-                        db.SaveChanges();
+
+                        db.UsunPrzepis(PrzepisId);
 
                         MessageBox.Show("Usunięto przepis. Okno zostanie zamknięte.");
 

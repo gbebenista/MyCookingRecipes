@@ -58,6 +58,7 @@
             this.dataGridViewListaKrokowPrzepisu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewListaKrokowPrzepisu.Size = new System.Drawing.Size(683, 234);
             this.dataGridViewListaKrokowPrzepisu.TabIndex = 0;
+            this.dataGridViewListaKrokowPrzepisu.DataSourceChanged += new System.EventHandler(this.dataGridViewListaKrokowPrzepisu_DataSourceChanged);
             this.dataGridViewListaKrokowPrzepisu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaKrokowPrzepisu_CellContentClick);
             // 
             // groupBoxListaKrokowPrzepisu
@@ -80,6 +81,7 @@
             this.buttonZamknij.TabIndex = 2;
             this.buttonZamknij.Text = "Wyjdź";
             this.buttonZamknij.UseVisualStyleBackColor = true;
+            this.buttonZamknij.Click += new System.EventHandler(this.buttonZamknij_Click);
             // 
             // buttonUsunKrokiPrzepisu
             // 
@@ -89,6 +91,7 @@
             this.buttonUsunKrokiPrzepisu.TabIndex = 1;
             this.buttonUsunKrokiPrzepisu.Text = "Usuń zaznaczone kroki przepisu..";
             this.buttonUsunKrokiPrzepisu.UseVisualStyleBackColor = true;
+            this.buttonUsunKrokiPrzepisu.Click += new System.EventHandler(this.buttonUsunKrokiPrzepisu_Click);
             // 
             // groupBoxDodajKrokPrzepisu
             // 
@@ -112,13 +115,24 @@
             this.buttonDodajKrokPrzepisu.TabIndex = 4;
             this.buttonDodajKrokPrzepisu.Text = "Dodaj krok przepisu";
             this.buttonDodajKrokPrzepisu.UseVisualStyleBackColor = true;
+            this.buttonDodajKrokPrzepisu.Click += new System.EventHandler(this.buttonDodajKrokPrzepisu_Click);
             // 
             // numericUpDownKolejnoscWPrzepisie
             // 
             this.numericUpDownKolejnoscWPrzepisie.Location = new System.Drawing.Point(519, 39);
+            this.numericUpDownKolejnoscWPrzepisie.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDownKolejnoscWPrzepisie.Name = "numericUpDownKolejnoscWPrzepisie";
             this.numericUpDownKolejnoscWPrzepisie.Size = new System.Drawing.Size(170, 20);
             this.numericUpDownKolejnoscWPrzepisie.TabIndex = 3;
+            this.numericUpDownKolejnoscWPrzepisie.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // labelKolejnoscWPrzepisie
             // 
@@ -155,6 +169,7 @@
             this.Controls.Add(this.groupBoxListaKrokowPrzepisu);
             this.Name = "KrokiPrzepisuOkno";
             this.Text = "KrokiPrzepisuOkno";
+            this.Load += new System.EventHandler(this.KrokiPrzepisuOkno_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaKrokowPrzepisu)).EndInit();
             this.groupBoxListaKrokowPrzepisu.ResumeLayout(false);
             this.groupBoxDodajKrokPrzepisu.ResumeLayout(false);

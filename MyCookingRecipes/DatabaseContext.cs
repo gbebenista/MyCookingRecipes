@@ -84,32 +84,19 @@ namespace MyCookingRecipes
             }
         }
 
-        //public IEnumerable<Skladniki> PobierzListeSkladnikow()
-        //{
-        //    using (DatabaseContext db = new DatabaseContext())
-        //    {
-        //        var query = Skladniki.Join(
-        //            db.RodzajIlosciSkladnikow,
-        //            skladnik => skladnik.IdRodzajuIlosciSkladnika,
-        //            rodzajskladnika => rodzajskladnika.RodzajIlosciSkladnikaId,
-        //            (skladnik, rodzajskladnika) => new 
-        //            {
-        //                skladnik.SkladnikiId,
-        //                skladnik.NazwaSkladnika,
-        //                rodzajskladnika.Liczebność
-        //            }
-        //            ).ToList();
-        //        return query;
-        //    }
-        //}
-
-        //public List<Ulubione> ListaUlubionych()
-        //{
-        //    using (DatabaseContext db = new DatabaseContext())
-        //    {
-        //        return db.Ulubione.Include(p => p.Przepis).Select(p => new { p.Przepis.NazwaPotrawy }).ToList();
-        //    }
-        //}
+       public void UsunPrzepis(int przepisid)
+        {
+            using(DatabaseContext db = new DatabaseContext())
+            {
+                if (db.Ulubione.Where(u => u.Przepis.PrzepisyId == przepisid).Any())
+                    db.Ulubione.RemoveRange(db.Ulubione.Where(u => u.Przepis.PrzepisyId == przepisid).First());
+                db.DataWybraniaPrzepisow.RemoveRange(db.DataWybraniaPrzepisow.Where(dwp => dwp.Przepisy.PrzepisyId == przepisid).ToList());
+                db.KrokiPrzygotowaniaPrzepisow.RemoveRange(db.KrokiPrzygotowaniaPrzepisow.Where(kpp => kpp.Przepisy.PrzepisyId == przepisid).ToList());
+                db.SkladnikiWPrzepisach.RemoveRange(db.SkladnikiWPrzepisach.Where(swp => swp.Przepis.PrzepisyId == przepisid).ToList());
+                db.Przepisy.RemoveRange(db.Przepisy.Where(p => p.PrzepisyId == przepisid).First());
+                db.SaveChanges();
+            }
+        }
 
     }
 }

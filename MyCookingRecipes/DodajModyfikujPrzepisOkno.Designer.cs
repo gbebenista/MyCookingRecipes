@@ -97,12 +97,14 @@
             // 
             // buttonUsunKrok
             // 
+            this.buttonUsunKrok.Enabled = false;
             this.buttonUsunKrok.Location = new System.Drawing.Point(208, 19);
             this.buttonUsunKrok.Name = "buttonUsunKrok";
             this.buttonUsunKrok.Size = new System.Drawing.Size(189, 23);
             this.buttonUsunKrok.TabIndex = 12;
             this.buttonUsunKrok.Text = "Usuń krok przygotowania..";
             this.buttonUsunKrok.UseVisualStyleBackColor = true;
+            this.buttonUsunKrok.Click += new System.EventHandler(this.buttonUsunKrok_Click);
             // 
             // dataGridViewKrokiPrzygotowania
             // 
@@ -119,7 +121,9 @@
             this.dataGridViewKrokiPrzygotowania.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewKrokiPrzygotowania.Size = new System.Drawing.Size(391, 155);
             this.dataGridViewKrokiPrzygotowania.TabIndex = 9;
+            this.dataGridViewKrokiPrzygotowania.DataSourceChanged += new System.EventHandler(this.dataGridViewKrokiPrzygotowania_DataSourceChanged);
             this.dataGridViewKrokiPrzygotowania.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKrokiPrzygotowania_CellContentClick);
+            this.dataGridViewKrokiPrzygotowania.DoubleClick += new System.EventHandler(this.dataGridViewKrokiPrzygotowania_DoubleClick);
             // 
             // groupBoxSkladniki
             // 
@@ -148,6 +152,7 @@
             this.dataGridViewSkladniki.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSkladniki.Size = new System.Drawing.Size(391, 138);
             this.dataGridViewSkladniki.TabIndex = 7;
+            this.dataGridViewSkladniki.DataSourceChanged += new System.EventHandler(this.dataGridViewSkladniki_DataSourceChanged);
             this.dataGridViewSkladniki.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSkladniki_CellContentClick);
             // 
             // buttonDodajSkladnik
@@ -162,12 +167,14 @@
             // 
             // buttonUsunSkladnik
             // 
+            this.buttonUsunSkladnik.Enabled = false;
             this.buttonUsunSkladnik.Location = new System.Drawing.Point(208, 19);
             this.buttonUsunSkladnik.Name = "buttonUsunSkladnik";
             this.buttonUsunSkladnik.Size = new System.Drawing.Size(189, 23);
             this.buttonUsunSkladnik.TabIndex = 12;
             this.buttonUsunSkladnik.Text = "Usuń składnik..";
             this.buttonUsunSkladnik.UseVisualStyleBackColor = true;
+            this.buttonUsunSkladnik.Click += new System.EventHandler(this.buttonUsunSkladnik_Click);
             // 
             // buttonDodajPrzepis
             // 
@@ -209,6 +216,11 @@
             // numericUpDownIloscPorcji
             // 
             this.numericUpDownIloscPorcji.Location = new System.Drawing.Point(151, 92);
+            this.numericUpDownIloscPorcji.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDownIloscPorcji.Minimum = new decimal(new int[] {
             1,
             0,
@@ -236,6 +248,11 @@
             // numericUpDownCzasPrzygotowania
             // 
             this.numericUpDownCzasPrzygotowania.Location = new System.Drawing.Point(6, 92);
+            this.numericUpDownCzasPrzygotowania.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDownCzasPrzygotowania.Minimum = new decimal(new int[] {
             1,
             0,
@@ -256,6 +273,7 @@
             this.textBoxNazwaPrzepisu.Name = "textBoxNazwaPrzepisu";
             this.textBoxNazwaPrzepisu.Size = new System.Drawing.Size(403, 20);
             this.textBoxNazwaPrzepisu.TabIndex = 0;
+            this.textBoxNazwaPrzepisu.TextChanged += new System.EventHandler(this.textBoxNazwaPrzepisu_TextChanged);
             // 
             // DodajModyfikujPrzepisOkno
             // 
@@ -265,6 +283,7 @@
             this.Controls.Add(this.groupBoxDodajPrzepis);
             this.Name = "DodajModyfikujPrzepisOkno";
             this.Text = "DodajModyfikujPrzepisOkno";
+            this.Load += new System.EventHandler(this.DodajModyfikujPrzepisOkno_Load);
             this.groupBoxDodajPrzepis.ResumeLayout(false);
             this.groupBoxDodajPrzepis.PerformLayout();
             this.groupBoxKrokiPrzygotowania.ResumeLayout(false);
