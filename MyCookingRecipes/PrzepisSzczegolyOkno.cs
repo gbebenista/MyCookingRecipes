@@ -6,18 +6,35 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
+
 
 namespace MyCookingRecipes
 {
     public partial class PrzepisSzczegolyOkno : Form
     {
+        private static System.Timers.Timer aTimer;
+        private const int  liczbaSekund = 60;
+        public void DodajDoDateWykonania()
+        {
+            aTimer = new System.Timers.Timer();
+            aTimer.Interval = 1000 * liczbaSekund;
+            aTimer.Elapsed += OnTimedEvent;
+            aTimer.AutoReset = false;
+            aTimer.Enabled = true;
+
+            Console.WriteLine("Stoper Wyłączony");
+
+        }
+
         public int PrzepisId { get; set; }
 
         public PrzepisSzczegolyOkno(int przepisid)
         {
             InitializeComponent();
             this.PrzepisId = przepisid;
+            DodajDoDateWykonania();
         }
 
         private void PrzepisSzczegolyOkno_Load(object sender, EventArgs e)
@@ -44,7 +61,28 @@ namespace MyCookingRecipes
                 MessageBox.Show("Wystąpił problem podczas ładowania szczegółów przepisu");
             }
         }
+        private void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)
+        {
+            Console.WriteLine("Dodano do wykonanych : ", e.SignalTime);
+            try
+            {
+                using (DatabaseContext db = new DatabaseContext())
+                {
+                    db.Add(new DataWybraniaPrzepisu
+                    {
 
+                        Przepisy = db.Przepisy.Find(PrzepisId),
+                        DataWybrania = DateTime.Today
+                    });
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Wystąpił problem podczas dodawania do listy wykonanych.", ex.InnerException.ToString());
+            }
+
+        }
         private void buttonZamknijOkno_Click(object sender, EventArgs e)
         {
             this.Close();
