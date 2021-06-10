@@ -83,7 +83,9 @@ namespace MyCookingRecipes
                              join skl in db.Skladniki on swk.Skladnik.SkladnikiId equals skl.SkladnikiId
                              join pp in db.Przepisy on swk.Przepis.PrzepisyId equals pp.PrzepisyId
                              join ris in db.RodzajIlosciSkladnikow on swk.Skladnik.RodzajIlosciSkladnika.RodzajIlosciSkladnikaId equals ris.RodzajIlosciSkladnikaId
+                             where swk.Przepis.PrzepisyId == (int)dataGridViewListaPrzepisow.CurrentRow.Cells[0].Value
                              group swk by new { swk.Skladnik.NazwaSkladnika, ris.Liczebność } into g
+                             
                              select new
                              {
 
