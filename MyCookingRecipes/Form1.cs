@@ -13,10 +13,10 @@ namespace MyCookingRecipes
     public partial class Form1 : Form
     {
 
-        private ContextMenuStrip contextMenuStrip;
-        private ToolStripMenuItem modyfikujPrzepis = new ToolStripMenuItem();
-        private ToolStripMenuItem usunPrzepis = new ToolStripMenuItem();
-        private ToolStripMenuItem dodajUsunUlubione = new ToolStripMenuItem();
+        //private ContextMenuStrip contextMenuStrip;
+        //private ToolStripMenuItem modyfikujPrzepis = new ToolStripMenuItem();
+        //private ToolStripMenuItem usunPrzepis = new ToolStripMenuItem();
+        //private ToolStripMenuItem dodajUsunUlubione = new ToolStripMenuItem();
 
         public Form1()
         {
@@ -82,21 +82,6 @@ namespace MyCookingRecipes
 
         }
 
-        private void groupBoxSzczegolyPrzepisu_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridViewListaPrzepisow_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void zarzadzajToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UlubioneOkno ulubioneOkno = new UlubioneOkno();
@@ -121,29 +106,15 @@ namespace MyCookingRecipes
 
             using (DatabaseContext db = new DatabaseContext())
             {
-                bool czyprzepisjestulubiony = db.Ulubione.Where(u => u.Przepis.PrzepisyId == (int)dataGridViewListaPrzepisow.CurrentRow.Cells[0].Value).Any();
-
-                contextMenuStrip = new ContextMenuStrip();
-                modyfikujPrzepis.Text = "Modyfikuj przepis";
-                usunPrzepis.Text = "Usuń przepis";
-                if (czyprzepisjestulubiony)
+                if (e.RowIndex > -1)
                 {
-                    dodajUsunUlubione.Text = "Usun z ulubionych";
-                    dodajUsunUlubione.Checked = true;
-                }
-                else
-                {
-                    dodajUsunUlubione.Text = "Dodaj do ulubionych";
-                    dodajUsunUlubione.Checked = false;
-
+                    dataGridViewListaPrzepisow.CurrentCell = dataGridViewListaPrzepisow.Rows[e.RowIndex].Cells[0];
+                    e.ContextMenuStrip = ContextMenuStrip;
                 }
 
-                contextMenuStrip.Items.Add(modyfikujPrzepis);
-                contextMenuStrip.Items.Add(usunPrzepis);
-                contextMenuStrip.Items.Add(dodajUsunUlubione);
-
+                if (db.CzyJestUlubiony((int)dataGridViewListaPrzepisow.CurrentRow.Cells[0].Value)) dodajUsunDoUlubionychToolStripMenuItem.Text = "Usuń z ulubionych";
+                else dodajUsunDoUlubionychToolStripMenuItem.Text = "Dodaj do ulubionych";
             }
-            e.ContextMenuStrip = contextMenuStrip;
         }
 
 
@@ -207,30 +178,30 @@ namespace MyCookingRecipes
             LoadSearchAndFavourities();
         }
 
-        private void modyfikujPrzepis_Click(object sender, EventArgs e)
+        private void modyfikujPrzepisToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DodajModyfikujPrzepisOkno dodajModyfikujPrzepisOkno = new DodajModyfikujPrzepisOkno((int)dataGridViewListaPrzepisow.CurrentRow.Cells[0].Value);
             dodajModyfikujPrzepisOkno.ShowDialog();
         }
 
-
-        private void usunPrzepis_Click(object sender, EventArgs e)
+        private void usunPrzepisToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void dodajUsunUlubione_Click(object sender, EventArgs e)
+        private void dodajUsunDoUlubionychToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             try
             {
                 using (DatabaseContext db = new DatabaseContext())
                 {
-                    if (dodajUsunUlubione.Checked)
+
+                    if (db.CzyJestUlubiony((int)dataGridViewListaPrzepisow.CurrentRow.Cells[0].Value))
                     {
                         db.Remove(db.Ulubione.Where(u => u.Przepis.PrzepisyId == (int)dataGridViewListaPrzepisow.CurrentRow.Cells[0].Value).First());
                         db.SaveChanges();
                         MessageBox.Show(String.Format("Usunięto przepis:{0}", dataGridViewListaPrzepisow.CurrentRow.Cells[1]));
-
                     }
                     else
                     {
@@ -242,7 +213,8 @@ namespace MyCookingRecipes
                         db.Add(przepisdoulubionych);
                         db.SaveChanges();
                         MessageBox.Show(String.Format("Dodano do ulubionych przepis {0}", przepisdoulubionych.Przepis.NazwaPotrawy));
-                }
+
+                    }
                 }
             }
             catch (Exception)
@@ -250,14 +222,5 @@ namespace MyCookingRecipes
                 MessageBox.Show("Wystąpił problem z dodaniem/usunięciem przepisu z ulubionych.");
             }
         }
-
-        private void dataGridViewListaPrzepisow_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                dataGridViewListaPrzepisow.CurrentCell = dataGridViewListaPrzepisow[e.ColumnIndex, e.RowIndex];
-            }
-        }
-
     }
 }

@@ -24,13 +24,16 @@ namespace MyCookingRecipes
         {
             try
             {
-                using(DatabaseContext db = new DatabaseContext())
+                using (DatabaseContext db = new DatabaseContext())
                 {
                     Przepisy przepis = db.PobierzPrzepisZKrokami(PrzepisId);
 
                     labelNazwaPrzepisu.Text = przepis.NazwaPotrawy;
                     labelCzasPrzygotowania.Text = przepis.CzasPrzygotowania.ToString();
                     labelIloscPorcji.Text = przepis.IloscPorcji.ToString();
+
+                    if (db.Ulubione.Where(u => u.Przepis.PrzepisyId == PrzepisId).Any()) labelCzyUlubione.Text = "Tak";
+                    else labelCzyUlubione.Text = "Nie";
 
                     listBoxListaSkladnikow.DataSource = przepis.SkladnikiWPrzepisie.Select(p => new { p.Skladnik.NazwaSkladnika }).ToList();
                     listBoxListaSkladnikow.DisplayMember = "NazwaSkladnika";
@@ -59,7 +62,7 @@ namespace MyCookingRecipes
         {
             try
             {
-                using(DatabaseContext db = new DatabaseContext())
+                using (DatabaseContext db = new DatabaseContext())
                 {
                     DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć ten przepis?", "Usuwanie przepisu", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dialogResult == DialogResult.Yes)

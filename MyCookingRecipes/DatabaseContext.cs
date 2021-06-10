@@ -51,7 +51,7 @@ namespace MyCookingRecipes
                 return db.Przepisy.Where(p => p.NazwaPotrawy.Contains(name)).ToList();
             }
         }
-        public void PobierzSkladnikiwPrzepisie(int id )
+        public void PobierzSkladnikiwPrzepisie(int id)
         {
             using (DatabaseContext db = new DatabaseContext())
             {
@@ -73,6 +73,14 @@ namespace MyCookingRecipes
             using (DatabaseContext db = new DatabaseContext())
             {
                 return RodzajIlosciSkladnikow.ToList();
+            }
+        }
+
+        public bool CzyJestUlubiony(int id)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                return db.Ulubione.Where(u => u.Przepis.PrzepisyId == id).Any();
             }
         }
 

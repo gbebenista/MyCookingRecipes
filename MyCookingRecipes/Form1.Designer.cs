@@ -30,6 +30,7 @@ namespace MyCookingRecipes
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridViewListaPrzepisow = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aplikacjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,9 +53,14 @@ namespace MyCookingRecipes
             this.buttonListaSkladnikow = new System.Windows.Forms.Button();
             this.textBoxSzukaj = new System.Windows.Forms.TextBox();
             this.checkBoxUlubione = new System.Windows.Forms.CheckBox();
+            this.contextMenuStripPrzepisy = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.modyfikujPrzepisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usunPrzepisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dodajUsunDoUlubionychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaPrzepisow)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBoxSzczegolyPrzepisu.SuspendLayout();
+            this.contextMenuStripPrzepisy.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewListaPrzepisow
@@ -65,6 +71,7 @@ namespace MyCookingRecipes
             this.dataGridViewListaPrzepisow.AllowUserToResizeRows = false;
             this.dataGridViewListaPrzepisow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewListaPrzepisow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListaPrzepisow.ContextMenuStrip = this.contextMenuStripPrzepisy;
             this.dataGridViewListaPrzepisow.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dataGridViewListaPrzepisow.Location = new System.Drawing.Point(12, 60);
             this.dataGridViewListaPrzepisow.MultiSelect = false;
@@ -75,9 +82,7 @@ namespace MyCookingRecipes
             this.dataGridViewListaPrzepisow.Size = new System.Drawing.Size(546, 384);
             this.dataGridViewListaPrzepisow.TabIndex = 0;
             this.dataGridViewListaPrzepisow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaPrzepisow_CellClick);
-            this.dataGridViewListaPrzepisow.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaPrzepisow_CellDoubleClick);
-            this.dataGridViewListaPrzepisow.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewListaPrzepisow_CellMouseUp);
-            this.dataGridViewListaPrzepisow.RowContextMenuStripNeeded += new System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventHandler(this.dataGridViewListaPrzepisow_RowContextMenuStripNeeded);
+            this.dataGridViewListaPrzepisow.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaPrzepisow_CellDoubleClick);            this.dataGridViewListaPrzepisow.RowContextMenuStripNeeded += new System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventHandler(this.dataGridViewListaPrzepisow_RowContextMenuStripNeeded);
             // 
             // menuStrip1
             // 
@@ -268,6 +273,36 @@ namespace MyCookingRecipes
             this.checkBoxUlubione.UseVisualStyleBackColor = true;
             this.checkBoxUlubione.CheckedChanged += new System.EventHandler(this.checkBoxUlubione_CheckedChanged);
             // 
+            // contextMenuStripPrzepisy
+            // 
+            this.contextMenuStripPrzepisy.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modyfikujPrzepisToolStripMenuItem,
+            this.usunPrzepisToolStripMenuItem,
+            this.dodajUsunDoUlubionychToolStripMenuItem});
+            this.contextMenuStripPrzepisy.Name = "contextMenuStripPrzepisy";
+            this.contextMenuStripPrzepisy.Size = new System.Drawing.Size(186, 92);
+            // 
+            // modyfikujPrzepisToolStripMenuItem
+            // 
+            this.modyfikujPrzepisToolStripMenuItem.Name = "modyfikujPrzepisToolStripMenuItem";
+            this.modyfikujPrzepisToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.modyfikujPrzepisToolStripMenuItem.Text = "Modyfikuj przepis";
+            this.modyfikujPrzepisToolStripMenuItem.Click += new System.EventHandler(this.modyfikujPrzepisToolStripMenuItem_Click);
+            // 
+            // usunPrzepisToolStripMenuItem
+            // 
+            this.usunPrzepisToolStripMenuItem.Name = "usunPrzepisToolStripMenuItem";
+            this.usunPrzepisToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.usunPrzepisToolStripMenuItem.Text = "Usun przepis";
+            this.usunPrzepisToolStripMenuItem.Click += new System.EventHandler(this.usunPrzepisToolStripMenuItem_Click);
+            // 
+            // dodajUsunDoUlubionychToolStripMenuItem
+            // 
+            this.dodajUsunDoUlubionychToolStripMenuItem.Name = "dodajUsunDoUlubionychToolStripMenuItem";
+            this.dodajUsunDoUlubionychToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.dodajUsunDoUlubionychToolStripMenuItem.Text = "Dodaj do ulubionych";
+            this.dodajUsunDoUlubionychToolStripMenuItem.Click += new System.EventHandler(this.dodajUsunDoUlubionychToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,15 +323,12 @@ namespace MyCookingRecipes
             this.menuStrip1.PerformLayout();
             this.groupBoxSzczegolyPrzepisu.ResumeLayout(false);
             this.groupBoxSzczegolyPrzepisu.PerformLayout();
+            this.contextMenuStripPrzepisy.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
-        private void DodajUsunUlubione_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         #endregion
 
@@ -322,6 +354,10 @@ namespace MyCookingRecipes
         private System.Windows.Forms.Button buttonListaSkladnikow;
         private System.Windows.Forms.TextBox textBoxSzukaj;
         private System.Windows.Forms.CheckBox checkBoxUlubione;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripPrzepisy;
+        private System.Windows.Forms.ToolStripMenuItem modyfikujPrzepisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usunPrzepisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dodajUsunDoUlubionychToolStripMenuItem;
     }
 }
 
