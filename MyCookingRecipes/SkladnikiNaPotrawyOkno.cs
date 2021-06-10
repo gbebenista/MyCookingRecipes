@@ -43,55 +43,24 @@ namespace MyCookingRecipes
             {
                 using (DatabaseContext db = new DatabaseContext())
                 {
-                    //TO JEST NIE DO NAPISANIA
+                    List<int> przepisyid = new List<int>();
+                    foreach (DataGridViewRow row in dataGridViewListaPrzepisow.SelectedRows)
+                    {
+                        przepisyid.Add((int)row.Cells[0].Value);
+                    }
 
-                    /* dataGridViewListaSkladnikow.DataSource = (db.SkladnikiWPrzepisach.Join(
-                         db.Skladniki,
-                         skladnikwprzepisie => skladnikwprzepisie.Skladnik.SkladnikiId,
-                         skladnik => skladnik.SkladnikiId,
-                         (skladnikwprzepisie, skladnik) => new { skladnikwprzepisie, skladnik }
-                         ).Join(
-                         db.Przepisy,
-                         skladnikiwprzepisach => skladnikiwprzepisach.skladnikwprzepisie.Przepis.PrzepisyId,
-                         przepis => przepis.PrzepisyId,
-                         (skladnikiwprzepisach, przepis) => new { skladnikiwprzepisach, przepis }
-                         ).Join(
-                         db.RodzajIlosciSkladnikow,
-                         rodzajilosciskladnikow => rodzajilosciskladnikow.skladnikiwprzepisach.skladnik.RodzajIlosciSkladnika.RodzajIlosciSkladnikaId,
-                         skladniki => skladniki.RodzajIlosciSkladnikaId,
-                         (rodzajilosciskladnikow, skladniki) => new { rodzajilosciskladnikow, skladniki }
-                         )
-                         .Where(p => p.rodzajilosciskladnikow.przepis.PrzepisyId == (int)dataGridViewListaPrzepisow.CurrentRow.Cells[0].Value).GroupBy(swp => swp.rodzajilosciskladnikow)).ToList();*/
-                    /*      dataGridViewListaSkladnikow.DataSource = dataGridViewListaSkladnikow.DataSource = (db.SkladnikiWPrzepisach.Join(
-                         db.Skladniki,
-                         skladnikwprzepisie => skladnikwprzepisie.Skladnik.SkladnikiId,
-                         skladnik => skladnik.SkladnikiId,
-                         (skladnikwprzepisie, skladnik) => new { skladnikwprzepisie, skladnik.NazwaSkladnika }
-                         ).Join(
-                               db.Przepisy,
-                               skladnikiwprzepisach => skladnikiwprzepisach.skladnikwprzepisie.Przepis.PrzepisyId,
-                               przepis => przepis.PrzepisyId,
-                               (skladnikiwprzepisach, przepis) => new { skladnikiwprzepisach, przepis }
-                               ).Join(
-                               db.RodzajIlosciSkladnikow,
-                               rodzajilosciskladnikow => rodzajilosciskladnikow.skladnikiwprzepisach.skladnikwprzepisie.Skladnik.RodzajIlosciSkladnika.RodzajIlosciSkladnikaId,
-                               skladniki => skladniki.RodzajIlosciSkladnikaId,
-                               (rodzajilosciskladnikow, skladniki) => new { rodzajilosciskladnikow, skladniki }
-                               )).ToList(); ;
-                      }*/
                     var q = (from swk in db.SkladnikiWPrzepisach
                              join skl in db.Skladniki on swk.Skladnik.SkladnikiId equals skl.SkladnikiId
                              join pp in db.Przepisy on swk.Przepis.PrzepisyId equals pp.PrzepisyId
                              join ris in db.RodzajIlosciSkladnikow on swk.Skladnik.RodzajIlosciSkladnika.RodzajIlosciSkladnikaId equals ris.RodzajIlosciSkladnikaId
-                             where swk.Przepis.PrzepisyId == (int)dataGridViewListaPrzepisow.CurrentRow.Cells[0].Value
+                             where przepisyid.Contains(swk.Przepis.PrzepisyId)
                              group swk by new { swk.Skladnik.NazwaSkladnika, ris.Liczebność } into g
-                             
+
                              select new
                              {
 
                                  g.Key.NazwaSkladnika,
-
-                                 sum = g.Sum(ii => ii.Ilosc),
+                                 Ilosc = g.Sum(ii => ii.Ilosc),
                                  g.Key.Liczebność
 
 
@@ -99,10 +68,8 @@ namespace MyCookingRecipes
                     dataGridViewListaSkladnikow.DataSource = q;
                 }
             }
-            catch (Exception exec)
+            catch (Exception)
             {
-                MessageBox.Show(exec.ToString());
-                Console.WriteLine(exec.ToString());
                 MessageBox.Show("Wystąpił problem ze stworzeniem listy składników.");
 
 
