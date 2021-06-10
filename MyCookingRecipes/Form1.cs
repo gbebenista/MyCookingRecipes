@@ -17,7 +17,7 @@ namespace MyCookingRecipes
         {
             InitializeComponent();
 
-
+            SprawdzPrzepisyZOstatniegoMiesiaca();
         }
         public void LoadDefaultDataGridView()
         {
@@ -236,5 +236,35 @@ namespace MyCookingRecipes
                 MessageBox.Show("Wystąpił problem z dodaniem/usunięciem przepisu z ulubionych.");
             }
         }
+
+        private void SprawdzPrzepisyZOstatniegoMiesiaca()
+        {
+            try
+            {
+                using (DatabaseContext db = new DatabaseContext())
+                {
+
+                    var q = (from dwp in db.DataWybraniaPrzepisow
+                             where dwp.DataWybrania > DateTime.Today.AddDays(-30)
+                             group dwp by dwp.Przepisy.PrzepisyId into g
+                            
+                             select new
+                             {
+                                 g.Key,
+                                 Ilosc = g.Count()
+                             }
+                             ).OrderByDescending(i => i.Ilosc).ThenBy(j => j.Key).Take(5).ToList();
+                   // Console.WriteLine(q);
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Wystąpił problem ze stworzeniem listy składników.");
+
+
+            }
+        }
     }
+    
 }
