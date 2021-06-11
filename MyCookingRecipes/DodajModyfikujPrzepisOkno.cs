@@ -110,7 +110,9 @@ namespace MyCookingRecipes
                                 };
                                 db.Add(nowyulubiony);
                             }
-                            
+
+                            db.RemoveRange(db.SkladnikiWPrzepisach.Where(er => er.Przepis == null).ToList()); // kasuje nulle z SkladnikiWPrzepisach
+                            db.RemoveRange(db.KrokiPrzygotowaniaPrzepisow.Where(er => er.Przepisy == null).ToList()); // kasuje nulle z KrokiPrzygotowaniaPrzepisow
                             db.SaveChanges();
                            
                             break;
@@ -222,6 +224,24 @@ namespace MyCookingRecipes
         {
             if (textBoxNazwaPrzepisu.Text == "") buttonDodajPrzepis.Enabled = false;
             else buttonDodajPrzepis.Enabled = true;
+        }
+
+        private void DodajModyfikujPrzepisOkno_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                using (DatabaseContext db = new DatabaseContext())
+                {
+                    db.RemoveRange(db.SkladnikiWPrzepisach.Where(er => er.Przepis == null).ToList()); // kasuje nulle SkladnikiWPrzepisach
+                    db.RemoveRange(db.KrokiPrzygotowaniaPrzepisow.Where(er => er.Przepisy == null).ToList()); // kasuje nulle KrokiPrzygotowaniaPrzepisow
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Wystąpił problem z kasowaniem");
+            }
+            
         }
     }
 }

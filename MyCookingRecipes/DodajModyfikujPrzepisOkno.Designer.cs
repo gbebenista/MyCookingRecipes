@@ -283,6 +283,7 @@
             this.Controls.Add(this.groupBoxDodajPrzepis);
             this.Name = "DodajModyfikujPrzepisOkno";
             this.Text = "DodajModyfikujPrzepisOkno";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DodajModyfikujPrzepisOkno_FormClosing);
             this.Load += new System.EventHandler(this.DodajModyfikujPrzepisOkno_Load);
             this.groupBoxDodajPrzepis.ResumeLayout(false);
             this.groupBoxDodajPrzepis.PerformLayout();
