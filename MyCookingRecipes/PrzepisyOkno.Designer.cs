@@ -33,7 +33,6 @@
             this.dataGridViewPrzepisyOknoLista = new System.Windows.Forms.DataGridView();
             this.buttonDodajNowyPrzepis = new System.Windows.Forms.Button();
             this.buttonModyfikujPrzepis = new System.Windows.Forms.Button();
-            this.buttonUsunPrzepis = new System.Windows.Forms.Button();
             this.buttonZamknij = new System.Windows.Forms.Button();
             this.groupBoxListaPrzepisow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrzepisyOknoLista)).BeginInit();
@@ -96,16 +95,6 @@
             this.buttonModyfikujPrzepis.UseVisualStyleBackColor = true;
             this.buttonModyfikujPrzepis.Click += new System.EventHandler(this.buttonModyfikujPrzepis_Click);
             // 
-            // buttonUsunPrzepis
-            // 
-            this.buttonUsunPrzepis.Location = new System.Drawing.Point(331, 9);
-            this.buttonUsunPrzepis.Name = "buttonUsunPrzepis";
-            this.buttonUsunPrzepis.Size = new System.Drawing.Size(138, 23);
-            this.buttonUsunPrzepis.TabIndex = 3;
-            this.buttonUsunPrzepis.Text = "Usuń zaznaczony przepis";
-            this.buttonUsunPrzepis.UseVisualStyleBackColor = true;
-            this.buttonUsunPrzepis.Click += new System.EventHandler(this.buttonUsunPrzepis_Click);
-            // 
             // buttonZamknij
             // 
             this.buttonZamknij.Location = new System.Drawing.Point(475, 9);
@@ -122,7 +111,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(606, 445);
             this.Controls.Add(this.buttonZamknij);
-            this.Controls.Add(this.buttonUsunPrzepis);
             this.Controls.Add(this.buttonModyfikujPrzepis);
             this.Controls.Add(this.buttonDodajNowyPrzepis);
             this.Controls.Add(this.groupBoxListaPrzepisow);
@@ -143,7 +131,6 @@
         private System.Windows.Forms.TextBox textBoxSzukajPrzepis;
         private System.Windows.Forms.Button buttonDodajNowyPrzepis;
         private System.Windows.Forms.Button buttonModyfikujPrzepis;
-        private System.Windows.Forms.Button buttonUsunPrzepis;
         private System.Windows.Forms.Button buttonZamknij;
     }
 }
