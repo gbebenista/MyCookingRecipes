@@ -41,13 +41,13 @@
             this.labelIloscPorcji = new System.Windows.Forms.Label();
             this.labelCzasPrzygotowania = new System.Windows.Forms.Label();
             this.labelNazwaPrzepisu = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewListaSkladnikow = new System.Windows.Forms.DataGridView();
+            this.dataGridViewKrokiPrzepisu = new System.Windows.Forms.DataGridView();
             this.groupBoxSzegolyPrzepisu.SuspendLayout();
             this.groupBoxKrokiPrzepisu.SuspendLayout();
             this.groupBoxListaSkladnikow.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaSkladnikow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKrokiPrzepisu)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxSzegolyPrzepisu
@@ -103,7 +103,7 @@
             // 
             // groupBoxKrokiPrzepisu
             // 
-            this.groupBoxKrokiPrzepisu.Controls.Add(this.dataGridView2);
+            this.groupBoxKrokiPrzepisu.Controls.Add(this.dataGridViewKrokiPrzepisu);
             this.groupBoxKrokiPrzepisu.Location = new System.Drawing.Point(6, 343);
             this.groupBoxKrokiPrzepisu.Name = "groupBoxKrokiPrzepisu";
             this.groupBoxKrokiPrzepisu.Size = new System.Drawing.Size(538, 227);
@@ -113,7 +113,7 @@
             // 
             // groupBoxListaSkladnikow
             // 
-            this.groupBoxListaSkladnikow.Controls.Add(this.dataGridView1);
+            this.groupBoxListaSkladnikow.Controls.Add(this.dataGridViewListaSkladnikow);
             this.groupBoxListaSkladnikow.Location = new System.Drawing.Point(6, 135);
             this.groupBoxListaSkladnikow.Name = "groupBoxListaSkladnikow";
             this.groupBoxListaSkladnikow.Size = new System.Drawing.Size(538, 202);
@@ -185,27 +185,39 @@
             this.labelNazwaPrzepisu.TabIndex = 1;
             this.labelNazwaPrzepisu.Text = "label1";
             // 
-            // dataGridView1
+            // dataGridViewListaSkladnikow
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(523, 177);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewListaSkladnikow.AllowUserToAddRows = false;
+            this.dataGridViewListaSkladnikow.AllowUserToDeleteRows = false;
+            this.dataGridViewListaSkladnikow.AllowUserToResizeColumns = false;
+            this.dataGridViewListaSkladnikow.AllowUserToResizeRows = false;
+            this.dataGridViewListaSkladnikow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewListaSkladnikow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListaSkladnikow.Location = new System.Drawing.Point(9, 19);
+            this.dataGridViewListaSkladnikow.MultiSelect = false;
+            this.dataGridViewListaSkladnikow.Name = "dataGridViewListaSkladnikow";
+            this.dataGridViewListaSkladnikow.ReadOnly = true;
+            this.dataGridViewListaSkladnikow.RowHeadersVisible = false;
+            this.dataGridViewListaSkladnikow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewListaSkladnikow.Size = new System.Drawing.Size(523, 177);
+            this.dataGridViewListaSkladnikow.TabIndex = 0;
             // 
-            // dataGridView2
+            // dataGridViewKrokiPrzepisu
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(526, 202);
-            this.dataGridView2.TabIndex = 0;
+            this.dataGridViewKrokiPrzepisu.AllowUserToAddRows = false;
+            this.dataGridViewKrokiPrzepisu.AllowUserToDeleteRows = false;
+            this.dataGridViewKrokiPrzepisu.AllowUserToResizeColumns = false;
+            this.dataGridViewKrokiPrzepisu.AllowUserToResizeRows = false;
+            this.dataGridViewKrokiPrzepisu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewKrokiPrzepisu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewKrokiPrzepisu.Location = new System.Drawing.Point(6, 19);
+            this.dataGridViewKrokiPrzepisu.MultiSelect = false;
+            this.dataGridViewKrokiPrzepisu.Name = "dataGridViewKrokiPrzepisu";
+            this.dataGridViewKrokiPrzepisu.ReadOnly = true;
+            this.dataGridViewKrokiPrzepisu.RowHeadersVisible = false;
+            this.dataGridViewKrokiPrzepisu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewKrokiPrzepisu.Size = new System.Drawing.Size(526, 202);
+            this.dataGridViewKrokiPrzepisu.TabIndex = 0;
             // 
             // PrzepisSzczegolyOkno
             // 
@@ -220,8 +232,8 @@
             this.groupBoxSzegolyPrzepisu.PerformLayout();
             this.groupBoxKrokiPrzepisu.ResumeLayout(false);
             this.groupBoxListaSkladnikow.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaSkladnikow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKrokiPrzepisu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -240,7 +252,7 @@
         private System.Windows.Forms.Button buttonZamknijOkno;
         private System.Windows.Forms.Button buttonUsunPrzepis;
         private System.Windows.Forms.Button buttonModyfikujPrzepis;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewKrokiPrzepisu;
+        private System.Windows.Forms.DataGridView dataGridViewListaSkladnikow;
     }
 }

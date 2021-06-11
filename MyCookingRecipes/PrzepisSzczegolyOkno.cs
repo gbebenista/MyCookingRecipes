@@ -15,7 +15,7 @@ namespace MyCookingRecipes
     public partial class PrzepisSzczegolyOkno : Form
     {
         private static System.Timers.Timer aTimer;
-        private const int  liczbaSekund = 60;
+        private const int liczbaSekund = 60;
         public void DodajDoDateWykonania()
         {
             aTimer = new System.Timers.Timer();
@@ -52,8 +52,8 @@ namespace MyCookingRecipes
                     if (db.Ulubione.Where(u => u.Przepis.PrzepisyId == PrzepisId).Any()) labelCzyUlubione.Text = "Tak";
                     else labelCzyUlubione.Text = "Nie";
 
-                    //listViewListaSkladnikow.Items.AddRange(przepis.SkladnikiWPrzepisie.Select(p => new { p.Skladnik.NazwaSkladnika }).ToList());
-                    //listViewKrokiPrzepisu.Items.AddRange(przepis.KrokiPrzygotowaniaPrzepisow.Select(k => new { k.Opis }).ToList());
+                    dataGridViewListaSkladnikow.DataSource = db.SkladnikiWPrzepisach.Where(swp => swp.Przepis.PrzepisyId == PrzepisId).Select(swp => new { swp.Skladnik.NazwaSkladnika, swp.Ilosc, swp.Skladnik.RodzajIlosciSkladnika.Liczebność }).ToList();
+                    dataGridViewKrokiPrzepisu.DataSource = db.KrokiPrzygotowaniaPrzepisow.Where(kpp => kpp.Przepisy.PrzepisyId == PrzepisId).Select(kpp => new { kpp.Opis, kpp.KolejnoscWPrzepisie }).ToList();
                 }
             }
             catch (Exception)
