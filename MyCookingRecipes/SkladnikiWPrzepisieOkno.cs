@@ -116,8 +116,16 @@ namespace MyCookingRecipes
                                 Skladnik = db.Skladniki.Where(s => s.SkladnikiId == (int)dataGridViewSkladniki.CurrentRow.Cells[0].Value).First(),
                                 Przepis = PrzepisOtrzymany 
                             };
+                            if (db.SkladnikiWPrzepisach.Where(er => er.Przepis == null && er.Skladnik.SkladnikiId == nowySkladnikWPrzepisie.Skladnik.SkladnikiId).Any())
+                            {
+                                MessageBox.Show("Wybrany składknik jest już dodany w przepisie");
+                                break;
+                            };
+                                
+                            db.RemoveRange(db.SkladnikiWPrzepisach.Where(er => er.Przepis == null).ToList());
                             db.Add(nowySkladnikWPrzepisie);
-                            //db.SaveChanges();
+                            db.SaveChanges();
+                            MessageBox.Show("Dodano składnik do przepisu");
                             break;
                         default:
                             SkladnikWPrzepisie nowySkladnikWPrzepisieE = new SkladnikWPrzepisie
@@ -126,11 +134,17 @@ namespace MyCookingRecipes
                                 Skladnik = db.Skladniki.Where(s => s.SkladnikiId == (int)dataGridViewSkladniki.CurrentRow.Cells[0].Value).First(),
                                 Przepis = db.Przepisy.Where(p => p.PrzepisyId == PrzepisId).First()
                             };
+                            if (db.SkladnikiWPrzepisach.Where(er => er.Przepis.PrzepisyId == nowySkladnikWPrzepisieE.Przepis.PrzepisyId && er.Skladnik.SkladnikiId == nowySkladnikWPrzepisieE.Skladnik.SkladnikiId).Any())
+                            {
+                                MessageBox.Show("Wybrany składknik jest już dodany w przepisie");
+                                break;
+                            };
                             db.Add(nowySkladnikWPrzepisieE);
                             db.SaveChanges();
+                            MessageBox.Show("Zmieniono składnik w przepisie");
                             break;
                     }
-                    MessageBox.Show("Dodano składnik do przepisu");
+                    
                     dodajModyfikujPrzepisOkno.LadujSkladnikiWPrzepisie();
                 }
             }

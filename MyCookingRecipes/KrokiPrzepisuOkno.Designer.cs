@@ -31,7 +31,6 @@
             this.dataGridViewListaKrokowPrzepisu = new System.Windows.Forms.DataGridView();
             this.groupBoxListaKrokowPrzepisu = new System.Windows.Forms.GroupBox();
             this.buttonZamknij = new System.Windows.Forms.Button();
-            this.buttonUsunKrokiPrzepisu = new System.Windows.Forms.Button();
             this.groupBoxDodajKrokPrzepisu = new System.Windows.Forms.GroupBox();
             this.buttonDodajKrokPrzepisu = new System.Windows.Forms.Button();
             this.numericUpDownKolejnoscWPrzepisie = new System.Windows.Forms.NumericUpDown();
@@ -58,13 +57,11 @@
             this.dataGridViewListaKrokowPrzepisu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewListaKrokowPrzepisu.Size = new System.Drawing.Size(683, 234);
             this.dataGridViewListaKrokowPrzepisu.TabIndex = 0;
-            this.dataGridViewListaKrokowPrzepisu.DataSourceChanged += new System.EventHandler(this.dataGridViewListaKrokowPrzepisu_DataSourceChanged);
             this.dataGridViewListaKrokowPrzepisu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaKrokowPrzepisu_CellContentClick);
             // 
             // groupBoxListaKrokowPrzepisu
             // 
             this.groupBoxListaKrokowPrzepisu.Controls.Add(this.buttonZamknij);
-            this.groupBoxListaKrokowPrzepisu.Controls.Add(this.buttonUsunKrokiPrzepisu);
             this.groupBoxListaKrokowPrzepisu.Controls.Add(this.dataGridViewListaKrokowPrzepisu);
             this.groupBoxListaKrokowPrzepisu.Location = new System.Drawing.Point(13, 13);
             this.groupBoxListaKrokowPrzepisu.Name = "groupBoxListaKrokowPrzepisu";
@@ -82,16 +79,6 @@
             this.buttonZamknij.Text = "Wyjdź";
             this.buttonZamknij.UseVisualStyleBackColor = true;
             this.buttonZamknij.Click += new System.EventHandler(this.buttonZamknij_Click);
-            // 
-            // buttonUsunKrokiPrzepisu
-            // 
-            this.buttonUsunKrokiPrzepisu.Location = new System.Drawing.Point(6, 17);
-            this.buttonUsunKrokiPrzepisu.Name = "buttonUsunKrokiPrzepisu";
-            this.buttonUsunKrokiPrzepisu.Size = new System.Drawing.Size(250, 23);
-            this.buttonUsunKrokiPrzepisu.TabIndex = 1;
-            this.buttonUsunKrokiPrzepisu.Text = "Usuń zaznaczone kroki przepisu..";
-            this.buttonUsunKrokiPrzepisu.UseVisualStyleBackColor = true;
-            this.buttonUsunKrokiPrzepisu.Click += new System.EventHandler(this.buttonUsunKrokiPrzepisu_Click);
             // 
             // groupBoxDodajKrokPrzepisu
             // 
@@ -185,7 +172,6 @@
         private System.Windows.Forms.GroupBox groupBoxListaKrokowPrzepisu;
         private System.Windows.Forms.GroupBox groupBoxDodajKrokPrzepisu;
         private System.Windows.Forms.TextBox textBoxOpisKrokuPrzepisu;
-        private System.Windows.Forms.Button buttonUsunKrokiPrzepisu;
         private System.Windows.Forms.Button buttonDodajKrokPrzepisu;
         private System.Windows.Forms.NumericUpDown numericUpDownKolejnoscWPrzepisie;
         private System.Windows.Forms.Label labelKolejnoscWPrzepisie;
