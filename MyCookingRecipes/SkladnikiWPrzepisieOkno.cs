@@ -115,7 +115,7 @@ namespace MyCookingRecipes
                                 Przepis = PrzepisOtrzymany 
                             };
                             db.Add(nowySkladnikWPrzepisie);
-                            db.SaveChanges();
+                            //db.SaveChanges();
                             break;
                         default:
                             SkladnikWPrzepisie nowySkladnikWPrzepisieE = new SkladnikWPrzepisie

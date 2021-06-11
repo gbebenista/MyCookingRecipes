@@ -61,6 +61,7 @@ namespace MyCookingRecipes
             {
                 using(DatabaseContext db = new DatabaseContext())
                 {
+                    if (textBoxOpisKrokuPrzepisu.Text == "") return;
                     switch (PrzepisId)
                     {
                         case null:
@@ -105,7 +106,7 @@ namespace MyCookingRecipes
                 using(DatabaseContext db = new DatabaseContext())
                 {
                     dataGridViewListaKrokowPrzepisu.DataSource = db.KrokiPrzygotowaniaPrzepisow.Where(kpp => kpp.Przepisy.PrzepisyId == PrzepisId).ToList();
-                    numericUpDownKolejnoscWPrzepisie.Minimum = db.KrokiPrzygotowaniaPrzepisow.Max(kpp => kpp.KolejnoscWPrzepisie);
+        
                 }
             }
             catch (Exception)

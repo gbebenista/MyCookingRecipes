@@ -132,9 +132,19 @@
             // numericUpDownIlosc
             // 
             this.numericUpDownIlosc.Location = new System.Drawing.Point(13, 149);
+            this.numericUpDownIlosc.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDownIlosc.Name = "numericUpDownIlosc";
             this.numericUpDownIlosc.Size = new System.Drawing.Size(165, 20);
             this.numericUpDownIlosc.TabIndex = 3;
+            this.numericUpDownIlosc.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // labelIlosc
             // 

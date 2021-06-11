@@ -69,6 +69,7 @@ namespace MyCookingRecipes
             {
                 using(DatabaseContext db = new DatabaseContext())
                 {
+                    
                     switch (PrzepisId)
                     {
                         case null:
@@ -176,12 +177,14 @@ namespace MyCookingRecipes
         {
             if (dataGridViewSkladniki.Rows.Count > 1) buttonUsunSkladnik.Enabled = true;
             else buttonUsunSkladnik.Enabled = false;
+            CzyMoznaDodacPrzepis();
         }
 
         private void dataGridViewKrokiPrzygotowania_DataSourceChanged(object sender, EventArgs e)
         {
             if (dataGridViewKrokiPrzygotowania.Rows.Count > 1) buttonUsunKrok.Enabled = true;
             else buttonUsunKrok.Enabled = false;
+            CzyMoznaDodacPrzepis();
         }
 
         private void buttonUsunSkladnik_Click(object sender, EventArgs e)
@@ -220,8 +223,13 @@ namespace MyCookingRecipes
 
         private void textBoxNazwaPrzepisu_TextChanged(object sender, EventArgs e)
         {
-            if (textBoxNazwaPrzepisu.Text == "") buttonDodajPrzepis.Enabled = false;
-            else buttonDodajPrzepis.Enabled = true;
+            CzyMoznaDodacPrzepis();
+        }
+
+        public bool CzyMoznaDodacPrzepis()
+        {
+            if (textBoxNazwaPrzepisu.Text == "" || dataGridViewSkladniki.Rows.Count == 0 || dataGridViewKrokiPrzygotowania.Rows.Count == 0) return false;
+            else return true;
         }
     }
 }
