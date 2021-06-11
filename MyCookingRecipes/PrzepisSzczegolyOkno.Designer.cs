@@ -41,8 +41,8 @@
             this.labelIloscPorcji = new System.Windows.Forms.Label();
             this.labelCzasPrzygotowania = new System.Windows.Forms.Label();
             this.labelNazwaPrzepisu = new System.Windows.Forms.Label();
-            this.listViewListaSkladnikow = new System.Windows.Forms.ListView();
             this.listViewKrokiPrzepisu = new System.Windows.Forms.ListView();
+            this.listViewListaSkladnikow = new System.Windows.Forms.ListView();
             this.groupBoxSzegolyPrzepisu.SuspendLayout();
             this.groupBoxKrokiPrzepisu.SuspendLayout();
             this.groupBoxListaSkladnikow.SuspendLayout();
@@ -183,14 +183,6 @@
             this.labelNazwaPrzepisu.TabIndex = 1;
             this.labelNazwaPrzepisu.Text = "label1";
             // 
-            // listViewListaSkladnikow
-            // 
-            this.listViewListaSkladnikow.Location = new System.Drawing.Point(6, 20);
-            this.listViewListaSkladnikow.Name = "listViewListaSkladnikow";
-            this.listViewListaSkladnikow.Size = new System.Drawing.Size(526, 176);
-            this.listViewListaSkladnikow.TabIndex = 0;
-            this.listViewListaSkladnikow.UseCompatibleStateImageBehavior = false;
-            // 
             // listViewKrokiPrzepisu
             // 
             this.listViewKrokiPrzepisu.Location = new System.Drawing.Point(6, 19);
@@ -198,6 +190,14 @@
             this.listViewKrokiPrzepisu.Size = new System.Drawing.Size(526, 202);
             this.listViewKrokiPrzepisu.TabIndex = 0;
             this.listViewKrokiPrzepisu.UseCompatibleStateImageBehavior = false;
+            // 
+            // listViewListaSkladnikow
+            // 
+            this.listViewListaSkladnikow.Location = new System.Drawing.Point(6, 20);
+            this.listViewListaSkladnikow.Name = "listViewListaSkladnikow";
+            this.listViewListaSkladnikow.Size = new System.Drawing.Size(526, 176);
+            this.listViewListaSkladnikow.TabIndex = 0;
+            this.listViewListaSkladnikow.UseCompatibleStateImageBehavior = false;
             // 
             // PrzepisSzczegolyOkno
             // 

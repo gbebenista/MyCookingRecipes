@@ -105,6 +105,8 @@ namespace MyCookingRecipes
             {
                 using(DatabaseContext db = new DatabaseContext())
                 {
+                    DodajModyfikujPrzepisOkno dodajModyfikujPrzepisOkno = (DodajModyfikujPrzepisOkno)Application.OpenForms["DodajModyfikujPrzepisOkno"];
+
                     switch (PrzepisId)
                     {
                         case null:
@@ -129,7 +131,6 @@ namespace MyCookingRecipes
                             break;
                     }
                     MessageBox.Show("Dodano składnik do przepisu");
-                    DodajModyfikujPrzepisOkno dodajModyfikujPrzepisOkno = (DodajModyfikujPrzepisOkno)Application.OpenForms["DodajModyfikujPrzepisOkno"];
                     dodajModyfikujPrzepisOkno.LadujSkladnikiWPrzepisie();
                 }
             }

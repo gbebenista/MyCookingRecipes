@@ -95,7 +95,31 @@ namespace MyCookingRecipes
 
         private void buttonPDF_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DataTable data = new DataTable();
 
+                foreach (DataGridViewColumn col in dataGridViewListaSkladnikow.Columns)
+                {
+                    data.Columns.Add(col.Name);
+                }
+
+                foreach (DataGridViewRow row in dataGridViewListaSkladnikow.Rows)
+                {
+                    DataRow dRow = data.NewRow();
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        dRow[cell.ColumnIndex] = cell.Value;
+                    }
+                    data.Rows.Add(dRow);
+                }
+
+                PDFGenerator.Generate(data, "lista zakupów");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Wystąpił nieoczekiwany błąd przy generowaniu pliku PDF z listą zakupów.");
+            }
         }
 
         private void buttonZamknij_Click(object sender, EventArgs e)
