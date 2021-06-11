@@ -5,6 +5,7 @@ using iText.Layout.Properties;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,9 @@ namespace MyCookingRecipes
         public static void Generate(DataTable data, string title)
         {
             string genTime = DateTime.Today.ToShortDateString();
-            string filename = "Lista zakupów " + genTime + " .pdf";
+            //string filename = "Lista zakupów " + genTime + " .pdf";
+            string filename = String.Format("Lista zakupów_{0}.pdf",genTime.ToString(new CultureInfo("de-DE")));
+
 
             try
             {

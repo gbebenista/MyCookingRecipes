@@ -102,6 +102,7 @@
             this.dataGridViewListaSkladnikow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewListaSkladnikow.Size = new System.Drawing.Size(382, 330);
             this.dataGridViewListaSkladnikow.TabIndex = 1;
+            this.dataGridViewListaSkladnikow.DataSourceChanged += new System.EventHandler(this.dataGridViewListaSkladnikow_DataSourceChanged);
             this.dataGridViewListaSkladnikow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaSkladnikow_CellContentClick);
             // 
             // buttonZnajdzSkladniki
@@ -116,6 +117,7 @@
             // 
             // buttonPDF
             // 
+            this.buttonPDF.Enabled = false;
             this.buttonPDF.Location = new System.Drawing.Point(452, 405);
             this.buttonPDF.Name = "buttonPDF";
             this.buttonPDF.Size = new System.Drawing.Size(211, 33);

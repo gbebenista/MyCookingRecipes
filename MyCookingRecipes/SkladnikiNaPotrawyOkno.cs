@@ -131,5 +131,11 @@ namespace MyCookingRecipes
         {
             LoadDefaultDataGridView();
         }
+
+        private void dataGridViewListaSkladnikow_DataSourceChanged(object sender, EventArgs e)
+        {
+            if (dataGridViewListaSkladnikow.Rows.Count > 0) buttonPDF.Enabled = true;
+            else buttonPDF.Enabled = false;
+        }
     }
 }
