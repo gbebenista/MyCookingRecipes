@@ -18,10 +18,9 @@ namespace MyCookingRecipes
     {
         public static void Generate(DataTable data, string title)
         {
-            string genTime = DateTime.Today.ToShortDateString();
-            //string filename = "Lista zakupów " + genTime + " .pdf";
-            string filename = String.Format("Lista zakupów_{0}.pdf",genTime.ToString(new CultureInfo("de-DE")));
-
+            DateTime genTime = DateTime.Today;
+            CultureInfo format = new CultureInfo("de-DE");
+            string filename = String.Format("Lista zakupów_{0}.pdf",genTime.ToString(format));
 
             try
             {
@@ -45,7 +44,7 @@ namespace MyCookingRecipes
                             PdfDocument pdfDocument = new PdfDocument(pdfWriter);
                             Document document = new Document(pdfDocument);
 
-                            document.Add(new Paragraph(genTime));
+                            document.Add(new Paragraph(genTime.ToString()));
                             document.Add(new Paragraph(title).SetTextAlignment(TextAlignment.CENTER).SetFontSize(20));
 
                             document.Add(toTable(data));
