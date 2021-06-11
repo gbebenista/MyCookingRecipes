@@ -49,12 +49,6 @@ namespace MyCookingRecipes
             }
         }
 
-        private void dataGridViewListaKrokowPrzepisu_DataSourceChanged(object sender, EventArgs e)
-        {
-            if (dataGridViewListaKrokowPrzepisu.Rows.Count > 1) buttonUsunKrokiPrzepisu.Enabled = true;
-            else buttonUsunKrokiPrzepisu.Enabled = false;
-        }
-
         private void buttonDodajKrokPrzepisu_Click(object sender, EventArgs e)
         {
             try
@@ -71,8 +65,14 @@ namespace MyCookingRecipes
                                 KolejnoscWPrzepisie = (int)numericUpDownKolejnoscWPrzepisie.Value,
                                 Przepisy = PrzepisOtrzymany  
                             };
+                            if (db.KrokiPrzygotowaniaPrzepisow.Where(er => er.Przepisy == null && er.KolejnoscWPrzepisie == nowyKrokPrzygotowaniaPrzepisu.KolejnoscWPrzepisie).Any())
+                            {
+                                MessageBox.Show("Wybrana kolejność w przepisie jest już dodana");
+                                break;
+                            };
                             db.Add(nowyKrokPrzygotowaniaPrzepisu);
                             db.SaveChanges();
+                            MessageBox.Show("Dodano krok przygotowania przepisu");
                             break;
                         default:
                             KrokiPrzygotowaniaPrzepisu nowyKrokPrzygotowaniaPrzepisuE = new KrokiPrzygotowaniaPrzepisu
@@ -81,12 +81,17 @@ namespace MyCookingRecipes
                                 KolejnoscWPrzepisie = (int)numericUpDownKolejnoscWPrzepisie.Value,
                                 Przepisy = db.Przepisy.Where(p => p.PrzepisyId == PrzepisId).First()
                             };
+                            if (db.KrokiPrzygotowaniaPrzepisow.Where(er => er.Przepisy.PrzepisyId == nowyKrokPrzygotowaniaPrzepisuE.Przepisy.PrzepisyId && er.KolejnoscWPrzepisie == nowyKrokPrzygotowaniaPrzepisuE.KolejnoscWPrzepisie).Any())
+                            {
+                                MessageBox.Show("Wybrana kolejność w przepisie jest już dodana");
+                                break;
+                            };
                             db.Add(nowyKrokPrzygotowaniaPrzepisuE);
                             db.SaveChanges();
+                            MessageBox.Show("Dodano krok przygotowania przepisu");
                             break;
                         
                     }
-                    MessageBox.Show("Dodano krok przygotowania przepisu");
                     LadujKrokiPrzepisu();
 
                     DodajModyfikujPrzepisOkno dodajModyfikujPrzepisOkno = (DodajModyfikujPrzepisOkno)Application.OpenForms["DodajModyfikujPrzepisOkno"];
