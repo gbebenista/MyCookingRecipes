@@ -294,7 +294,7 @@ namespace MyCookingRecipes
         {
             try
             {
-                if (!File.Exists("RecipesB.mdf"))
+                if (!File.Exists("RecipesDB.mdf"))
                 {
                     MessageBox.Show(@"Nie można odnaleść bazy danych. Upewnij się że w folderze jest plik RecipesDB.mdf", "Zamykanie");
                     Environment.Exit(1);
