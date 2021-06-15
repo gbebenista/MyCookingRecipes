@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,8 +16,9 @@ namespace MyCookingRecipes
 
         public Form1()
         {
+            SprawdzCzyIstniejePlik();
             InitializeComponent();
-
+            
             SprawdzPrzepisyZOstatniegoMiesiaca();
         }
         public void LoadDefaultDataGridView()
@@ -285,6 +287,22 @@ namespace MyCookingRecipes
                 MessageBox.Show("Wystąpił problem podczas dodawania przepisów do ulubionych .");
 
 
+            }
+
+        }
+        private void SprawdzCzyIstniejePlik()
+        {
+            try
+            {
+                if (!File.Exists("RecipesB.mdf"))
+                {
+                    MessageBox.Show(@"Nie można odnaleść bazy danych. Upewnij się że w folderze jest plik RecipesDB.mdf", "Zamykanie");
+                    Environment.Exit(1);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Nie można odnaleść bazy danych. Upewnij się że w folderze jest plik RecipesDB.mdf", ex.InnerException.ToString());
             }
         }
     }
