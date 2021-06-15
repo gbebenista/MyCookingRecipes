@@ -19,8 +19,8 @@ namespace MyCookingRecipes
         public DbSet<SkladnikWPrzepisie> SkladnikiWPrzepisach { get; set; }
 
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=RecipesDB;Trusted_Connection=True");
-
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>  optionsBuilder.UseSqlServer(@"Server=localhost;Database=RecipesDB;Trusted_Connection=True");
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>  optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;AttachDBFilename="+ Environment.CurrentDirectory+"\\RecipesDB.mdf;Trusted_Connection=true;MultipleActiveResultSets=true");
         public List<Przepisy> PobierzPrzepisy()
         {
             using (DatabaseContext db = new DatabaseContext())
