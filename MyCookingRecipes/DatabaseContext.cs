@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyCookingRecipes
 {
@@ -20,7 +18,7 @@ namespace MyCookingRecipes
 
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>  optionsBuilder.UseSqlServer(@"Server=localhost;Database=RecipesDB;Trusted_Connection=True");
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>  optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;AttachDBFilename="+ Environment.CurrentDirectory+"\\RecipesDB.mdf;Trusted_Connection=true;MultipleActiveResultSets=true");
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;AttachDBFilename=" + Environment.CurrentDirectory + "\\RecipesDB.mdf;Trusted_Connection=true;MultipleActiveResultSets=true");
         public List<Przepisy> PobierzPrzepisy()
         {
             using (DatabaseContext db = new DatabaseContext())
@@ -84,9 +82,9 @@ namespace MyCookingRecipes
             }
         }
 
-       public void UsunPrzepis(int przepisid)
+        public void UsunPrzepis(int przepisid)
         {
-            using(DatabaseContext db = new DatabaseContext())
+            using (DatabaseContext db = new DatabaseContext())
             {
                 if (db.Ulubione.Where(u => u.Przepis.PrzepisyId == przepisid).Any())
                     db.Ulubione.RemoveRange(db.Ulubione.Where(u => u.Przepis.PrzepisyId == przepisid).First());

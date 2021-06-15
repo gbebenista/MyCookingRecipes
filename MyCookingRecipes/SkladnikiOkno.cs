@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyCookingRecipes
@@ -40,12 +36,13 @@ namespace MyCookingRecipes
             {
                 using (DatabaseContext db = new DatabaseContext())
                 {
-                    
+
                     dataGridViewListaSkladnikow.DataSource = db.Skladniki.Join(
                     db.RodzajIlosciSkladnikow,
                     skladnik => skladnik.RodzajIlosciSkladnika.RodzajIlosciSkladnikaId,
                     rodzajskladnika => rodzajskladnika.RodzajIlosciSkladnikaId,
-                    (skladnik, rodzajskladnika) => new {
+                    (skladnik, rodzajskladnika) => new
+                    {
                         skladnik.SkladnikiId,
                         skladnik.NazwaSkladnika,
                         rodzajskladnika.Liczebność
@@ -75,9 +72,9 @@ namespace MyCookingRecipes
                     LoadDefaultDataGridView();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Wystąpił problem z dodaniem składnika. Proszę spróbować ponownie"+ex.InnerException.ToString());
+                MessageBox.Show("Wystąpił problem z dodaniem składnika. Proszę spróbować ponownie" + ex.InnerException.ToString());
             }
         }
 
@@ -91,13 +88,14 @@ namespace MyCookingRecipes
                     db.RodzajIlosciSkladnikow,
                     skladnik => skladnik.RodzajIlosciSkladnika.RodzajIlosciSkladnikaId,
                     rodzajskladnika => rodzajskladnika.RodzajIlosciSkladnikaId,
-                    (skladnik, rodzajskladnika) => new {
+                    (skladnik, rodzajskladnika) => new
+                    {
                         skladnik.SkladnikiId,
                         skladnik.NazwaSkladnika,
                         rodzajskladnika.Liczebność
                     }
                     ).Where(skladnik => skladnik.NazwaSkladnika.Contains(textBoxWyszukajSkladnik.Text)).ToList();
-                    
+
                 }
             }
             catch (Exception ex)

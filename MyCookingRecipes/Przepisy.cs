@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace MyCookingRecipes
 {
@@ -13,7 +8,7 @@ namespace MyCookingRecipes
         public string NazwaPotrawy { get; set; }
         public int CzasPrzygotowania { get; set; }
         public int? IloscPorcji { get; set; }
-        
+
         public List<Ulubione> Ulubione { get; set; }
 
         public List<DataWybraniaPrzepisu> DataWybraniaPrzepisow { get; set; }

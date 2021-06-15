@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyCookingRecipes
@@ -37,7 +32,7 @@ namespace MyCookingRecipes
         {
             try
             {
-                using(DatabaseContext db = new DatabaseContext())
+                using (DatabaseContext db = new DatabaseContext())
                 {
                     db.Remove(db.KrokiPrzygotowaniaPrzepisow.Where(kpp => kpp.KrokiPrzygotowaniaPrzepisuId == (int)dataGridViewListaKrokowPrzepisu.CurrentRow.Cells[0].Value).First());
                     db.SaveChanges();
@@ -53,7 +48,7 @@ namespace MyCookingRecipes
         {
             try
             {
-                using(DatabaseContext db = new DatabaseContext())
+                using (DatabaseContext db = new DatabaseContext())
                 {
                     if (textBoxOpisKrokuPrzepisu.Text == "") return;
                     switch (PrzepisId)
@@ -63,7 +58,7 @@ namespace MyCookingRecipes
                             {
                                 Opis = textBoxOpisKrokuPrzepisu.Text,
                                 KolejnoscWPrzepisie = (int)numericUpDownKolejnoscWPrzepisie.Value,
-                                Przepisy = PrzepisOtrzymany  
+                                Przepisy = PrzepisOtrzymany
                             };
                             if (db.KrokiPrzygotowaniaPrzepisow.Where(er => er.Przepisy == null && er.KolejnoscWPrzepisie == nowyKrokPrzygotowaniaPrzepisu.KolejnoscWPrzepisie).Any())
                             {
@@ -90,7 +85,7 @@ namespace MyCookingRecipes
                             db.SaveChanges();
                             MessageBox.Show("Dodano krok przygotowania przepisu");
                             break;
-                        
+
                     }
                     LadujKrokiPrzepisu();
 
@@ -108,10 +103,10 @@ namespace MyCookingRecipes
         {
             try
             {
-                using(DatabaseContext db = new DatabaseContext())
+                using (DatabaseContext db = new DatabaseContext())
                 {
                     dataGridViewListaKrokowPrzepisu.DataSource = db.KrokiPrzygotowaniaPrzepisow.Where(kpp => kpp.Przepisy.PrzepisyId == PrzepisId).ToList();
-        
+
                 }
             }
             catch (Exception)

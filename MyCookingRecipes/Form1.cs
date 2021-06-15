@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyCookingRecipes
@@ -18,7 +14,7 @@ namespace MyCookingRecipes
         {
             SprawdzCzyIstniejePlik();
             InitializeComponent();
-            
+
             SprawdzPrzepisyZOstatniegoMiesiaca();
         }
         public void LoadDefaultDataGridView()
@@ -246,21 +242,21 @@ namespace MyCookingRecipes
                 using (DatabaseContext db = new DatabaseContext())
                 {
                     List<Ulubione> noweUlubione = new List<Ulubione>();
-                    
+
 
                     var ulub = (from ulu in db.Ulubione
                                 where ulu.CzySystemDodal == false
                                 select ulu.Przepis.PrzepisyId
                                 ).ToList();
                     var kompulu = (from dwp in db.DataWybraniaPrzepisow
-                             where dwp.DataWybrania > DateTime.Today.AddDays(-30)
-                             group dwp by dwp.Przepisy.PrzepisyId into g
-                            
-                             select new
-                             {
-                                 g.Key,
-                                 Ilosc = g.Count()
-                             }
+                                   where dwp.DataWybrania > DateTime.Today.AddDays(-30)
+                                   group dwp by dwp.Przepisy.PrzepisyId into g
+
+                                   select new
+                                   {
+                                       g.Key,
+                                       Ilosc = g.Count()
+                                   }
                              ).OrderByDescending(i => i.Ilosc).ThenBy(j => j.Key).Take(5).ToList();
 
 
@@ -306,5 +302,5 @@ namespace MyCookingRecipes
             }
         }
     }
-    
+
 }

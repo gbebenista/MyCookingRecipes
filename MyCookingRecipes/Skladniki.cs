@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace MyCookingRecipes
 {
@@ -10,7 +6,7 @@ namespace MyCookingRecipes
     {
         public int SkladnikiId { get; set; }
 
-        public string  NazwaSkladnika { get; set; }
+        public string NazwaSkladnika { get; set; }
 
         public RodzajIlosciSkladnika RodzajIlosciSkladnika { get; set; }
 

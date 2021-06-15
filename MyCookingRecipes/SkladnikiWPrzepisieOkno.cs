@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyCookingRecipes
@@ -37,7 +33,8 @@ namespace MyCookingRecipes
                     db.RodzajIlosciSkladnikow,
                     skladnik => skladnik.RodzajIlosciSkladnika.RodzajIlosciSkladnikaId,
                     rodzajskladnika => rodzajskladnika.RodzajIlosciSkladnikaId,
-                    (skladnik, rodzajskladnika) => new {
+                    (skladnik, rodzajskladnika) => new
+                    {
                         skladnik.SkladnikiId,
                         skladnik.NazwaSkladnika,
                         rodzajskladnika.Liczebność
@@ -55,13 +52,14 @@ namespace MyCookingRecipes
         {
             try
             {
-                using(DatabaseContext db = new DatabaseContext())
+                using (DatabaseContext db = new DatabaseContext())
                 {
                     dataGridViewSkladniki.DataSource = db.Skladniki.Join(
                     db.RodzajIlosciSkladnikow,
                     skladnik => skladnik.RodzajIlosciSkladnika.RodzajIlosciSkladnikaId,
                     rodzajskladnika => rodzajskladnika.RodzajIlosciSkladnikaId,
-                    (skladnik, rodzajskladnika) => new {
+                    (skladnik, rodzajskladnika) => new
+                    {
                         skladnik.SkladnikiId,
                         skladnik.NazwaSkladnika,
                         rodzajskladnika.Liczebność
@@ -103,7 +101,7 @@ namespace MyCookingRecipes
         {
             try
             {
-                using(DatabaseContext db = new DatabaseContext())
+                using (DatabaseContext db = new DatabaseContext())
                 {
                     DodajModyfikujPrzepisOkno dodajModyfikujPrzepisOkno = (DodajModyfikujPrzepisOkno)Application.OpenForms["DodajModyfikujPrzepisOkno"];
 
@@ -114,14 +112,14 @@ namespace MyCookingRecipes
                             {
                                 Ilosc = numericUpDownIlosc.Value,
                                 Skladnik = db.Skladniki.Where(s => s.SkladnikiId == (int)dataGridViewSkladniki.CurrentRow.Cells[0].Value).First(),
-                                Przepis = PrzepisOtrzymany 
+                                Przepis = PrzepisOtrzymany
                             };
                             if (db.SkladnikiWPrzepisach.Where(er => er.Przepis == null && er.Skladnik.SkladnikiId == nowySkladnikWPrzepisie.Skladnik.SkladnikiId).Any())
                             {
                                 MessageBox.Show("Wybrany składknik jest już dodany w przepisie");
                                 break;
                             };
-                                
+
                             db.RemoveRange(db.SkladnikiWPrzepisach.Where(er => er.Przepis == null).ToList());
                             db.Add(nowySkladnikWPrzepisie);
                             db.SaveChanges();
@@ -144,7 +142,7 @@ namespace MyCookingRecipes
                             MessageBox.Show("Zmieniono składnik w przepisie");
                             break;
                     }
-                    
+
                     dodajModyfikujPrzepisOkno.LadujSkladnikiWPrzepisie();
                 }
             }

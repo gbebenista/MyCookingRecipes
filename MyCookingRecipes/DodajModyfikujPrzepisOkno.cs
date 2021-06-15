@@ -1,12 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyCookingRecipes
@@ -28,7 +23,7 @@ namespace MyCookingRecipes
             {
                 using (DatabaseContext db = new DatabaseContext())
                 {
-                    dataGridViewSkladniki.DataSource = db.SkladnikiWPrzepisach.Where(swp => swp.Przepis.PrzepisyId == PrzepisId).Select(swp => new { swp.SkladnikWPrzepisieId, swp.Skladnik.SkladnikiId, swp.Skladnik.NazwaSkladnika,  swp.Ilosc }).ToList();
+                    dataGridViewSkladniki.DataSource = db.SkladnikiWPrzepisach.Where(swp => swp.Przepis.PrzepisyId == PrzepisId).Select(swp => new { swp.SkladnikWPrzepisieId, swp.Skladnik.SkladnikiId, swp.Skladnik.NazwaSkladnika, swp.Ilosc }).ToList();
                 }
             }
             catch (Exception)
@@ -67,22 +62,23 @@ namespace MyCookingRecipes
         {
             try
             {
-                using(DatabaseContext db = new DatabaseContext())
+                using (DatabaseContext db = new DatabaseContext())
                 {
-                    
+
                     switch (PrzepisId)
                     {
                         case null:
-                            
-                            Przepisy nowyprzepis = new Przepisy {
+
+                            Przepisy nowyprzepis = new Przepisy
+                            {
                                 NazwaPotrawy = textBoxNazwaPrzepisu.Text,
                                 CzasPrzygotowania = (int)numericUpDownCzasPrzygotowania.Value,
                                 IloscPorcji = (int)numericUpDownIloscPorcji.Value,
-                                
+
                             };
                             PrzepisDoPrzekazania = nowyprzepis;
                             db.Add(nowyprzepis);
-                            foreach(DataGridViewRow row in dataGridViewSkladniki.Rows)
+                            foreach (DataGridViewRow row in dataGridViewSkladniki.Rows)
                             {
                                 SkladnikWPrzepisie skladnikWPrzepisie = new SkladnikWPrzepisie
                                 {
@@ -92,7 +88,7 @@ namespace MyCookingRecipes
                                 };
                                 db.Add(skladnikWPrzepisie);
                             }
-                            foreach(DataGridViewRow row in dataGridViewKrokiPrzygotowania.Rows)
+                            foreach (DataGridViewRow row in dataGridViewKrokiPrzygotowania.Rows)
                             {
                                 KrokiPrzygotowaniaPrzepisu krokiPrzygotowaniaPrzepisu = new KrokiPrzygotowaniaPrzepisu
                                 {
@@ -115,7 +111,7 @@ namespace MyCookingRecipes
                             db.RemoveRange(db.SkladnikiWPrzepisach.Where(er => er.Przepis == null).ToList()); // kasuje nulle z SkladnikiWPrzepisach
                             db.RemoveRange(db.KrokiPrzygotowaniaPrzepisow.Where(er => er.Przepisy == null).ToList()); // kasuje nulle z KrokiPrzygotowaniaPrzepisow
                             db.SaveChanges();
-                           
+
                             break;
                         default:
                             Przepisy edytowanyprzepis = db.Przepisy.Where(p => p.PrzepisyId == PrzepisId).First();
@@ -127,7 +123,7 @@ namespace MyCookingRecipes
                             db.SaveChanges();
                             MessageBox.Show("Pomyślnie edytowano przepis");
                             break;
-                            
+
                     }
                     PrzepisyOkno przepisyOkno = (PrzepisyOkno)Application.OpenForms["PrzepisyOkno"];
                     przepisyOkno.LadujPrzepisy();
@@ -249,7 +245,7 @@ namespace MyCookingRecipes
             {
                 MessageBox.Show("Wystąpił problem z kasowaniem");
             }
-            
+
         }
     }
 }

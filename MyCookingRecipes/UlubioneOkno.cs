@@ -1,12 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyCookingRecipes
@@ -76,8 +72,8 @@ namespace MyCookingRecipes
 
                             foreach (DataGridViewRow row in dataGridViewListaUlubione.SelectedRows)
                             {
-                                    nazwyusunietychulubionych.Add(row.Cells[1].Value.ToString());
-                                    db.Remove(db.Ulubione.Where(u => u.UlubioneId == (int)row.Cells[0].Value).First());
+                                nazwyusunietychulubionych.Add(row.Cells[1].Value.ToString());
+                                db.Remove(db.Ulubione.Where(u => u.UlubioneId == (int)row.Cells[0].Value).First());
                             }
                             db.SaveChanges();
                             LoadDefaultDataGridView();
